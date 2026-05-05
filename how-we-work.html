@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Work | Digitinize Creative — D2C Growth Agency</title>
+<meta name="description" content="Our 4-phase process: deep audit, growth blueprint, build & launch, compound & scale. See exactly how we embed inside D2C brands to drive profitable growth.">
+<meta name="keywords" content="D2C agency process, performance marketing onboarding, growth strategy D2C India, ecommerce agency Bangalore">
+<meta property="og:title" content="How We Work | Digitinize Creative — D2C Growth Agency">
+<meta property="og:description" content="Our 4-phase process: deep audit, growth blueprint, build & launch, compound & scale. See exactly how we embed inside D2C brands to drive profitable growth.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<link rel="canonical" href="https://digitinize.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0E1338;
+  color: #F0EEF8;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Cursor ── */
+.cursor {
+  position: fixed; width: 8px; height: 8px; border-radius: 50%;
+  background: #E85A3C; pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width .15s, height .15s;
+}
+.cursor-ring {
+  position: fixed; width: 32px; height: 32px; border-radius: 50%;
+  border: 1.5px solid rgba(232,90,60,0.5); pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width .2s cubic-bezier(0.16,1,0.3,1), height .2s cubic-bezier(0.16,1,0.3,1), opacity .2s;
+}
+
+/* ── Design tokens ── */
+:root {
+  --ink: #0E1338;
+  --paper: #F0EEF8;
+  --signal: #E85A3C;
+  --indigo: #4F46E5;
+  --muted: rgba(240,238,248,0.5);
+  --border: rgba(240,238,248,0.08);
+  --border-hover: rgba(240,238,248,0.18);
+  --card-bg: rgba(255,255,255,0.03);
+  --card-bg-hover: rgba(255,255,255,0.055);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --max-w: 1200px;
+  --section-gap: clamp(88px, 12vw, 148px);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 40px rgba(0,0,0,0.35);
+  --shadow-glow: 0 0 48px rgba(232,90,60,0.15);
+}
+
+/* ── Typography ── */
+h1,h2,h3,h4 {
+  font-family: var(--font-display); font-weight: 700;
+  line-height: 1.06; letter-spacing: -0.025em;
+}
+h1 { font-size: clamp(52px, 8.5vw, 104px); }
+h2 { font-size: clamp(36px, 5.5vw, 68px); }
+h3 { font-size: clamp(22px, 2.8vw, 34px); }
+h4 { font-size: clamp(16px, 1.8vw, 21px); font-family: var(--font-body); font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+p { color: var(--muted); max-width: 62ch; line-height: 1.75; }
+a { color: inherit; text-decoration: none; }
+strong { color: var(--paper); font-weight: 600; }
+
+/* ── Layout ── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); }
+section { padding: var(--section-gap) 0; }
+
+/* ── Gradient mesh background ── */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 90% 70% at 100% -5%, rgba(232,90,60,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at -10% 45%, rgba(79,70,229,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 50% 110%, rgba(79,70,229,0.06) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* ── Noise texture ── */
+body::after {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 24px clamp(20px,5vw,56px);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .35s cubic-bezier(0.16,1,0.3,1);
+}
+.nav.scrolled {
+  background: rgba(14,19,56,0.82);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+  padding-top: 15px; padding-bottom: 15px;
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 24px; font-weight: 900;
+  letter-spacing: -0.04em; color: var(--paper);
+}
+.nav-logo span { color: var(--signal); }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--muted);
+  transition: color .2s; position: relative; letter-spacing: 0.01em;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-5px; left:0; right:0; height:1.5px;
+  background: var(--signal); transform: scaleX(0); transform-origin: left;
+  transition: transform .25s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--paper); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-cta {
+  background: linear-gradient(135deg, #E85A3C 0%, #C94828 100%);
+  color: #fff; padding: 10px 22px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(232,90,60,0.35);
+  transition: transform .15s, box-shadow .15s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(232,90,60,0.45); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--paper); transition: all .3s; }
+.nav-mobile { display: none; }
+@media (max-width: 800px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: #0E1338; z-index: 99; padding: 100px 44px 44px;
+    flex-direction: column; gap: 28px;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: var(--font-display); font-size: 40px; font-weight: 700;
+    color: var(--paper); letter-spacing: -0.02em;
+    border-bottom: 1px solid var(--border); padding-bottom: 20px;
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile .mob-cta {
+    display: inline-block; background: linear-gradient(135deg,#E85A3C,#C94828);
+    padding: 14px 32px; border-radius: 8px;
+    font-family: var(--font-body); font-size: 16px; font-weight: 600;
+    border-bottom: none !important;
+  }
+}
+
+/* ── Footer ── */
+.footer { border-top: 1px solid var(--border); padding: 80px 0 48px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 56px; }
+.footer-brand p { margin-top: 14px; font-size: 14px; line-height: 1.75; max-width: 280px; }
+.footer-col h5 {
+  font-family: var(--font-body); font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: rgba(240,238,248,0.3);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul a { font-size: 14px; color: var(--muted); transition: color .2s; }
+.footer-col ul a:hover { color: var(--paper); }
+.footer-bottom {
+  margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 13px; max-width: none; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #E85A3C 0%, #C94828 100%);
+  color: #fff; padding: 15px 32px; border-radius: 10px;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(232,90,60,0.3);
+  transition: transform .15s cubic-bezier(0.16,1,0.3,1), box-shadow .15s;
+  border: none; cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(232,90,60,0.45); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(240,238,248,0.12); color: var(--paper); padding: 14px 31px;
+  border-radius: 10px; font-size: 15px; font-weight: 500;
+  background: rgba(255,255,255,0.03);
+  transition: all .2s; cursor: pointer;
+}
+.btn-outline:hover {
+  border-color: rgba(240,238,248,0.25);
+  background: rgba(255,255,255,0.07);
+  transform: translateY(-1px);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, background .25s, transform .3s cubic-bezier(0.16,1,0.3,1), box-shadow .25s;
+}
+.card::after {
+  content: ''; position: absolute; inset: 0; border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(232,90,60,0.05) 0%, rgba(79,70,229,0.05) 100%);
+  opacity: 0; transition: opacity .3s;
+}
+.card:hover {
+  border-color: var(--border-hover);
+  background: var(--card-bg-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.35), 0 0 0 1px rgba(232,90,60,0.06);
+}
+.card:hover::after { opacity: 1; }
+
+/* ── Tags ── */
+.tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  color: var(--signal); background: rgba(232,90,60,0.1);
+  border: 1px solid rgba(232,90,60,0.2); padding: 4px 10px;
+  border-radius: 100px; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* ── Section label ── */
+.section-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  color: var(--signal); letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.section-label::before {
+  content: ''; display: block; width: 20px; height: 1.5px;
+  background: var(--signal); flex-shrink: 0;
+}
+
+/* ── Reveal animations ── */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(0.16,1,0.3,1), transform .8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .08s; }
+.reveal-delay-2 { transition-delay: .16s; }
+.reveal-delay-3 { transition-delay: .24s; }
+.reveal-delay-4 { transition-delay: .32s; }
+.reveal-delay-5 { transition-delay: .40s; }
+
+/* ── Proof strip ── */
+.proof-strip {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+  background: linear-gradient(90deg, rgba(232,90,60,0.04) 0%, rgba(79,70,229,0.04) 100%);
+}
+.proof-strip .container {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.proof-item { display: flex; flex-direction: column; gap: 6px; }
+.proof-num {
+  font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; color: var(--paper); line-height: 1;
+  letter-spacing: -0.03em;
+}
+.proof-num span { color: var(--signal); }
+.proof-label { font-size: 13px; color: var(--muted); letter-spacing: 0.01em; }
+.proof-divider { width: 1px; height: 56px; background: var(--border); flex-shrink: 0; }
+@media (max-width: 640px) {
+  .proof-strip .container { justify-content: center; }
+  .proof-divider { display: none; }
+}
+
+/* ── Grid utilities ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── Page hero ── */
+.page-hero { padding: calc(var(--section-gap) + 88px) 0 var(--section-gap); }
+.page-hero h1 { max-width: 16ch; }
+.page-hero > .container > p,
+.page-hero p.hero-body {
+  font-size: clamp(17px, 2vw, 21px);
+  margin-top: 22px; max-width: 52ch; line-height: 1.65;
+}
+
+/* ── Section dividers ── */
+.section-alt {
+  background: rgba(255,255,255,0.018);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.section-tinted {
+  background: linear-gradient(180deg, rgba(79,70,229,0.05) 0%, rgba(79,70,229,0.01) 100%);
+}
+
+/* ── Service icon ── */
+.svc-icon { width: 52px; height: 52px; margin-bottom: 20px; flex-shrink: 0; }
+
+
+.phase-block { display:grid; grid-template-columns:80px 1fr; gap:32px; padding:56px 0; border-bottom:1px solid var(--border); position:relative; }
+.phase-block:last-child { border-bottom:none; }
+.phase-num-col { display:flex; flex-direction:column; align-items:center; gap:0; }
+.phase-num {
+  width:64px; height:64px; border-radius:50%; border:1px solid rgba(232,90,60,0.3);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-mono); font-size:14px; color:var(--signal);
+  background: rgba(232,90,60,0.06); flex-shrink:0;
+}
+.phase-line { flex:1; width:1px; background:linear-gradient(var(--signal),transparent); margin-top:12px; min-height:40px; }
+.phase-block:last-child .phase-line { display:none; }
+.phase-content h3 { margin-bottom:12px; }
+.phase-content p { font-size:16px; max-width:60ch; }
+.phase-deliverables { margin-top:24px; display:flex; flex-wrap:wrap; gap:10px; }
+.phase-deliverable {
+  font-family:var(--font-mono); font-size:11px; color:var(--muted);
+  border:1px solid var(--border); padding:6px 12px; border-radius:4px; letter-spacing:.04em;
+}
+.phase-timeline { font-family:var(--font-mono); font-size:11px; color:var(--signal); margin-bottom:8px; letter-spacing:.06em; }
+@media (max-width:560px) { .phase-block { grid-template-columns:1fr; } .phase-num-col { flex-direction:row; align-items:center; } .phase-line { width:40px; height:1px; background:linear-gradient(90deg,var(--signal),transparent); margin:0 0 0 12px; } }
+.guarantee-card {
+  background: linear-gradient(135deg, rgba(79,70,229,0.12) 0%, rgba(14,19,56,0.85) 100%);
+  border:1px solid rgba(79,70,229,0.2); border-radius:20px; padding:clamp(32px,5vw,64px);
+  display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+}
+.guarantee-list { list-style:none; display:flex; flex-direction:column; gap:16px; margin-top:24px; }
+.guarantee-list li { display:flex; gap:12px; font-size:16px; color:var(--muted); }
+.guarantee-list li::before { content:'→'; color:var(--signal); font-weight:700; }
+@media (max-width:640px) { .guarantee-card { grid-template-columns:1fr; } }
+
+</style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Digitinize<span>.</span></a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li>
+<li><a href="services.html" class="">Growth Systems</a></li>
+<li><a href="how-we-work.html" class="active">How We Work</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="playbooks.html" class="">Playbooks</a></li></ul>
+  <a href="contact.html" class="nav-cta">Work with us →</a>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+<a href="services.html">Growth Systems</a>
+<a href="how-we-work.html">How We Work</a>
+<a href="about.html">About</a>
+<a href="playbooks.html">Playbooks</a>
+  <a href="contact.html" class="mob-cta">Work with us →</a>
+</div>
+
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label reveal">How We Work</span>
+    <h1 class="reveal reveal-delay-1">From the first call to<br>compound growth.</h1>
+    <p class="reveal reveal-delay-2">Across SEO, paid media, video, social, and email &amp; WhatsApp — we follow one process: audit deep, plan precisely, build fast, then compound. We move quickly because we've done this before.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label reveal">The process</span>
+    <h2 class="reveal reveal-delay-1">Four phases. One north star:<br>profitable growth.</h2>
+
+    <!-- Process timeline infographic -->
+    <div class="reveal reveal-delay-2" style="margin-top:48px;margin-bottom:56px">
+      <svg viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px">
+        <defs>
+          <linearGradient id="trackGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E85A3C" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.8"/>
+          </linearGradient>
+        </defs>
+        <!-- Track line -->
+        <line x1="100" y1="44" x2="800" y2="44" stroke="#1E2855" stroke-width="2"/>
+        <line x1="100" y1="44" x2="800" y2="44" stroke="url(#trackGrad)" stroke-width="2" opacity="0.5"/>
+        <!-- Phase 1: Audit -->
+        <circle cx="100" cy="44" r="22" fill="#131B4A" stroke="#E85A3C" stroke-width="2"/>
+        <text x="100" y="40" fill="#E85A3C" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">01</text>
+        <text x="100" y="53" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Audit</text>
+        <rect x="54" y="72" width="92" height="36" rx="6" fill="#172050" stroke="#252E6E" stroke-width="1"/>
+        <text x="100" y="87" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">Deep Audit</text>
+        <text x="100" y="100" fill="#6B7199" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Weeks 1–2</text>
+        <!-- Arrow 1→2 -->
+        <polygon points="310,40 298,35 298,49" fill="#E85A3C" opacity="0.7"/>
+        <!-- Phase 2: Blueprint -->
+        <circle cx="333" cy="44" r="22" fill="#131B4A" stroke="#E85A3C" stroke-width="2"/>
+        <text x="333" cy="40" fill="#E85A3C" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
+        <text x="333" y="40" fill="#E85A3C" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
+        <text x="333" y="53" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Plan</text>
+        <rect x="287" y="72" width="92" height="36" rx="6" fill="#172050" stroke="#252E6E" stroke-width="1"/>
+        <text x="333" y="87" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">Blueprint</text>
+        <text x="333" y="100" fill="#6B7199" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Week 3</text>
+        <!-- Arrow 2→3 -->
+        <polygon points="543,40 531,35 531,49" fill="#4F46E5" opacity="0.7"/>
+        <!-- Phase 3: Build -->
+        <circle cx="566" cy="44" r="22" fill="#131B4A" stroke="#4F46E5" stroke-width="2"/>
+        <text x="566" y="40" fill="#4F46E5" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">03</text>
+        <text x="566" y="53" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Build</text>
+        <rect x="520" y="72" width="92" height="36" rx="6" fill="#172050" stroke="#252E6E" stroke-width="1"/>
+        <text x="566" y="87" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">Build &amp; Launch</text>
+        <text x="566" y="100" fill="#6B7199" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Weeks 4–8</text>
+        <!-- Arrow 3→4 -->
+        <polygon points="776,40 764,35 764,49" fill="#4F46E5" opacity="0.7"/>
+        <!-- Phase 4: Scale -->
+        <circle cx="800" cy="44" r="22" fill="#4F46E5" stroke="#4F46E5" stroke-width="2"/>
+        <text x="800" y="40" fill="#fff" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">04</text>
+        <text x="800" y="53" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Scale</text>
+        <rect x="754" y="72" width="92" height="36" rx="6" fill="#4F46E5" fill-opacity="0.2" stroke="#4F46E5" stroke-width="1"/>
+        <text x="800" y="87" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">Compound</text>
+        <text x="800" y="100" fill="#8B8FA8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Ongoing →</text>
+        <!-- Time marker -->
+        <text x="450" y="14" fill="#6B7199" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">━━━━ 90-day launch window ━━━━</text>
+        <line x1="100" y1="18" x2="566" y2="18" stroke="#E85A3C" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+        <line x1="566" y1="18" x2="800" y2="18" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div style="margin-top:0">
+      <div class="phase-block reveal">
+        <div class="phase-num-col">
+          <div class="phase-num">01</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-timeline">Weeks 1–2</div>
+          <h3>Deep Audit</h3>
+          <p>Before we touch your accounts or write a single brief, we learn your business. Ad accounts, email performance, unit economics, customer data, category dynamics — all of it. We leave no stone unturned because the best growth strategy is built on what's actually true about your brand, not what we assume.</p>
+          <div class="phase-deliverables">
+            <span class="phase-deliverable">Full paid account audit</span>
+            <span class="phase-deliverable">Lifecycle health check</span>
+            <span class="phase-deliverable">Creative performance analysis</span>
+            <span class="phase-deliverable">CAC:LTV model</span>
+            <span class="phase-deliverable">Category competitive audit</span>
+            <span class="phase-deliverable">Growth bottleneck map</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-block reveal">
+        <div class="phase-num-col">
+          <div class="phase-num">02</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-timeline">Week 3</div>
+          <h3>Growth Blueprint</h3>
+          <p>The audit informs a 90-day growth blueprint — a prioritised plan that tells you exactly what we're building, why, in what order, and what result we expect from each initiative. No vague strategy decks. Every recommendation tied to a number.</p>
+          <div class="phase-deliverables">
+            <span class="phase-deliverable">90-day roadmap</span>
+            <span class="phase-deliverable">Priority stack-ranking</span>
+            <span class="phase-deliverable">Expected outcomes by initiative</span>
+            <span class="phase-deliverable">KPI framework</span>
+            <span class="phase-deliverable">Resource requirements</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-block reveal">
+        <div class="phase-num-col">
+          <div class="phase-num">03</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-timeline">Weeks 4–8</div>
+          <h3>Build &amp; Launch</h3>
+          <p>We build the systems — campaigns, flows, creative frameworks, dashboards — and get them live. Not in theory. In your accounts. Generating data. The first 60 days are about building infrastructure and gathering signal.</p>
+          <div class="phase-deliverables">
+            <span class="phase-deliverable">Campaign restructure</span>
+            <span class="phase-deliverable">Lifecycle flows live</span>
+            <span class="phase-deliverable">Creative testing launched</span>
+            <span class="phase-deliverable">Attribution model deployed</span>
+            <span class="phase-deliverable">Weekly reporting live</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-block reveal">
+        <div class="phase-num-col">
+          <div class="phase-num">04</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-timeline">Week 9 → ongoing</div>
+          <h3>Compound &amp; Scale</h3>
+          <p>This is where we earn our keep. Weekly iteration loops — what's working gets scaled, what isn't gets killed or rethought. Over months, the system compounds. CAC drops. LTV rises. Revenue becomes more predictable.</p>
+          <div class="phase-deliverables">
+            <span class="phase-deliverable">Weekly optimisation syncs</span>
+            <span class="phase-deliverable">Creative refresh cycles</span>
+            <span class="phase-deliverable">Budget scaling framework</span>
+            <span class="phase-deliverable">Quarterly strategy review</span>
+            <span class="phase-deliverable">LTV cohort tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--section-gap) 0;background:rgba(244,241,232,0.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <span class="section-label reveal">What's different</span>
+    <h2 class="reveal reveal-delay-1">The things we commit to<br>from day one</h2>
+    <div class="grid-3" style="margin-top:48px">
+      <div class="card reveal reveal-delay-1">
+        <div style="font-size:28px;margin-bottom:16px">👤</div>
+        <h4>No account manager layer</h4>
+        <p>The people on the intro call are the people who do the work. You have direct access to the strategist, the media buyer, the creative lead — all of them.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div style="font-size:28px;margin-bottom:16px">📞</div>
+        <h4>Proactive, not reactive</h4>
+        <p>We don't wait for you to ask what's happening. We bring problems, opportunities, and recommendations to you — before you notice them.</p>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div style="font-size:28px;margin-bottom:16px">📊</div>
+        <h4>Revenue-tied reporting only</h4>
+        <p>We don't report impressions or reach. We report CAC, ROAS, repeat rate, and revenue. If it doesn't connect to money, it's not in the dashboard.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div style="font-size:28px;margin-bottom:16px">🏗️</div>
+        <h4>We build things that last</h4>
+        <p>Every system we build is documented, transferable, and yours. If you ever leave, you keep the infrastructure — not a black box.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div style="font-size:28px;margin-bottom:16px">🎯</div>
+        <h4>Small roster, full focus</h4>
+        <p>We work with a small number of brands at a time. That's a feature, not a constraint. Your brand gets genuine attention.</p>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div style="font-size:28px;margin-bottom:16px">🔁</div>
+        <h4>Long-term mindset</h4>
+        <p>We're not here for a 90-day sprint. We're here for the compounding. Our average client relationship is 18+ months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--section-gap) 0">
+  <div class="container">
+    <div class="guarantee-card reveal">
+      <div>
+        <span class="section-label">Our commitment</span>
+        <h2 style="font-size:clamp(32px,4vw,48px)">What you can hold us to</h2>
+        <ul class="guarantee-list">
+          <li>A growth blueprint within 3 weeks of starting</li>
+          <li>Live campaigns and flows within 6 weeks</li>
+          <li>Weekly reporting, every single week</li>
+          <li>Access to the actual experts, not intermediaries</li>
+          <li>Honest assessment if something isn't working</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:16px">What we need from you</h3>
+        <p>We work best with founders and operators who are close to their numbers, open to honest feedback, and in it for the long game. If you want someone to tell you what you want to hear, we're not your team.</p>
+        <a href="contact.html" class="btn-primary" style="margin-top:28px">Start the process →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:var(--section-gap)">
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2>The best time to fix<br>your growth stack was Q1.</h2>
+      <p>The second best time is now. Tell us where you're stuck — we'll tell you what we'd do.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Book a free strategy call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-0.03em">Digitinize<span style="color:var(--signal)">.</span></div>
+        <p>Your in-house growth team — without the hire. Embedding inside D2C brands since 2014.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#seo">SEO</a></li>
+          <li><a href="services.html#paid">Paid Media</a></li>
+          <li><a href="services.html#video">Video as Infrastructure</a></li>
+          <li><a href="services.html#social">Social Media Marketing</a></li>
+          <li><a href="services.html#email">Email &amp; WhatsApp Marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="how-we-work.html">How We Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="playbooks.html">Playbooks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="mailto:hello@digitinize.com">hello@digitinize.com</a></li>
+          <li><a href="https://www.linkedin.com/company/digitinize" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/digitinize" target="_blank">Instagram</a></li>
+          <li><a href="contact.html">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:var(--muted)">© 2024 Digitinize Creative Pvt. Ltd. Bangalore, India.</p>
+      <p style="color:var(--muted)">D2C marketing agency India · Performance marketing Bangalore</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const ring = document.querySelector('.cursor-ring');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.card').forEach(el => {
+  el.addEventListener('mouseenter', () => { ring.style.width='56px'; ring.style.height='56px'; ring.style.opacity='.6'; });
+  el.addEventListener('mouseleave', () => { ring.style.width='36px'; ring.style.height='36px'; ring.style.opacity='1'; });
+});
+
+// Nav scroll
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile nav
+const ham = document.querySelector('.nav-hamburger');
+const mob = document.querySelector('.nav-mobile');
+if (ham && mob) {
+  ham.addEventListener('click', () => {
+    mob.classList.toggle('open');
+    const bars = ham.querySelectorAll('span');
+    const open = mob.classList.contains('open');
+    bars[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    bars[1].style.opacity = open ? '0' : '1';
+    bars[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+}
+
+// Intersection Observer reveals
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Counter animation
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const dur = 1600;
+  const start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = prefix + Math.floor(ease * target) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const co = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); co.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+</script>
+</body>
+</html>
