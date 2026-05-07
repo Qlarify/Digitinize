@@ -3,25 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How We Work | Digitinize Creative — D2C Growth Agency</title>
-<meta name="description" content="Our 4-phase process: deep audit, growth blueprint, build & launch, compound & scale. See exactly how we embed inside D2C brands to drive profitable growth.">
-<meta name="keywords" content="D2C agency process, performance marketing onboarding, growth strategy D2C India, ecommerce agency Bangalore">
-<meta property="og:title" content="How We Work | Digitinize Creative — D2C Growth Agency">
-<meta property="og:description" content="Our 4-phase process: deep audit, growth blueprint, build & launch, compound & scale. See exactly how we embed inside D2C brands to drive profitable growth.">
+<title>How We Work | Digitinize — B2B Growth Agency</title>
+<meta name="description" content="Our 4-phase process: deep audit, growth blueprint, build & launch, compound & scale. See exactly how we embed inside B2B brands to drive profitable growth.">
+<meta name="keywords" content="B2B agency process, performance marketing onboarding, growth strategy B2B India, B2B pipeline agency Bangalore">
+<meta property="og:title" content="How We Work | Digitinize — B2B Growth Agency">
+<meta property="og:description" content="Our 4-phase process: deep audit, growth blueprint, build & launch, compound & scale. See exactly how we embed inside B2B brands to drive profitable growth.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <link rel="canonical" href="https://digitinize.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: #0E1338;
-  color: #F0EEF8;
+  background: #F4F9F9;
+  color: #0E1338;
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.65;
   overflow-x: hidden;
@@ -33,28 +34,28 @@ body {
 /* ── Cursor ── */
 .cursor {
   position: fixed; width: 8px; height: 8px; border-radius: 50%;
-  background: #E85A3C; pointer-events: none; z-index: 9999;
+  background: #0D8080; pointer-events: none; z-index: 9999;
   transform: translate(-50%,-50%);
   transition: width .15s, height .15s;
 }
 .cursor-ring {
   position: fixed; width: 32px; height: 32px; border-radius: 50%;
-  border: 1.5px solid rgba(232,90,60,0.5); pointer-events: none; z-index: 9998;
+  border: 1.5px solid rgba(13,128,128,0.5); pointer-events: none; z-index: 9998;
   transform: translate(-50%,-50%);
   transition: width .2s cubic-bezier(0.16,1,0.3,1), height .2s cubic-bezier(0.16,1,0.3,1), opacity .2s;
 }
 
 /* ── Design tokens ── */
 :root {
-  --ink: #0E1338;
-  --paper: #F0EEF8;
-  --signal: #E85A3C;
+  --ink: #F4F9F9;
+  --paper: #0E1338;
+  --signal: #0D8080;
   --indigo: #4F46E5;
-  --muted: rgba(240,238,248,0.5);
-  --border: rgba(240,238,248,0.08);
-  --border-hover: rgba(240,238,248,0.18);
-  --card-bg: rgba(255,255,255,0.03);
-  --card-bg-hover: rgba(255,255,255,0.055);
+  --muted: rgba(14,19,56,0.55);
+  --border: rgba(14,19,56,0.09);
+  --border-hover: rgba(14,19,56,0.18);
+  --card-bg: #FFFFFF;
+  --card-bg-hover: #F0FDFD;
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
@@ -63,7 +64,7 @@ body {
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 8px 40px rgba(0,0,0,0.35);
-  --shadow-glow: 0 0 48px rgba(232,90,60,0.15);
+  --shadow-glow: 0 0 48px rgba(13,128,128,0.22);
 }
 
 /* ── Typography ── */
@@ -87,9 +88,9 @@ section { padding: var(--section-gap) 0; }
 body::before {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(ellipse 90% 70% at 100% -5%, rgba(232,90,60,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 60% at -10% 45%, rgba(79,70,229,0.10) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 50% 110%, rgba(79,70,229,0.06) 0%, transparent 50%);
+    radial-gradient(ellipse 90% 70% at 100% -5%, rgba(13,128,128,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at -10% 45%, rgba(79,70,229,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 50% 110%, rgba(79,70,229,0.03) 0%, transparent 50%);
 }
 body > * { position: relative; z-index: 1; }
 
@@ -108,7 +109,7 @@ body::after {
   transition: all .35s cubic-bezier(0.16,1,0.3,1);
 }
 .nav.scrolled {
-  background: rgba(14,19,56,0.82);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   border-bottom: 1px solid var(--border);
@@ -116,7 +117,7 @@ body::after {
 }
 .nav-logo {
   font-family: var(--font-display); font-size: 24px; font-weight: 900;
-  letter-spacing: -0.04em; color: var(--paper);
+  letter-spacing: -0.04em; color: var(--signal);
 }
 .nav-logo span { color: var(--signal); }
 .nav-links { display: flex; gap: 40px; list-style: none; }
@@ -132,13 +133,13 @@ body::after {
 .nav-links a:hover, .nav-links a.active { color: var(--paper); }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
 .nav-cta {
-  background: linear-gradient(135deg, #E85A3C 0%, #C94828 100%);
+  background: linear-gradient(135deg, #0D8080 0%, #096060 100%);
   color: #fff; padding: 10px 22px; border-radius: 8px;
   font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
-  box-shadow: 0 4px 20px rgba(232,90,60,0.35);
+  box-shadow: 0 4px 20px rgba(13,128,128,0.35);
   transition: transform .15s, box-shadow .15s;
 }
-.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(232,90,60,0.45); }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(13,128,128,0.45); }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--paper); transition: all .3s; }
 .nav-mobile { display: none; }
@@ -147,7 +148,7 @@ body::after {
   .nav-hamburger { display: flex; }
   .nav-mobile {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: #0E1338; z-index: 99; padding: 100px 44px 44px;
+    background: #F4F9F9; z-index: 99; padding: 100px 44px 44px;
     flex-direction: column; gap: 28px;
   }
   .nav-mobile.open { display: flex; }
@@ -158,7 +159,7 @@ body::after {
   }
   .nav-mobile a:last-child { border-bottom: none; }
   .nav-mobile .mob-cta {
-    display: inline-block; background: linear-gradient(135deg,#E85A3C,#C94828);
+    display: inline-block; background: linear-gradient(135deg,#0D8080,#096060);
     padding: 14px 32px; border-radius: 8px;
     font-family: var(--font-body); font-size: 16px; font-weight: 600;
     border-bottom: none !important;
@@ -171,7 +172,7 @@ body::after {
 .footer-brand p { margin-top: 14px; font-size: 14px; line-height: 1.75; max-width: 280px; }
 .footer-col h5 {
   font-family: var(--font-body); font-size: 11px; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: rgba(240,238,248,0.3);
+  letter-spacing: .1em; text-transform: uppercase; color: rgba(14,19,56,0.45);
   margin-bottom: 20px;
 }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
@@ -191,24 +192,24 @@ body::after {
 /* ── Buttons ── */
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px;
-  background: linear-gradient(135deg, #E85A3C 0%, #C94828 100%);
+  background: linear-gradient(135deg, #0D8080 0%, #096060 100%);
   color: #fff; padding: 15px 32px; border-radius: 10px;
   font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
-  box-shadow: 0 4px 20px rgba(232,90,60,0.3);
+  box-shadow: 0 4px 20px rgba(13,128,128,0.3);
   transition: transform .15s cubic-bezier(0.16,1,0.3,1), box-shadow .15s;
   border: none; cursor: pointer;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(232,90,60,0.45); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(13,128,128,0.45); }
 .btn-outline {
   display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid rgba(240,238,248,0.12); color: var(--paper); padding: 14px 31px;
+  border: 1.5px solid rgba(13,128,128,0.35); color: var(--signal); padding: 14px 31px;
   border-radius: 10px; font-size: 15px; font-weight: 500;
-  background: rgba(255,255,255,0.03);
+  background: transparent;
   transition: all .2s; cursor: pointer;
 }
 .btn-outline:hover {
-  border-color: rgba(240,238,248,0.25);
-  background: rgba(255,255,255,0.07);
+  border-color: rgba(13,128,128,0.60);
+  background: rgba(13,128,128,0.06);
   transform: translateY(-1px);
 }
 
@@ -224,14 +225,14 @@ body::after {
 }
 .card::after {
   content: ''; position: absolute; inset: 0; border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(232,90,60,0.05) 0%, rgba(79,70,229,0.05) 100%);
+  background: linear-gradient(135deg, rgba(13,128,128,0.05) 0%, rgba(79,70,229,0.05) 100%);
   opacity: 0; transition: opacity .3s;
 }
 .card:hover {
   border-color: var(--border-hover);
   background: var(--card-bg-hover);
   transform: translateY(-6px);
-  box-shadow: 0 24px 56px rgba(0,0,0,0.35), 0 0 0 1px rgba(232,90,60,0.06);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10), 0 0 0 1px rgba(13,128,128,0.10);
 }
 .card:hover::after { opacity: 1; }
 
@@ -239,8 +240,8 @@ body::after {
 .tag {
   display: inline-flex; align-items: center;
   font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-  color: var(--signal); background: rgba(232,90,60,0.1);
-  border: 1px solid rgba(232,90,60,0.2); padding: 4px 10px;
+  color: var(--signal); background: rgba(13,128,128,0.1);
+  border: 1px solid rgba(13,128,128,0.2); padding: 4px 10px;
   border-radius: 100px; letter-spacing: .06em; text-transform: uppercase;
 }
 
@@ -272,7 +273,7 @@ body::after {
 .proof-strip {
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   padding: 48px 0;
-  background: linear-gradient(90deg, rgba(232,90,60,0.04) 0%, rgba(79,70,229,0.04) 100%);
+  background: linear-gradient(90deg, rgba(13,128,128,0.07) 0%, rgba(79,70,229,0.05) 100%);
 }
 .proof-strip .container {
   display: flex; align-items: center; justify-content: space-between;
@@ -315,11 +316,11 @@ body::after {
 
 /* ── Section dividers ── */
 .section-alt {
-  background: rgba(255,255,255,0.018);
+  background: rgba(13,128,128,0.04);
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
 }
 .section-tinted {
-  background: linear-gradient(180deg, rgba(79,70,229,0.05) 0%, rgba(79,70,229,0.01) 100%);
+  background: linear-gradient(180deg, rgba(13,128,128,0.05) 0%, rgba(13,128,128,0.01) 100%);
 }
 
 /* ── Service icon ── */
@@ -330,10 +331,10 @@ body::after {
 .phase-block:last-child { border-bottom:none; }
 .phase-num-col { display:flex; flex-direction:column; align-items:center; gap:0; }
 .phase-num {
-  width:64px; height:64px; border-radius:50%; border:1px solid rgba(232,90,60,0.3);
+  width:64px; height:64px; border-radius:50%; border:1px solid rgba(13,128,128,0.3);
   display:flex; align-items:center; justify-content:center;
   font-family:var(--font-mono); font-size:14px; color:var(--signal);
-  background: rgba(232,90,60,0.06); flex-shrink:0;
+  background: rgba(13,128,128,0.06); flex-shrink:0;
 }
 .phase-line { flex:1; width:1px; background:linear-gradient(var(--signal),transparent); margin-top:12px; min-height:40px; }
 .phase-block:last-child .phase-line { display:none; }
@@ -365,7 +366,7 @@ body::after {
 <nav class="nav">
   <a href="index.html" class="nav-logo">Digitinize<span>.</span></a>
   <ul class="nav-links"><li><a href="index.html" class="">Home</a></li>
-<li><a href="services.html" class="">Growth Systems</a></li>
+<li><a href="services.html" class="">Growth Services</a></li>
 <li><a href="how-we-work.html" class="active">How We Work</a></li>
 <li><a href="about.html" class="">About</a></li>
 <li><a href="playbooks.html" class="">Playbooks</a></li></ul>
@@ -374,7 +375,7 @@ body::after {
 </nav>
 <div class="nav-mobile">
   <a href="index.html">Home</a>
-<a href="services.html">Growth Systems</a>
+<a href="services.html">Growth Services</a>
 <a href="how-we-work.html">How We Work</a>
 <a href="about.html">About</a>
 <a href="playbooks.html">Playbooks</a>
@@ -400,7 +401,7 @@ body::after {
       <svg viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px">
         <defs>
           <linearGradient id="trackGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#E85A3C" stop-opacity="0.8"/>
+            <stop offset="0%" stop-color="#0D8080" stop-opacity="0.8"/>
             <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.8"/>
           </linearGradient>
         </defs>
@@ -408,18 +409,18 @@ body::after {
         <line x1="100" y1="44" x2="800" y2="44" stroke="#1E2855" stroke-width="2"/>
         <line x1="100" y1="44" x2="800" y2="44" stroke="url(#trackGrad)" stroke-width="2" opacity="0.5"/>
         <!-- Phase 1: Audit -->
-        <circle cx="100" cy="44" r="22" fill="#131B4A" stroke="#E85A3C" stroke-width="2"/>
-        <text x="100" y="40" fill="#E85A3C" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">01</text>
+        <circle cx="100" cy="44" r="22" fill="#131B4A" stroke="#0D8080" stroke-width="2"/>
+        <text x="100" y="40" fill="#0D8080" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">01</text>
         <text x="100" y="53" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Audit</text>
         <rect x="54" y="72" width="92" height="36" rx="6" fill="#172050" stroke="#252E6E" stroke-width="1"/>
         <text x="100" y="87" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">Deep Audit</text>
         <text x="100" y="100" fill="#6B7199" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Weeks 1–2</text>
         <!-- Arrow 1→2 -->
-        <polygon points="310,40 298,35 298,49" fill="#E85A3C" opacity="0.7"/>
+        <polygon points="310,40 298,35 298,49" fill="#0D8080" opacity="0.7"/>
         <!-- Phase 2: Blueprint -->
-        <circle cx="333" cy="44" r="22" fill="#131B4A" stroke="#E85A3C" stroke-width="2"/>
-        <text x="333" cy="40" fill="#E85A3C" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
-        <text x="333" y="40" fill="#E85A3C" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
+        <circle cx="333" cy="44" r="22" fill="#131B4A" stroke="#0D8080" stroke-width="2"/>
+        <text x="333" cy="40" fill="#0D8080" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
+        <text x="333" y="40" fill="#0D8080" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">02</text>
         <text x="333" y="53" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Plan</text>
         <rect x="287" y="72" width="92" height="36" rx="6" fill="#172050" stroke="#252E6E" stroke-width="1"/>
         <text x="333" y="87" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle">Blueprint</text>
@@ -444,7 +445,7 @@ body::after {
         <text x="800" y="100" fill="#8B8FA8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">Ongoing →</text>
         <!-- Time marker -->
         <text x="450" y="14" fill="#6B7199" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">━━━━ 90-day launch window ━━━━</text>
-        <line x1="100" y1="18" x2="566" y2="18" stroke="#E85A3C" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+        <line x1="100" y1="18" x2="566" y2="18" stroke="#0D8080" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
         <line x1="566" y1="18" x2="800" y2="18" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
       </svg>
     </div>
@@ -606,17 +607,17 @@ body::after {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div style="font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-0.03em">Digitinize<span style="color:var(--signal)">.</span></div>
-        <p>Your in-house growth team — without the hire. Embedding inside D2C brands since 2014.</p>
+        <div style="font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-0.03em;color:var(--signal)">Digitinize<span>.</span></div>
+        <p>Your embedded B2B growth team — without the hire. Building pipeline since 2014.</p>
       </div>
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
-          <li><a href="services.html#seo">SEO</a></li>
-          <li><a href="services.html#paid">Paid Media</a></li>
-          <li><a href="services.html#video">Video as Infrastructure</a></li>
-          <li><a href="services.html#social">Social Media Marketing</a></li>
-          <li><a href="services.html#email">Email &amp; WhatsApp Marketing</a></li>
+          <li><a href="services.html#seo">SEO &amp; Content</a></li>
+          <li><a href="services.html#paid">LinkedIn &amp; Paid Media</a></li>
+          <li><a href="services.html#demand">Demand Generation</a></li>
+          <li><a href="services.html#social">Thought Leadership</a></li>
+          <li><a href="services.html#email">Marketing Automation</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -639,8 +640,8 @@ body::after {
       </div>
     </div>
     <div class="footer-bottom">
-      <p style="color:var(--muted)">© 2024 Digitinize Creative Pvt. Ltd. Bangalore, India.</p>
-      <p style="color:var(--muted)">D2C marketing agency India · Performance marketing Bangalore</p>
+      <p style="color:var(--muted)">© 2024 Digitinize Pvt. Ltd. Bangalore, India.</p>
+      <p style="color:var(--muted)">B2B marketing agency India · Performance marketing Bangalore</p>
     </div>
   </div>
 </footer>
