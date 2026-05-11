@@ -1,2 +1,7 @@
 .DS_Store
 Thumbs.db
+
+# Internal drafts — not for public deploy
+*.docx
+Digitinize Creative - Revised.html
+Digitinize Creative - v2.html

@@ -468,14 +468,113 @@ body::after {
 .founder-avatar {
   aspect-ratio: 1; border-radius: 16px;
   background: linear-gradient(135deg, rgba(13,128,128,0.18) 0%, rgba(79,70,229,0.22) 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 72px; font-weight: 700;
-  color: rgba(14,19,56,0.15);
+  overflow: hidden; position: relative;
+  border: 1px solid var(--border);
+}
+.founder-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block;
 }
 .founder-quote { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); line-height: 1.4; color: var(--paper); font-style: italic; margin-bottom: 28px; }
 .founder-sig { font-family: var(--font-display); font-size: 18px; color: var(--paper); }
 .founder-sig span { display: block; font-family: var(--font-body); font-size: 13px; color: var(--muted); margin-top: 4px; font-style: normal; }
 @media (max-width:768px) { .founder-card { grid-template-columns:1fr; } .founder-avatar { max-width: 180px; } }
+
+/* ── Industries strip ── */
+.industries-strip {
+  padding: 52px 0;
+  background: rgba(13,128,128,0.03);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.industries-label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em;
+  color: var(--muted); text-transform: uppercase; text-align: center; display: block;
+  margin-bottom: 28px;
+}
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+}
+.industry-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 20px 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: border-color .2s, box-shadow .2s;
+}
+.industry-tile:hover { border-color: rgba(13,128,128,0.3); box-shadow: 0 4px 16px rgba(13,128,128,0.08); }
+.industry-tile svg { flex-shrink: 0; }
+.industry-tile span { font-size: 11px; font-family: var(--font-body); color: var(--muted); font-weight: 500; line-height: 1.3; }
+.industries-note {
+  text-align: center; font-size: 12px; color: var(--muted); margin-top: 20px;
+  font-family: var(--font-mono); letter-spacing: .04em; max-width: none;
+}
+@media (max-width: 1024px) { .industries-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 560px) { .industries-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Case study cards ── */
+.case-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.case-card:hover { border-color: rgba(13,128,128,0.3); box-shadow: 0 8px 32px rgba(13,128,128,0.10); transform: translateY(-4px); }
+.case-tag { font-family: var(--font-mono); font-size: 11px; color: var(--signal); letter-spacing: .06em; }
+.case-challenge { font-size: 13px; color: var(--muted); font-style: italic; }
+.case-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.case-bullets li { font-size: 13px; color: var(--muted); padding-left: 16px; position: relative; }
+.case-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--signal); font-size: 11px; top: 2px; }
+.case-result { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+.case-result-num { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); font-weight: 700; color: var(--signal); line-height: 1.1; }
+.case-result-ctx { font-size: 12px; color: var(--muted); margin-top: 4px; max-width: none; }
+
+/* ── Testimonial cards ── */
+.testimonial-section { background: rgba(13,128,128,0.03); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.testimonial-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 32px 32px;
+  display: flex; flex-direction: column; gap: 20px;
+  position: relative;
+}
+.testimonial-quote-mark {
+  font-family: var(--font-display); font-size: 72px; color: var(--signal);
+  line-height: 0.6; opacity: 0.3; position: absolute; top: 24px; left: 28px;
+}
+.testimonial-body { font-size: 15px; line-height: 1.75; color: var(--paper); padding-top: 32px; max-width: none; }
+.testimonial-attr { margin-top: auto; font-size: 12px; color: var(--muted); font-family: var(--font-mono); letter-spacing: .03em; }
+.testimonial-attr strong { color: var(--paper); display: block; font-size: 13px; margin-bottom: 2px; font-family: var(--font-body); letter-spacing: 0; }
+
+/* ── Comparison table ── */
+.comparison-section { }
+.comparison-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+.comparison-table th {
+  padding: 16px 20px; font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  text-align: center; border-bottom: 2px solid var(--border);
+}
+.comparison-table th:first-child { text-align: left; }
+.comparison-table th.col-us { background: rgba(13,128,128,0.07); color: var(--signal); border-radius: 12px 12px 0 0; }
+.comparison-table td {
+  padding: 14px 20px; font-size: 13px; color: var(--muted);
+  border-bottom: 1px solid var(--border); text-align: center; vertical-align: middle;
+}
+.comparison-table td:first-child { text-align: left; color: var(--paper); font-weight: 500; font-size: 14px; }
+.comparison-table td.col-us { background: rgba(13,128,128,0.04); }
+.comparison-table tr:last-child td { border-bottom: none; }
+.check { color: var(--signal); font-size: 17px; }
+.cross { color: var(--muted); font-size: 17px; opacity: 0.5; }
+.partial { color: #F59E0B; font-size: 15px; }
+@media (max-width: 640px) {
+  .comparison-table th:nth-child(2), .comparison-table td:nth-child(2) { display: none; }
+}
 
 /* CTA section */
 .cta-section {
@@ -502,7 +601,7 @@ body::after {
 <li><a href="how-we-work.html" class="">How We Work</a></li>
 <li><a href="about.html" class="">About</a></li>
 <li><a href="playbooks.html" class="">Playbooks</a></li></ul>
-  <a href="contact.html" class="nav-cta">Work with us →</a>
+  <a href="contact.html" class="nav-cta">Apply to work with us →</a>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile">
@@ -511,7 +610,7 @@ body::after {
 <a href="how-we-work.html">How We Work</a>
 <a href="about.html">About</a>
 <a href="playbooks.html">Playbooks</a>
-  <a href="contact.html" class="mob-cta">Work with us →</a>
+  <a href="contact.html" class="mob-cta">Apply to work with us →</a>
 </div>
 
 
@@ -522,13 +621,14 @@ body::after {
   <div class="container">
     <div class="hero-split">
       <div class="hero-content">
-        <div class="hero-eyebrow reveal">B2B Growth Partner · Bangalore, India</div>
-        <h1 class="reveal reveal-delay-1">Your embedded B2B growth team.<br><em>Without the hire.</em></h1>
-        <p class="hero-sub reveal reveal-delay-2">We embed inside B2B companies and run the full-stack revenue engine — SEO, LinkedIn ads, content, email and sales enablement. No account managers. No decks. Just pipeline.</p>
+        <div class="hero-eyebrow reveal">B2B Revenue Marketing</div>
+        <h1 class="reveal reveal-delay-1">Your B2B growth team.<br><em>Built in, not bolted on.</em></h1>
+        <p class="hero-sub reveal reveal-delay-2">Senior revenue marketers embedded inside your business — accountable to pipeline, not presentations. We run the marketing. You run the company.</p>
         <div class="hero-actions reveal reveal-delay-3">
-          <a href="contact.html" class="btn-primary">Start a conversation →</a>
-          <a href="how-we-work.html" class="btn-outline">How we work</a>
+          <a href="contact.html" class="btn-primary">Apply to work with us →</a>
+          <a href="how-we-work.html" class="btn-outline">See how we work</a>
         </div>
+        <p class="reveal reveal-delay-4" style="margin-top:20px;font-size:13px;color:var(--muted);letter-spacing:0.01em">90% client retention · 18-month average engagement · 10 years B2B only</p>
       </div>
       <div class="hero-visual reveal reveal-delay-4">
         <svg viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg">
@@ -656,31 +756,113 @@ body::after {
 <div class="proof-strip">
   <div class="container">
     <div class="proof-item reveal">
-      <div class="proof-num"><span data-target="17" data-suffix="+">17+</span></div>
-      <div class="proof-label">B2B clients served</div>
+      <div class="proof-num"><span data-target="90" data-suffix="%">90%</span></div>
+      <div class="proof-label">Client retention rate</div>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item reveal reveal-delay-1">
-      <div class="proof-num"><span data-target="10" data-suffix="yrs">10yrs</span></div>
-      <div class="proof-label">In B2B exclusively</div>
+      <div class="proof-num"><span data-target="18" data-suffix=" mo">18 mo</span></div>
+      <div class="proof-label">Avg. engagement length</div>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item reveal reveal-delay-2">
-      <div class="proof-num">₹<span data-target="50" data-suffix="Cr+">50Cr+</span></div>
-      <div class="proof-label">Revenue influenced</div>
-    </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item reveal reveal-delay-3">
       <div class="proof-num"><span data-target="3" data-suffix=".2×">3.2×</span></div>
       <div class="proof-label">Avg. ROAS improvement</div>
     </div>
     <div class="proof-divider"></div>
+    <div class="proof-item reveal reveal-delay-3">
+      <div class="proof-num"><span data-target="10" data-suffix=" yrs">10 yrs</span></div>
+      <div class="proof-label">B2B only</div>
+    </div>
+    <div class="proof-divider"></div>
     <div class="proof-item reveal reveal-delay-4">
-      <div class="proof-num"><span data-target="90" data-suffix="%">90%</span></div>
-      <div class="proof-label">Client retention rate</div>
+      <div class="proof-num"><span data-target="2014">2014</span></div>
+      <div class="proof-label">Founded</div>
     </div>
   </div>
 </div>
+
+<!-- INDUSTRIES STRIP -->
+<section class="industries-strip">
+  <div class="container">
+    <p class="industries-label reveal">B2B sectors we've grown</p>
+    <div class="industries-grid">
+      <div class="industry-tile reveal">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="8" width="22" height="14" rx="3" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <rect x="8" y="3" width="12" height="6" rx="2" stroke="#4F46E5" stroke-width="1.6" fill="none"/>
+          <line x1="10" y1="14" x2="18" y2="14" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="10" y1="17.5" x2="15" y2="17.5" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>SaaS &amp; Software</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-1">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="10" r="5" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <path d="M4 24c0-5.5 4.5-9 10-9s10 3.5 10 9" stroke="#0D8080" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <circle cx="22" cy="9" r="3" stroke="#4F46E5" stroke-width="1.5" fill="none"/>
+        </svg>
+        <span>IT Services &amp; Consulting</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-2">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="20" height="18" rx="3" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <line x1="8" y1="11" x2="20" y2="11" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="15" x2="20" y2="15" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="19" x2="14" y2="19" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Professional Services</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-3">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="13" width="8" height="12" rx="2" fill="#4F46E5" opacity="0.4"/>
+          <rect x="10" y="9" width="8" height="16" rx="2" fill="#0D8080" opacity="0.7"/>
+          <rect x="17" y="5" width="8" height="20" rx="2" fill="#0D8080"/>
+          <line x1="3" y1="3" x2="25" y2="3" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Enterprise Software</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-1">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 4C9 4 5 8 5 13s4 9 9 9 9-4 9-9-4-9-9-9z" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <path d="M14 8v5l3 3" stroke="#4F46E5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="14" cy="13" r="2" fill="#0D8080"/>
+        </svg>
+        <span>Healthcare B2B</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-2">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="8" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <line x1="6" y1="14" x2="22" y2="14" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M14 6c-3 2-5 5-5 8s2 6 5 8" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path d="M14 6c3 2 5 5 5 8s-2 6-5 8" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Fintech</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-3">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="16" width="22" height="9" rx="2" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <rect x="7" y="10" width="14" height="7" stroke="#4F46E5" stroke-width="1.5" fill="none"/>
+          <rect x="11" y="5" width="6" height="6" stroke="#0D8080" stroke-width="1.5" fill="none"/>
+          <line x1="8" y1="16" x2="8" y2="25" stroke="#0D8080" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="14" y1="16" x2="14" y2="25" stroke="#0D8080" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="20" y1="16" x2="20" y2="25" stroke="#0D8080" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <span>Manufacturing &amp; Industrial</span>
+      </div>
+      <div class="industry-tile reveal reveal-delay-4">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="10" r="4" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+          <circle cx="20" cy="10" r="4" stroke="#4F46E5" stroke-width="1.8" fill="none"/>
+          <path d="M2 23c0-4 2.7-6 6-6s6 2 6 6" stroke="#0D8080" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <path d="M14 23c0-4 2.7-6 6-6s6 2 6 6" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Staffing &amp; HR Tech</span>
+      </div>
+    </div>
+    <p class="industries-note reveal">We don't work with D2C or consumer brands.</p>
+  </div>
+</section>
 
 <!-- METRICS INFOGRAPHIC -->
 <section style="padding:64px 0 0">
@@ -691,7 +873,7 @@ body::after {
       <!-- Chart 1: Before/After ROAS -->
       <div class="metric-chart-card reveal reveal-delay-1">
         <h5>Pipeline — Before vs After</h5>
-        <span class="chart-sub">Avg. across 17+ B2B client engagements</span>
+        <span class="chart-sub">Avg. across B2B client engagements</span>
         <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
           <defs>
             <linearGradient id="barAfter" x1="0" y1="0" x2="0" y2="1">
@@ -809,27 +991,27 @@ body::after {
   <div class="container">
     <div class="problem-grid">
       <div>
-        <span class="section-label reveal">The problem</span>
-        <h2 class="reveal reveal-delay-1">Most agencies hand you a report.<br>We hand you pipeline.</h2>
+        <span class="section-label reveal">The problem with agencies</span>
+        <h2 class="reveal reveal-delay-1">You're not short on agencies.<br>You're short on accountability.</h2>
         <ul class="problem-list reveal reveal-delay-2">
-          <li>You get an account manager instead of the expert you spoke to</li>
-          <li>Strategy is copy-pasted from a B2C playbook that doesn't fit B2B sales cycles</li>
-          <li>The team changes every 90 days; you re-brief from scratch</li>
-          <li>Reporting shows MQLs and impressions — not pipeline or closed revenue</li>
-          <li>They disappear when performance dips</li>
+          <li>You hired an expert on the call — an account manager shows up on day one</li>
+          <li>Strategy built from a template, not your category, your cycle, your unit economics</li>
+          <li>The team rotates every quarter; you re-brief from zero every time</li>
+          <li>Reports full of impressions and MQLs — no one owns the pipeline number</li>
+          <li>When performance drops, the agency has seventeen reasons why — none of them theirs</li>
         </ul>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="solution-card">
-          <span class="section-label">The Digitinize difference</span>
-          <h3>We work like your best-ever in-house B2B marketing hire</h3>
-          <p>One senior team, embedded in your business, accountable to the same number you are — qualified pipeline and closed revenue.</p>
+          <span class="section-label">How we're different</span>
+          <h3>We don't manage campaigns. We run your revenue marketing.</h3>
+          <p>Digitinize operates as an embedded extension of your team — in your Slack, your standups, your strategy calls. We own the channels, the strategy, and the reporting. And we measure ourselves against one thing: pipeline.</p>
           <ul class="solution-list">
-            <li>Direct access to the people doing the work</li>
-            <li>Strategy built on your category, your unit economics</li>
-            <li>Proactive — we flag problems before you do</li>
-            <li>Reporting tied to MQL, SQL, pipeline value, and ACV</li>
-            <li>Long-term partners, not a 3-month sprint vendor</li>
+            <li>Embedded, not external — inside your team structure, not above it</li>
+            <li>Accountable to pipeline — not traffic, not MQLs, not impressions</li>
+            <li>Senior operators — the people who sold you are the people who work on your account</li>
+            <li>Systems that compound — infrastructure that gets more efficient over time</li>
+            <li>Long-term by design — 18-month average engagement, not a 90-day sprint</li>
           </ul>
           <a href="how-we-work.html" class="btn-primary" style="margin-top:28px">See how we work →</a>
         </div>
@@ -838,12 +1020,71 @@ body::after {
   </div>
 </section>
 
+<!-- COMPARISON TABLE -->
+<section class="comparison-section" style="padding:var(--section-gap) 0">
+  <div class="container">
+    <span class="section-label reveal">Why Digitinize</span>
+    <h2 class="reveal reveal-delay-1">Three options. One obvious choice.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Every B2B leader evaluating growth has the same three paths. Here's how they actually compare.</p>
+    <div class="reveal reveal-delay-3" style="overflow-x:auto;margin-top:8px">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:34%">What you're comparing</th>
+            <th>Traditional Agency</th>
+            <th>In-House Hire</th>
+            <th class="col-us">Digitinize</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Senior execution from day one</td>
+            <td><span class="cross">✕</span><br><span style="font-size:11px">Juniors do the work</span></td>
+            <td><span class="partial">~</span><br><span style="font-size:11px">3–6 month ramp</span></td>
+            <td class="col-us"><span class="check">✓</span><br><span style="font-size:11px">We start running</span></td>
+          </tr>
+          <tr>
+            <td>Accountable to pipeline, not deliverables</td>
+            <td><span class="cross">✕</span></td>
+            <td><span class="partial">~</span><br><span style="font-size:11px">Depends on reporting structure</span></td>
+            <td class="col-us"><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>No management overhead for you</td>
+            <td><span class="cross">✕</span><br><span style="font-size:11px">You brief, review, approve</span></td>
+            <td><span class="cross">✕</span><br><span style="font-size:11px">Full management cost</span></td>
+            <td class="col-us"><span class="check">✓</span><br><span style="font-size:11px">Embedded, self-directed</span></td>
+          </tr>
+          <tr>
+            <td>All 5 channels, one team</td>
+            <td><span class="partial">~</span><br><span style="font-size:11px">Siloed specialists, extra cost</span></td>
+            <td><span class="cross">✕</span><br><span style="font-size:11px">Unrealistic for one hire</span></td>
+            <td class="col-us"><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Ready in &lt; 2 weeks</td>
+            <td><span class="partial">~</span><br><span style="font-size:11px">Onboarding takes 4–6 weeks</span></td>
+            <td><span class="cross">✕</span><br><span style="font-size:11px">Hiring takes 2–4 months</span></td>
+            <td class="col-us"><span class="check">✓</span><br><span style="font-size:11px">7–10 business days</span></td>
+          </tr>
+          <tr>
+            <td>Cost-efficient at scale</td>
+            <td><span class="partial">~</span><br><span style="font-size:11px">Margin-heavy model</span></td>
+            <td><span class="cross">✕</span><br><span style="font-size:11px">Salary + benefits + tools</span></td>
+            <td class="col-us"><span class="check">✓</span><br><span style="font-size:11px">Senior team, fraction of cost</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section class="services-section">
   <div class="container">
-    <span class="section-label reveal">Growth services</span>
-    <h2 class="reveal reveal-delay-1">Everything a B2B company<br>needs to scale pipeline</h2>
-    <p class="reveal reveal-delay-2" style="margin-top:16px;font-size:18px;">We don't do everything. We do the five things that fill pipeline for B2B companies — and we do them at operator depth.</p>
+    <span class="section-label reveal">What we do</span>
+    <h2 class="reveal reveal-delay-1">Five channels. One revenue engine.<br>Zero siloes.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:16px;font-size:18px;">In B2B, isolated tactics don't compound. We build and run five connected marketing channels — each one designed to feed the others, and all of them accountable to pipeline.</p>
     <div class="grid-3" style="margin-top:48px">
       <div class="card service-card reveal reveal-delay-1">
         <div class="service-num">01</div>
@@ -853,8 +1094,9 @@ body::after {
           <line x1="22" y1="16" x2="22" y2="11" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
           <polyline points="18,14 22,11 26,14" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <h4>SEO &amp; Content</h4>
-        <p>B2B organic search built on topical authority — technical SEO, thought leadership content, and buyer-intent keyword strategy that compounds.</p>
+        <h4>Organic Search &amp; Content</h4>
+        <p>Technical SEO, editorial strategy, and topical authority built for complex B2B buying cycles. We turn organic search from a vanity traffic source into a qualified pipeline channel.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 40–70% increase in qualified organic traffic</div>
         <a href="services.html#seo" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-2">
@@ -867,7 +1109,8 @@ body::after {
           <polyline points="6,32 20,24 32,16 46,8" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 2"/>
         </svg>
         <h4>LinkedIn &amp; Paid Media</h4>
-        <p>LinkedIn, Google, and programmatic — structured as a pipeline machine, not a media buy. CPL and pipeline-first from day one.</p>
+        <p>LinkedIn campaigns, Google Ads, and programmatic — structured around your ICP and deal size, not CPM benchmarks. We run paid as a revenue channel, not a brand spend.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 3.2× ROAS improvement on existing paid portfolios</div>
         <a href="services.html#paid" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-3">
@@ -879,8 +1122,9 @@ body::after {
           <line x1="26" y1="40" x2="26" y2="44" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
         <h4>Demand Generation</h4>
-        <p>Full-funnel programs that move buyers from awareness to intent — webinars, gated content, nurture sequences, and ABM plays.</p>
-        <a href="services.html#video" class="learn">Learn more →</a>
+        <p>Multi-touch B2B campaigns designed for long buying cycles — from first awareness through sales-ready conversation. Tight alignment to sales handoff, always.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 2–3× improvement in MQL-to-SQL conversion</div>
+        <a href="services.html#demand" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-4">
         <div class="service-num">04</div>
@@ -895,8 +1139,9 @@ body::after {
           <line x1="12" y1="38" x2="20" y2="32" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="40" y1="38" x2="32" y2="32" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <h4>B2B Social &amp; Thought Leadership</h4>
-        <p>LinkedIn content strategy that builds authority, drives inbound, and positions your leadership as category experts.</p>
+        <h4>Authority Positioning &amp; B2B Social</h4>
+        <p>Executive positioning on LinkedIn, corporate brand narrative, and content that makes your ICP think of you first. In B2B, trust is the product. We build it at scale.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 5–10× improvement in inbound conversation quality</div>
         <a href="services.html#social" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-5">
@@ -910,10 +1155,65 @@ body::after {
           <circle cx="40" cy="44" r="2" fill="#fff"/>
           <circle cx="46" cy="44" r="2" fill="#fff"/>
         </svg>
-        <h4>Email &amp; Marketing Automation</h4>
-        <p>Nurture sequences and automation flows that keep buyers engaged across a long sales cycle — from MQL to closed deal.</p>
+        <h4>Marketing Automation &amp; Email</h4>
+        <p>Automated sequences, lead scoring, and CRM workflow design built for B2B sales cycles that span weeks or months. Systems that scale — not email blasts you rebuild every quarter.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 30–45% reduction in average sales cycle length</div>
         <a href="services.html#email" class="learn">Learn more →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section style="padding:var(--section-gap) 0">
+  <div class="container">
+    <span class="section-label reveal">Client results</span>
+    <h2 class="reveal reveal-delay-1">What B2B growth actually looks like.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Three engagements. Three different stages. One consistent outcome: pipeline that didn't exist before.</p>
+    <div class="grid-3" style="margin-top:48px">
+
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-tag">B2B SaaS · Series A · Competitive category</div>
+        <p class="case-challenge">"100% of pipeline from outbound. No inbound. CAC climbing quarter on quarter."</p>
+        <ul class="case-bullets">
+          <li>Full technical SEO rebuild around bottom-funnel intent keywords</li>
+          <li>Weekly content engine targeting competitor search terms</li>
+          <li>Newsletter automation wired into sales CRM for re-engagement</li>
+        </ul>
+        <div class="case-result">
+          <div class="case-result-num">9% → 41%</div>
+          <p class="case-result-ctx">Organic pipeline contribution. Timeline: 8 months.</p>
+        </div>
+      </div>
+
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-tag">IT Services · Mid-market · 200 employees</div>
+        <p class="case-challenge">"LinkedIn and Google spend with no qualified pipeline to show for it."</p>
+        <ul class="case-bullets">
+          <li>Rebuilt audience targeting around ICP job titles + company size signals</li>
+          <li>Replaced form-fill tracking with pipeline-attribution reporting</li>
+          <li>6-week creative testing sprint with structured winner framework</li>
+        </ul>
+        <div class="case-result">
+          <div class="case-result-num">3.2× ROAS</div>
+          <p class="case-result-ctx">Cost per SQL down 64%. Timeline: 90 days.</p>
+        </div>
+      </div>
+
+      <div class="case-card reveal reveal-delay-3">
+        <div class="case-tag">Consulting Firm · Founder-led · 18 employees</div>
+        <p class="case-challenge">"Founder invisible on LinkedIn. All pipeline from referrals — fragile and unpredictable."</p>
+        <ul class="case-bullets">
+          <li>Executive thought leadership framework + weekly content calendar</li>
+          <li>ICP-targeted connection and conversation strategy</li>
+          <li>3 pillar pieces positioning founder as category authority</li>
+        </ul>
+        <div class="case-result">
+          <div class="case-result-num">3–5 / week</div>
+          <p class="case-result-ctx">Qualified inbound conversations. Zero paid spend. Timeline: 6 months.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -921,32 +1221,32 @@ body::after {
 <!-- HOW WE WORK TEASER -->
 <section class="hww-teaser">
   <div class="container">
-    <span class="section-label reveal">Process</span>
-    <h2 class="reveal reveal-delay-1">From audit to qualified pipeline<br>in 90 days</h2>
+    <span class="section-label reveal">How we engage</span>
+    <h2 class="reveal reveal-delay-1">From first call to active pipeline.<br>In four stages.</h2>
     <div class="hww-steps reveal reveal-delay-2">
       <div class="hww-step">
         <div class="hww-step-num">01</div>
-        <h4>Pipeline Audit</h4>
-        <p>We dissect your funnel, current channels, ICP definition, and sales cycle before we touch anything.</p>
+        <h4>The Diagnostic</h4>
+        <p>Before we run anything, we understand everything. ICP, funnel performance, channel mix, tech stack, competitive position. Most agencies skip this. We treat it as the most valuable work we do together.</p>
       </div>
       <div class="hww-step">
         <div class="hww-step-num">02</div>
-        <h4>Growth Blueprint</h4>
-        <p>A 90-day plan built around your pipeline targets and ICP — not a generic template.</p>
+        <h4>The Revenue Blueprint</h4>
+        <p>A 90-day execution plan — channel priorities, campaign structures, content calendar, and success metrics. Not a strategy doc that sits in Notion. An operating plan.</p>
       </div>
       <div class="hww-step">
         <div class="hww-step-num">03</div>
-        <h4>Build &amp; Launch</h4>
-        <p>Campaigns, automation, and content — live and generating qualified leads within weeks.</p>
+        <h4>Build &amp; Activate</h4>
+        <p>Paid campaigns live. Content pipeline running. Automation flows configured. Sales enablement assets ready. Everything activates on a tight, sequenced timeline.</p>
       </div>
       <div class="hww-step">
         <div class="hww-step-num">04</div>
-        <h4>Optimise &amp; Scale</h4>
-        <p>Weekly iteration loops. What converts gets scaled. What doesn't gets cut. Fast.</p>
+        <h4>Compound</h4>
+        <p>Month over month: optimise what's working, cut what isn't, expand what's compounding. The goal is channels that get more efficient and more effective as data matures.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:48px" class="reveal">
-      <a href="how-we-work.html" class="btn-outline">Full process breakdown →</a>
+      <a href="how-we-work.html" class="btn-outline">Full engagement detail →</a>
     </div>
   </div>
 </section>
@@ -955,15 +1255,56 @@ body::after {
 <section class="founder-section">
   <div class="container">
     <div class="founder-card reveal">
-      <div class="founder-avatar">Z</div>
+      <div class="founder-avatar"><img src="images/zeeshan.jpg" alt="Zeeshan Soudagar, Founder of Digitinize"></div>
       <div>
-        <blockquote class="founder-quote">"We started Digitinize because we were B2B growth operators first — and we were tired of agencies that measured success by impressions instead of pipeline. Every company we work with, we treat like it's ours."</blockquote>
-        <div class="founder-sig">
+        <p class="section-label">Who you're working with</p>
+        <blockquote class="founder-quote">"I started Digitinize in 2014 because I'd watched too many excellent B2B companies — great products, real value, smart teams — struggle to grow because they were buying generic marketing from generalist agencies."</blockquote>
+        <p style="font-size:16px;margin-top:20px;max-width:52ch">I've spent the last decade embedded inside B2B companies: IT services firms, SaaS platforms, consulting practices, enterprise software businesses, healthcare providers. Watching what actually creates pipeline versus what creates the appearance of activity.<br><br>Every client we take on, I'm personally involved. We keep the roster deliberately small. And we've never once pitched a client on impressions.</p>
+        <div class="founder-sig" style="margin-top:28px">
           Zeeshan Soudagar
-          <span>Founder, Digitinize · 10 years in B2B growth</span>
+          <span>Founder &amp; Principal, Digitinize · 10 years B2B only</span>
         </div>
         <a href="about.html" style="display:inline-block;margin-top:24px;font-size:14px;color:var(--signal);font-weight:500">Read the full story →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial-section" style="padding:var(--section-gap) 0">
+  <div class="container">
+    <span class="section-label reveal">What clients say</span>
+    <h2 class="reveal reveal-delay-1">From the people who stayed.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">90% of our clients extend beyond their first engagement. Here's why.</p>
+    <div class="grid-3" style="margin-top:48px">
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-body">We'd tried two agencies before Digitinize. Both sent polished reports, neither owned the number. Zeeshan's team was the first to walk into a board meeting, put a pipeline figure on the table, and say 'we own that.' It changed how we think about marketing entirely.</p>
+        <div class="testimonial-attr">
+          <strong>Head of Growth</strong>
+          B2B SaaS · Series A · India
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-body">They're faster and sharper than our own team was — and they've never once made us feel like a client. They're in our Slack, on our Monday stand-ups, and know our ICP better than most of our sales reps. That's not what I expected from an external team.</p>
+        <div class="testimonial-attr">
+          <strong>Founder &amp; CEO</strong>
+          IT Consulting Firm · 120 employees
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-body">We're now in our third year with Digitinize. Organic pipeline contribution went from near-zero to 38% of total revenue. I don't think about replacing them the same way I don't think about replacing my CFO.</p>
+        <div class="testimonial-attr">
+          <strong>Chief Revenue Officer</strong>
+          Enterprise Software · Mid-market
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -972,13 +1313,14 @@ body::after {
 <section>
   <div class="container">
     <div class="cta-section reveal">
-      <span class="section-label" style="color:var(--signal)">Ready to scale?</span>
-      <h2>If you're a B2B company ready<br>to build predictable pipeline —</h2>
-      <p>We work with a select number of B2B companies at a time — which means the people you meet are the people who do the work. No handoffs.</p>
+      <span class="section-label" style="color:var(--signal)">Let's talk</span>
+      <h2>If you want a growth partner that thinks like an operator and executes like a team —</h2>
+      <p>We take on 4–6 new client partnerships per year. If you're evaluating growth partners, now is the right time to start the conversation.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn-primary">Book a strategy session →</a>
-        <a href="playbooks.html" class="btn-outline">See our playbooks first</a>
+        <a href="contact.html" class="btn-primary">Apply to work with us →</a>
+        <a href="how-we-work.html" class="btn-outline">Read how we work first</a>
       </div>
+      <p style="margin-top:24px;font-size:13px;color:var(--muted);max-width:none;text-align:center">90% retention · 18-month average tenure · 10 years B2B only · No account managers</p>
     </div>
   </div>
 </section>
