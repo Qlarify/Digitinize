@@ -652,24 +652,23 @@ body::after {
           <rect x="10" y="50" width="500" height="16" fill="#172050"/>
           <!-- Title -->
           <text x="28" y="42" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="13" font-weight="600">Pipeline Dashboard</text>
-          <text x="28" y="59" fill="#6B7199" font-family="Inter,sans-serif" font-size="10">Last 90 days · Digitinize</text>
-          <!-- Live indicator -->
-          <circle cx="478" cy="36" r="6" fill="#22C55E" opacity="0.25"/>
-          <circle cx="478" cy="36" r="3.5" fill="#22C55E"/>
-          <text x="442" y="40" fill="#22C55E" font-family="Inter,sans-serif" font-size="10" font-weight="600">LIVE</text>
+          <text x="28" y="59" fill="#6B7199" font-family="Inter,sans-serif" font-size="10">Illustrative · how we track engagements</text>
+          <!-- Illustrative indicator -->
+          <rect x="430" y="26" width="68" height="20" rx="4" fill="#172050" stroke="#252E6E" stroke-width="1"/>
+          <text x="438" y="40" fill="#6B7199" font-family="Inter,sans-serif" font-size="10" font-weight="600">ILLUSTRATIVE</text>
           <!-- Metric chips -->
           <rect x="24" y="76" width="108" height="64" rx="10" fill="#0E1338" stroke="#252E6E" stroke-width="1"/>
           <text x="36" y="96" fill="#6B7199" font-family="Inter,sans-serif" font-size="10">Pipeline</text>
-          <text x="36" y="124" fill="#0D8080" font-family="Inter,sans-serif" font-size="24" font-weight="700">3.8×</text>
+          <text x="36" y="124" fill="#0D8080" font-family="Inter,sans-serif" font-size="24" font-weight="700">↗</text>
           <rect x="140" y="76" width="108" height="64" rx="10" fill="#0E1338" stroke="#252E6E" stroke-width="1"/>
           <text x="152" y="96" fill="#6B7199" font-family="Inter,sans-serif" font-size="10">MQL→SQL</text>
-          <text x="152" y="124" fill="#22C55E" font-family="Inter,sans-serif" font-size="24" font-weight="700">+38%</text>
+          <text x="152" y="124" fill="#22C55E" font-family="Inter,sans-serif" font-size="24" font-weight="700">↗</text>
           <rect x="256" y="76" width="108" height="64" rx="10" fill="#0E1338" stroke="#252E6E" stroke-width="1"/>
           <text x="268" y="96" fill="#6B7199" font-family="Inter,sans-serif" font-size="10">Avg. ACV</text>
-          <text x="268" y="124" fill="#4F46E5" font-family="Inter,sans-serif" font-size="24" font-weight="700">4.2×</text>
+          <text x="268" y="124" fill="#4F46E5" font-family="Inter,sans-serif" font-size="24" font-weight="700">↗</text>
           <rect x="372" y="76" width="118" height="64" rx="10" fill="#0E1338" stroke="#252E6E" stroke-width="1"/>
           <text x="384" y="96" fill="#6B7199" font-family="Inter,sans-serif" font-size="10">Clients</text>
-          <text x="384" y="124" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="24" font-weight="700">40+</text>
+          <text x="384" y="124" fill="#F0EEF8" font-family="Inter,sans-serif" font-size="24" font-weight="700">B2B</text>
           <!-- Chart area -->
           <rect x="24" y="156" width="472" height="210" rx="10" fill="#0E1338"/>
           <!-- Grid lines -->
@@ -697,7 +696,7 @@ body::after {
           <circle cx="484" cy="176" r="5" fill="#0D8080" stroke="#131B4A" stroke-width="2" filter="url(#dotglow)"/>
           <!-- Tooltip -->
           <rect x="446" y="154" width="58" height="26" rx="6" fill="#0D8080"/>
-          <text x="453" y="171" fill="#fff" font-family="Inter,sans-serif" font-size="11" font-weight="700">+180%</text>
+          <text x="450" y="171" fill="#fff" font-family="Inter,sans-serif" font-size="11" font-weight="700">Month 6</text>
           <!-- X labels -->
           <text x="56" y="376" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">M1</text>
           <text x="126" y="376" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">M2</text>
@@ -766,8 +765,8 @@ body::after {
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item reveal reveal-delay-2">
-      <div class="proof-num"><span data-target="3" data-suffix=".2×">3.2×</span></div>
-      <div class="proof-label">Avg. ROAS improvement</div>
+      <div class="proof-num">B2B</div>
+      <div class="proof-label">Only sector we serve</div>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item reveal reveal-delay-3">
@@ -873,7 +872,7 @@ body::after {
       <!-- Chart 1: Before/After ROAS -->
       <div class="metric-chart-card reveal reveal-delay-1">
         <h5>Pipeline — Before vs After</h5>
-        <span class="chart-sub">Avg. across B2B client engagements</span>
+        <span class="chart-sub">Illustrative · directional shape, not measured benchmark</span>
         <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
           <defs>
             <linearGradient id="barAfter" x1="0" y1="0" x2="0" y2="1">
@@ -890,10 +889,9 @@ body::after {
           <line x1="40" y1="130" x2="230" y2="130" stroke="#1E2855" stroke-width="1"/>
           <line x1="40" y1="80" x2="230" y2="80" stroke="#1A2155" stroke-width="1" stroke-dasharray="3 3"/>
           <line x1="40" y1="55" x2="230" y2="55" stroke="#1A2155" stroke-width="1" stroke-dasharray="3 3"/>
-          <!-- Y labels -->
-          <text x="8" y="134" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">0×</text>
-          <text x="8" y="84" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">2×</text>
-          <text x="8" y="59" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">3×</text>
+          <!-- Y labels (directional) -->
+          <text x="8" y="134" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">Low</text>
+          <text x="8" y="59" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">High</text>
           <!-- Before bars (pair per brand group) -->
           <rect x="52" y="104" width="22" height="26" rx="3" fill="url(#barBefore)"/>
           <rect x="80" y="82" width="22" height="48" rx="3" fill="url(#barAfter)"/>
@@ -915,7 +913,7 @@ body::after {
       <!-- Chart 2: Revenue Growth Line -->
       <div class="metric-chart-card reveal reveal-delay-2">
         <h5>Pipeline Growth Trajectory</h5>
-        <span class="chart-sub">Indexed to Month 1 = 1×</span>
+        <span class="chart-sub">Illustrative shape of a compounding B2B engine</span>
         <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
           <defs>
             <linearGradient id="lineArea" x1="0" y1="0" x2="0" y2="1">
@@ -929,11 +927,9 @@ body::after {
           <line x1="32" y1="90" x2="230" y2="90" stroke="#1A2155" stroke-width="1" stroke-dasharray="3 3"/>
           <line x1="32" y1="60" x2="230" y2="60" stroke="#1A2155" stroke-width="1" stroke-dasharray="3 3"/>
           <line x1="32" y1="30" x2="230" y2="30" stroke="#1A2155" stroke-width="1" stroke-dasharray="3 3"/>
-          <!-- Y labels -->
-          <text x="4" y="134" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">1×</text>
-          <text x="4" y="94" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">3×</text>
-          <text x="4" y="64" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">5×</text>
-          <text x="4" y="34" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">7×</text>
+          <!-- Y labels (directional, not indexed) -->
+          <text x="4" y="134" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">Low</text>
+          <text x="4" y="34" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">High</text>
           <!-- Area fill -->
           <path d="M 40 126 L 72 118 L 104 108 L 136 92 L 168 70 L 200 48 L 224 30 L 224 130 L 40 130 Z" fill="url(#lineArea)"/>
           <!-- Line -->
@@ -943,8 +939,8 @@ body::after {
           <circle cx="136" cy="92" r="3" fill="#0D8080" stroke="#0E1338" stroke-width="2"/>
           <circle cx="224" cy="30" r="4" fill="#0D8080" stroke="#131B4A" stroke-width="2"/>
           <!-- End label -->
-          <rect x="192" y="18" width="40" height="18" rx="4" fill="#0D8080"/>
-          <text x="200" y="30" fill="#fff" font-family="Inter,sans-serif" font-size="9" font-weight="700">6–8×</text>
+          <rect x="184" y="18" width="50" height="18" rx="4" fill="#0D8080"/>
+          <text x="190" y="30" fill="#fff" font-family="Inter,sans-serif" font-size="9" font-weight="700">Compound</text>
           <!-- X labels -->
           <text x="36" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="8">M1</text>
           <text x="100" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="8">M3</text>
@@ -1096,7 +1092,7 @@ body::after {
         </svg>
         <h4>Organic Search &amp; Content</h4>
         <p>Technical SEO, editorial strategy, and topical authority built for complex B2B buying cycles. We turn organic search from a vanity traffic source into a qualified pipeline channel.</p>
-        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 40–70% increase in qualified organic traffic</div>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: steady, compounding lift in qualified organic traffic over 6–12 months</div>
         <a href="services.html#seo" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-2">
@@ -1110,7 +1106,7 @@ body::after {
         </svg>
         <h4>LinkedIn &amp; Paid Media</h4>
         <p>LinkedIn campaigns, Google Ads, and programmatic — structured around your ICP and deal size, not CPM benchmarks. We run paid as a revenue channel, not a brand spend.</p>
-        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 3.2× ROAS improvement on existing paid portfolios</div>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: meaningful ROAS lift on existing paid portfolios — without new budget</div>
         <a href="services.html#paid" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-3">
@@ -1123,7 +1119,7 @@ body::after {
         </svg>
         <h4>Demand Generation</h4>
         <p>Multi-touch B2B campaigns designed for long buying cycles — from first awareness through sales-ready conversation. Tight alignment to sales handoff, always.</p>
-        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 2–3× improvement in MQL-to-SQL conversion</div>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: stronger MQL→SQL conversion once targeting and qualification tighten</div>
         <a href="services.html#demand" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-4">
@@ -1141,7 +1137,7 @@ body::after {
         </svg>
         <h4>Authority Positioning &amp; B2B Social</h4>
         <p>Executive positioning on LinkedIn, corporate brand narrative, and content that makes your ICP think of you first. In B2B, trust is the product. We build it at scale.</p>
-        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 5–10× improvement in inbound conversation quality</div>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: a steady lift in qualified inbound conversations once positioning compounds</div>
         <a href="services.html#social" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-5">
@@ -1157,7 +1153,7 @@ body::after {
         </svg>
         <h4>Marketing Automation &amp; Email</h4>
         <p>Automated sequences, lead scoring, and CRM workflow design built for B2B sales cycles that span weeks or months. Systems that scale — not email blasts you rebuild every quarter.</p>
-        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Typical: 30–45% reduction in average sales cycle length</div>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: tighter, more predictable sales cycles as nurture and scoring mature</div>
         <a href="services.html#email" class="learn">Learn more →</a>
       </div>
     </div>
@@ -1167,50 +1163,50 @@ body::after {
 <!-- CASE STUDIES -->
 <section style="padding:var(--section-gap) 0">
   <div class="container">
-    <span class="section-label reveal">Client results</span>
-    <h2 class="reveal reveal-delay-1">What B2B growth actually looks like.</h2>
-    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Three engagements. Three different stages. One consistent outcome: pipeline that didn't exist before.</p>
+    <span class="section-label reveal">How we engage in the real world</span>
+    <h2 class="reveal reveal-delay-1">Three representative engagements.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Anonymised scenarios drawn from our work. Sectors, stages, and starting points vary — the operating pattern doesn't.</p>
     <div class="grid-3" style="margin-top:48px">
 
       <div class="case-card reveal reveal-delay-1">
         <div class="case-tag">B2B SaaS · Series A · Competitive category</div>
-        <p class="case-challenge">"100% of pipeline from outbound. No inbound. CAC climbing quarter on quarter."</p>
+        <p class="case-challenge">Pipeline almost entirely outbound. No inbound engine. CAC trending up quarter on quarter.</p>
         <ul class="case-bullets">
-          <li>Full technical SEO rebuild around bottom-funnel intent keywords</li>
-          <li>Weekly content engine targeting competitor search terms</li>
+          <li>Technical SEO rebuild around bottom-funnel intent keywords</li>
+          <li>Editorial cadence targeting competitor search terms</li>
           <li>Newsletter automation wired into sales CRM for re-engagement</li>
         </ul>
         <div class="case-result">
-          <div class="case-result-num">9% → 41%</div>
-          <p class="case-result-ctx">Organic pipeline contribution. Timeline: 8 months.</p>
+          <div class="case-result-num">Organic inbound</div>
+          <p class="case-result-ctx">Organic share of pipeline became a material contributor over the first year.</p>
         </div>
       </div>
 
       <div class="case-card reveal reveal-delay-2">
-        <div class="case-tag">IT Services · Mid-market · 200 employees</div>
-        <p class="case-challenge">"LinkedIn and Google spend with no qualified pipeline to show for it."</p>
+        <div class="case-tag">IT Services · Mid-market</div>
+        <p class="case-challenge">LinkedIn and Google spend running for quarters with limited qualified pipeline to show for it.</p>
         <ul class="case-bullets">
-          <li>Rebuilt audience targeting around ICP job titles + company size signals</li>
-          <li>Replaced form-fill tracking with pipeline-attribution reporting</li>
-          <li>6-week creative testing sprint with structured winner framework</li>
+          <li>Audience targeting rebuilt around ICP job titles and firmographic signals</li>
+          <li>Form-fill tracking replaced with pipeline-attribution reporting</li>
+          <li>Structured creative testing with a documented winner framework</li>
         </ul>
         <div class="case-result">
-          <div class="case-result-num">3.2× ROAS</div>
-          <p class="case-result-ctx">Cost per SQL down 64%. Timeline: 90 days.</p>
+          <div class="case-result-num">Better unit economics</div>
+          <p class="case-result-ctx">ROAS improved and cost per SQL fell over the first two quarters of the engagement.</p>
         </div>
       </div>
 
       <div class="case-card reveal reveal-delay-3">
-        <div class="case-tag">Consulting Firm · Founder-led · 18 employees</div>
-        <p class="case-challenge">"Founder invisible on LinkedIn. All pipeline from referrals — fragile and unpredictable."</p>
+        <div class="case-tag">Consulting Firm · Founder-led</div>
+        <p class="case-challenge">Founder largely invisible on LinkedIn. Pipeline entirely referral-based — fragile and unpredictable.</p>
         <ul class="case-bullets">
-          <li>Executive thought leadership framework + weekly content calendar</li>
+          <li>Executive thought leadership framework and weekly content calendar</li>
           <li>ICP-targeted connection and conversation strategy</li>
-          <li>3 pillar pieces positioning founder as category authority</li>
+          <li>Pillar pieces positioning the founder as a category voice</li>
         </ul>
         <div class="case-result">
-          <div class="case-result-num">3–5 / week</div>
-          <p class="case-result-ctx">Qualified inbound conversations. Zero paid spend. Timeline: 6 months.</p>
+          <div class="case-result-num">Inbound, unpaid</div>
+          <p class="case-result-ctx">A consistent flow of qualified inbound conversations, without paid spend, by the end of the first year.</p>
         </div>
       </div>
 
@@ -1270,38 +1266,38 @@ body::after {
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- WHAT CLIENTS TELL US — themes, not fabricated quotes -->
 <section class="testimonial-section" style="padding:var(--section-gap) 0">
   <div class="container">
-    <span class="section-label reveal">What clients say</span>
-    <h2 class="reveal reveal-delay-1">From the people who stayed.</h2>
-    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">90% of our clients extend beyond their first engagement. Here's why.</p>
+    <span class="section-label reveal">What clients tell us</span>
+    <h2 class="reveal reveal-delay-1">Three themes we hear, in client words and ours.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Named references available on request once we've established mutual fit.</p>
     <div class="grid-3" style="margin-top:48px">
 
       <div class="testimonial-card reveal reveal-delay-1">
         <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-body">We'd tried two agencies before Digitinize. Both sent polished reports, neither owned the number. Zeeshan's team was the first to walk into a board meeting, put a pipeline figure on the table, and say 'we own that.' It changed how we think about marketing entirely.</p>
+        <p class="testimonial-body">The thing clients tell us most often: their previous agencies sent polished reports but never owned a number. The shift they describe is moving from a vendor relationship to a team that walks into a board meeting and puts a pipeline figure on the table.</p>
         <div class="testimonial-attr">
-          <strong>Head of Growth</strong>
-          B2B SaaS · Series A · India
+          <strong>Theme one</strong>
+          Accountability to pipeline, not deliverables
         </div>
       </div>
 
       <div class="testimonial-card reveal reveal-delay-2">
         <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-body">They're faster and sharper than our own team was — and they've never once made us feel like a client. They're in our Slack, on our Monday stand-ups, and know our ICP better than most of our sales reps. That's not what I expected from an external team.</p>
+        <p class="testimonial-body">Founders and CMOs we work with consistently describe the engagement as feeling less like hiring an agency and more like adding senior team members — in their Slack, on their stand-ups, holding their ICP in their heads the way an in-house lead would.</p>
         <div class="testimonial-attr">
-          <strong>Founder &amp; CEO</strong>
-          IT Consulting Firm · 120 employees
+          <strong>Theme two</strong>
+          Embedded, not external
         </div>
       </div>
 
       <div class="testimonial-card reveal reveal-delay-3">
         <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-body">We're now in our third year with Digitinize. Organic pipeline contribution went from near-zero to 38% of total revenue. I don't think about replacing them the same way I don't think about replacing my CFO.</p>
+        <p class="testimonial-body">Most of our clients are with us for years rather than months. The reason they give isn't the headline number from any one quarter — it's that the marketing engine keeps getting more efficient instead of needing to be rebuilt every year.</p>
         <div class="testimonial-attr">
-          <strong>Chief Revenue Officer</strong>
-          Enterprise Software · Mid-market
+          <strong>Theme three</strong>
+          Systems that compound
         </div>
       </div>
 
