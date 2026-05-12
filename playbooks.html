@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free B2B Growth Playbooks | Digitinize</title>
+<meta name="description" content="Free frameworks and playbooks from 10 years of B2B growth: CAC reduction, lifecycle marketing, creative testing, analytics setup, and more.">
+<meta name="keywords" content="B2B growth playbooks, performance marketing frameworks India, lifecycle marketing guide B2B, B2B CAC reduction guide">
+<meta property="og:title" content="Free B2B Growth Playbooks | Digitinize">
+<meta property="og:description" content="Free frameworks and playbooks from 10 years of B2B growth: CAC reduction, lifecycle marketing, creative testing, analytics setup, and more.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<link rel="canonical" href="https://digitinize.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #F4F9F9;
+  color: #0E1338;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Cursor ── */
+.cursor {
+  position: fixed; width: 8px; height: 8px; border-radius: 50%;
+  background: #111D5E; pointer-events: none; z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width .15s, height .15s;
+}
+.cursor-ring {
+  position: fixed; width: 32px; height: 32px; border-radius: 50%;
+  border: 1.5px solid rgba(17,29,94,0.5); pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width .2s cubic-bezier(0.16,1,0.3,1), height .2s cubic-bezier(0.16,1,0.3,1), opacity .2s;
+}
+
+/* ── Design tokens ── */
+:root {
+  --ink: #F4F9F9;
+  --paper: #0E1338;
+  --signal: #111D5E;
+  --indigo: #4F46E5;
+  --muted: rgba(14,19,56,0.55);
+  --border: rgba(14,19,56,0.09);
+  --border-hover: rgba(14,19,56,0.18);
+  --card-bg: #FFFFFF;
+  --card-bg-hover: #F0FDFD;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --max-w: 1200px;
+  --section-gap: clamp(88px, 12vw, 148px);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 40px rgba(0,0,0,0.35);
+  --shadow-glow: 0 0 48px rgba(17,29,94,0.22);
+}
+
+/* ── Typography ── */
+h1,h2,h3,h4 {
+  font-family: var(--font-display); font-weight: 700;
+  line-height: 1.06; letter-spacing: -0.025em;
+}
+h1 { font-size: clamp(52px, 8.5vw, 104px); }
+h2 { font-size: clamp(36px, 5.5vw, 68px); }
+h3 { font-size: clamp(22px, 2.8vw, 34px); }
+h4 { font-size: clamp(16px, 1.8vw, 21px); font-family: var(--font-body); font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+p { color: var(--muted); max-width: 62ch; line-height: 1.75; }
+a { color: inherit; text-decoration: none; }
+strong { color: var(--paper); font-weight: 600; }
+
+/* ── Layout ── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); }
+section { padding: var(--section-gap) 0; }
+
+/* ── Gradient mesh background ── */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 90% 70% at 100% -5%, rgba(13,128,128,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at -10% 45%, rgba(79,70,229,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 50% 110%, rgba(79,70,229,0.03) 0%, transparent 50%);
+}
+body > * { position: relative; z-index: 1; }
+
+/* ── Noise texture ── */
+body::after {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ── Nav ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 24px clamp(20px,5vw,56px);
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .35s cubic-bezier(0.16,1,0.3,1);
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+  padding-top: 15px; padding-bottom: 15px;
+}
+.nav-logo {
+  font-family: var(--font-display); font-size: 24px; font-weight: 900;
+  letter-spacing: -0.04em; color: var(--signal);
+}
+.nav-logo span { color: #0D8080; }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--muted);
+  transition: color .2s; position: relative; letter-spacing: 0.01em;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-5px; left:0; right:0; height:1.5px;
+  background: var(--signal); transform: scaleX(0); transform-origin: left;
+  transition: transform .25s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--paper); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-cta {
+  background: linear-gradient(135deg, #111D5E 0%, #0A1440 100%);
+  color: #fff; padding: 10px 22px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(17,29,94,0.35);
+  transition: transform .15s, box-shadow .15s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(17,29,94,0.45); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--paper); transition: all .3s; }
+.nav-mobile { display: none; }
+@media (max-width: 800px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: #F4F9F9; z-index: 99; padding: 100px 44px 44px;
+    flex-direction: column; gap: 28px;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-family: var(--font-display); font-size: 40px; font-weight: 700;
+    color: var(--paper); letter-spacing: -0.02em;
+    border-bottom: 1px solid var(--border); padding-bottom: 20px;
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile .mob-cta {
+    display: inline-block; background: linear-gradient(135deg,#111D5E,#0A1440);
+    padding: 14px 32px; border-radius: 8px;
+    font-family: var(--font-body); font-size: 16px; font-weight: 600;
+    border-bottom: none !important;
+  }
+}
+
+/* ── Footer ── */
+.footer { border-top: 1px solid var(--border); padding: 80px 0 48px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 56px; }
+.footer-brand p { margin-top: 14px; font-size: 14px; line-height: 1.75; max-width: 280px; }
+.footer-col h5 {
+  font-family: var(--font-body); font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: rgba(14,19,56,0.45);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul a { font-size: 14px; color: var(--muted); transition: color .2s; }
+.footer-col ul a:hover { color: var(--paper); }
+.footer-bottom {
+  margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 13px; max-width: none; }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #111D5E 0%, #0A1440 100%);
+  color: #fff; padding: 15px 32px; border-radius: 10px;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(17,29,94,0.3);
+  transition: transform .15s cubic-bezier(0.16,1,0.3,1), box-shadow .15s;
+  border: none; cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(17,29,94,0.45); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid rgba(17,29,94,0.35); color: var(--signal); padding: 14px 31px;
+  border-radius: 10px; font-size: 15px; font-weight: 500;
+  background: transparent;
+  transition: all .2s; cursor: pointer;
+}
+.btn-outline:hover {
+  border-color: rgba(17,29,94,0.60);
+  background: rgba(17,29,94,0.06);
+  transform: translateY(-1px);
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, background .25s, transform .3s cubic-bezier(0.16,1,0.3,1), box-shadow .25s;
+}
+.card::after {
+  content: ''; position: absolute; inset: 0; border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(13,128,128,0.05) 0%, rgba(79,70,229,0.05) 100%);
+  opacity: 0; transition: opacity .3s;
+}
+.card:hover {
+  border-color: var(--border-hover);
+  background: var(--card-bg-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10), 0 0 0 1px rgba(13,128,128,0.10);
+}
+.card:hover::after { opacity: 1; }
+
+/* ── Tags ── */
+.tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  color: var(--signal); background: rgba(13,128,128,0.1);
+  border: 1px solid rgba(13,128,128,0.2); padding: 4px 10px;
+  border-radius: 100px; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* ── Section label ── */
+.section-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  color: var(--signal); letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.section-label::before {
+  content: ''; display: block; width: 20px; height: 1.5px;
+  background: var(--signal); flex-shrink: 0;
+}
+
+/* ── Reveal animations ── */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(0.16,1,0.3,1), transform .8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .08s; }
+.reveal-delay-2 { transition-delay: .16s; }
+.reveal-delay-3 { transition-delay: .24s; }
+.reveal-delay-4 { transition-delay: .32s; }
+.reveal-delay-5 { transition-delay: .40s; }
+
+/* ── Proof strip ── */
+.proof-strip {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+  background: linear-gradient(90deg, rgba(13,128,128,0.07) 0%, rgba(79,70,229,0.05) 100%);
+}
+.proof-strip .container {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.proof-item { display: flex; flex-direction: column; gap: 6px; }
+.proof-num {
+  font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; color: var(--paper); line-height: 1;
+  letter-spacing: -0.03em;
+}
+.proof-num span { color: var(--signal); }
+.proof-label { font-size: 13px; color: var(--muted); letter-spacing: 0.01em; }
+.proof-divider { width: 1px; height: 56px; background: var(--border); flex-shrink: 0; }
+@media (max-width: 640px) {
+  .proof-strip .container { justify-content: center; }
+  .proof-divider { display: none; }
+}
+
+/* ── Grid utilities ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── Page hero ── */
+.page-hero { padding: calc(var(--section-gap) + 88px) 0 var(--section-gap); }
+.page-hero h1 { max-width: 16ch; }
+.page-hero > .container > p,
+.page-hero p.hero-body {
+  font-size: clamp(17px, 2vw, 21px);
+  margin-top: 22px; max-width: 52ch; line-height: 1.65;
+}
+
+/* ── Section dividers ── */
+.section-alt {
+  background: rgba(13,128,128,0.04);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.section-tinted {
+  background: linear-gradient(180deg, rgba(13,128,128,0.05) 0%, rgba(13,128,128,0.01) 100%);
+}
+
+/* ── Service icon ── */
+.svc-icon { width: 52px; height: 52px; margin-bottom: 20px; flex-shrink: 0; }
+
+
+.playbook-card {
+  background:var(--card-bg); border:1px solid var(--border); border-radius:16px;
+  overflow:hidden; transition: border-color .2s, transform .2s;
+}
+.playbook-card:hover { border-color:rgba(244,241,232,0.15); transform:translateY(-4px); }
+.playbook-card-top {
+  padding:32px 32px 24px;
+  background:linear-gradient(135deg,rgba(13,128,128,0.06) 0%,rgba(0,61,61,0.04) 100%);
+  border-bottom:1px solid var(--border);
+}
+.playbook-icon { font-size:36px; margin-bottom:16px; }
+.playbook-card h4 { margin-bottom:8px; }
+.playbook-card-body { padding:24px 32px; }
+.playbook-card-body p { font-size:14px; }
+.playbook-tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:16px; }
+.playbook-download {
+  display:inline-flex; align-items:center; gap:8px; margin-top:20px;
+  font-size:13px; color:var(--signal); font-weight:600;
+}
+
+</style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Digitinize <span style="color:#0D8080">Creative</span><span>.</span></a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li>
+<li><a href="services.html" class="">Growth Services</a></li>
+<li><a href="how-we-work.html" class="">How We Work</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="playbooks.html" class="active">Playbooks</a></li></ul>
+  <a href="contact.html" class="nav-cta">Apply to work with us →</a>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+<a href="services.html">Growth Services</a>
+<a href="how-we-work.html">How We Work</a>
+<a href="about.html">About</a>
+<a href="playbooks.html">Playbooks</a>
+  <a href="contact.html" class="mob-cta">Apply to work with us →</a>
+</div>
+
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label reveal">Playbooks</span>
+    <h1 class="reveal reveal-delay-1">10 years of B2B growth.<br>Documented.</h1>
+    <p class="reveal reveal-delay-2">We've distilled the frameworks, tactics, and decision trees from 10 years of B2B growth work into free playbooks. No email gate. No upsell sequence. Just the actual thinking.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid-3">
+      <div class="playbook-card reveal reveal-delay-1">
+        <div class="playbook-card-top">
+          <div class="playbook-icon">📉</div>
+          <h4>The B2B CAC Reduction Playbook</h4>
+        </div>
+        <div class="playbook-card-body">
+          <p>17 concrete levers for reducing customer acquisition cost without cutting spend. Includes the CAC audit framework we run on every new client.</p>
+          <div class="playbook-tags">
+            <span class="tag">Paid</span><span class="tag">Analytics</span>
+          </div>
+          <a href="contact.html" class="playbook-download">Download free →</a>
+        </div>
+      </div>
+      <div class="playbook-card reveal reveal-delay-2">
+        <div class="playbook-card-top">
+          <div class="playbook-icon">🔁</div>
+          <h4>The Lifecycle Marketing Blueprint for B2B</h4>
+        </div>
+        <div class="playbook-card-body">
+          <p>The nurture sequences every B2B company needs — welcome, education, re-engagement, and expansion — with the segmentation logic and timing that makes each one work.</p>
+          <div class="playbook-tags">
+            <span class="tag">Lifecycle</span><span class="tag">Email</span><span class="tag">Automation</span>
+          </div>
+          <a href="contact.html" class="playbook-download">Download free →</a>
+        </div>
+      </div>
+      <div class="playbook-card reveal reveal-delay-3">
+        <div class="playbook-card-top">
+          <div class="playbook-icon">🎨</div>
+          <h4>B2B Content Testing Framework</h4>
+        </div>
+        <div class="playbook-card-body">
+          <p>How we test B2B content — ads, landing pages, email subject lines — to find what actually resonates with buyers. Includes the brief template and decision criteria we use.</p>
+          <div class="playbook-tags">
+            <span class="tag">Content</span><span class="tag">Paid</span>
+          </div>
+          <a href="contact.html" class="playbook-download">Download free →</a>
+        </div>
+      </div>
+      <div class="playbook-card reveal reveal-delay-1">
+        <div class="playbook-card-top">
+          <div class="playbook-icon">📊</div>
+          <h4>B2B Analytics Setup Guide</h4>
+        </div>
+        <div class="playbook-card-body">
+          <p>The exact GA4 + attribution stack we recommend for B2B brands at each growth stage — with the 8 metrics that actually tell you if growth is sustainable.</p>
+          <div class="playbook-tags">
+            <span class="tag">Analytics</span><span class="tag">Attribution</span>
+          </div>
+          <a href="contact.html" class="playbook-download">Download free →</a>
+        </div>
+      </div>
+      <div class="playbook-card reveal reveal-delay-2">
+        <div class="playbook-card-top">
+          <div class="playbook-icon">🚀</div>
+          <h4>The B2B Pipeline Foundations Playbook</h4>
+        </div>
+        <div class="playbook-card-body">
+          <p>The sequence of growth investments for an early-stage B2B company — what to build first, second, and third to establish a repeatable pipeline motion.</p>
+          <div class="playbook-tags">
+            <span class="tag">Strategy</span><span class="tag">Foundations</span>
+          </div>
+          <a href="contact.html" class="playbook-download">Download free →</a>
+        </div>
+      </div>
+      <div class="playbook-card reveal reveal-delay-3">
+        <div class="playbook-card-top">
+          <div class="playbook-icon">💰</div>
+          <h4>The B2B Retention &amp; Expansion Guide</h4>
+        </div>
+        <div class="playbook-card-body">
+          <p>How to model, measure, and improve LTV across cohorts. The retention and expansion framework we use to extend client relationships and reduce churn.</p>
+          <div class="playbook-tags">
+            <span class="tag">Retention</span><span class="tag">Expansion</span>
+          </div>
+          <a href="contact.html" class="playbook-download">Download free →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:var(--section-gap)">
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2>Want the thinking behind<br>the playbooks?</h2>
+      <p>Book a strategy call. We'll walk through your specific situation — no playbook required.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary">Book a free call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-0.03em;color:var(--signal)">Digitinize <span style="color:#0D8080">Creative</span><span style="color:#0D8080">.</span></div>
+        <p>Your embedded B2B growth team — without the hire. Building pipeline since 2014.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#seo">SEO &amp; Content</a></li>
+          <li><a href="services.html#paid">LinkedIn &amp; Paid Media</a></li>
+          <li><a href="services.html#demand">Demand Generation</a></li>
+          <li><a href="services.html#social">Thought Leadership</a></li>
+          <li><a href="services.html#email">Marketing Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="how-we-work.html">How We Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="playbooks.html">Playbooks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="mailto:hello@digitinize.com">hello@digitinize.com</a></li>
+          <li><a href="https://www.linkedin.com/company/digitinize" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/digitinize" target="_blank">Instagram</a></li>
+          <li><a href="contact.html">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:var(--muted)">© 2024 Digitinize Pvt. Ltd. Bangalore, India.</p>
+      <p style="color:var(--muted)">B2B marketing agency India · Performance marketing Bangalore</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const ring = document.querySelector('.cursor-ring');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a,button,.card').forEach(el => {
+  el.addEventListener('mouseenter', () => { ring.style.width='56px'; ring.style.height='56px'; ring.style.opacity='.6'; });
+  el.addEventListener('mouseleave', () => { ring.style.width='36px'; ring.style.height='36px'; ring.style.opacity='1'; });
+});
+
+// Nav scroll
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile nav
+const ham = document.querySelector('.nav-hamburger');
+const mob = document.querySelector('.nav-mobile');
+if (ham && mob) {
+  ham.addEventListener('click', () => {
+    mob.classList.toggle('open');
+    const bars = ham.querySelectorAll('span');
+    const open = mob.classList.contains('open');
+    bars[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    bars[1].style.opacity = open ? '0' : '1';
+    bars[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+}
+
+// Intersection Observer reveals
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Counter animation
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const dur = 1600;
+  const start = performance.now();
+  function step(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = prefix + Math.floor(ease * target) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const co = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); co.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  DIGITINIZE — Brand Design System
+ *  B2B Marketing Agency · Bangalore, India
+ * ═══════════════════════════════════════════════════════════════
+ *
+ *  This file is the single source of truth for all brand tokens.
+ *  Import it before any page-specific styles.
+ *
+ *  Contents
+ *  ─────────
+ *  1. Color Palette
+ *  2. Typography
+ *  3. Spacing & Layout
+ *  4. Elevation & Effects
+ *  5. Animation
+ *  6. Component Tokens
+ *  7. Brand Voice Notes (comments)
+ * ═══════════════════════════════════════════════════════════════
+ */
+
+/* ─────────────────────────────────────────────
+   1. COLOR PALETTE
+   Logo colours:
+     Primary  — Deep Midnight Blue  #111D5E  (hsl 231°, 69%, 22%)
+     Accent   — Digitinize Teal     #0D8080  (hsl 180°, 82%, 28%)
+   Both sit at shade-700 in their respective scales.
+   ───────────────────────────────────────────── */
+
+:root {
+
+  /* ══════════════════════════════════════════
+     MIDNIGHT BLUE SCALE  (primary / logo text)
+     ══════════════════════════════════════════ */
+  --midnight-50:  #F2F3FC;   /* Lightest tint — page wash            */
+  --midnight-100: #E1E4F7;   /* Subtle surface                       */
+  --midnight-200: #BCC2EF;   /* Card tint / hover bg                 */
+  --midnight-300: #8790E0;   /* Decorative / illustration            */
+  --midnight-400: #4E5ECB;   /* Hover highlight                      */
+  --midnight-500: #2F45B8;   /* Bright accent on dark bg             */
+  --midnight-600: #1D2F8F;   /* Hover CTA / lighter state            */
+  --midnight-700: #111D5E;   /* ★ LOGO PRIMARY — CTA / signal        */
+  --midnight-800: #0A1440;   /* Pressed / depth                      */
+  --midnight-900: #060C28;   /* Dark surface / footer                */
+  --midnight-950: #030614;   /* Near-black navy bg                   */
+
+  /* ══════════════════════════════════════════
+     TEAL SCALE  (accent / logo dot)
+     ══════════════════════════════════════════ */
+  --teal-50:  #F0FDFD;   /* Lightest tint — card hover bg        */
+  --teal-100: #CCFAFA;   /* Subtle surface wash                  */
+  --teal-200: #99F0F0;   /* Card tint                            */
+  --teal-300: #5CDEDE;   /* Decorative / illustration            */
+  --teal-400: #22C7C7;   /* Hover highlight on dark bg           */
+  --teal-500: #13BABA;   /* Bright accent on dark bg             */
+  --teal-600: #0F9898;   /* Hover / lighter state                */
+  --teal-700: #0D8080;   /* ★ LOGO ACCENT — dot & icons          */
+  --teal-800: #096060;   /* Pressed / depth                      */
+  --teal-900: #063D3D;   /* Dark surface                         */
+  --teal-950: #032626;   /* Near-black teal bg                   */
+
+  /* ══════════════════════════════════════════
+     SUPPORTING PALETTE
+     ══════════════════════════════════════════ */
+  --indigo-500:    #4F46E5;              /* Secondary accent — depth  */
+  --indigo-subtle: rgba(79,70,229,0.10); /* Pale indigo tint          */
+  --green-500:     #22C55E;              /* Positive / success        */
+  --amber-500:     #F59E0B;              /* Warning / highlight       */
+
+  /* ══════════════════════════════════════════
+     BRAND ALIASES  →  point at the scales
+     ══════════════════════════════════════════ */
+
+  /* Midnight (primary) */
+  --brand-midnight:        var(--midnight-700);
+  --brand-midnight-dark:   var(--midnight-800);
+  --brand-midnight-mid:    var(--midnight-600);
+  --brand-midnight-bright: var(--midnight-500);
+  --brand-midnight-subtle: rgba(17,29,94,0.12);
+  --brand-midnight-glow:   rgba(17,29,94,0.22);
+
+  /* Teal (accent) */
+  --brand-teal:        var(--teal-700);
+  --brand-teal-dark:   var(--teal-800);
+  --brand-teal-mid:    var(--teal-600);
+  --brand-teal-bright: var(--teal-500);
+  --brand-teal-subtle: rgba(13,128,128,0.12);
+  --brand-teal-glow:   rgba(13,128,128,0.22);
+
+  /* Legacy supporting names */
+  --brand-indigo:      var(--indigo-500);
+  --brand-indigo-pale: var(--indigo-subtle);
+  --brand-green:       var(--green-500);
+  --brand-amber:       var(--amber-500);
+
+  /* ══════════════════════════════════════════
+     NEUTRALS
+     ══════════════════════════════════════════ */
+  --ink:    #F4F9F9;               /* Page background (light teal-tinted) */
+  --paper:  #0E1338;               /* Primary text (dark navy)            */
+  --muted:  rgba(14,19,56,0.55);   /* Secondary text                      */
+  --faint:  rgba(240,238,248,0.25);/* Tertiary / disabled                 */
+
+  /* ══════════════════════════════════════════
+     SEMANTIC ALIASES
+     ══════════════════════════════════════════ */
+  --signal:       var(--midnight-700);   /* CTA / interactive — midnight  */
+  --signal-hover: var(--midnight-600);
+  --signal-dark:  var(--midnight-800);
+  --accent:       var(--teal-700);       /* Accent — teal dot & highlights */
+  --accent-hover: var(--teal-600);
+  --accent-dark:  var(--teal-800);
+
+  /* ══════════════════════════════════════════
+     SURFACE / BORDERS
+     ══════════════════════════════════════════ */
+  --border:        rgba(14,19,56,0.09);
+  --border-hover:  rgba(14,19,56,0.18);
+  --card-bg:       #FFFFFF;
+  --card-bg-hover: var(--teal-50);
+
+  /* ══════════════════════════════════════════
+     GRADIENTS
+     ══════════════════════════════════════════ */
+  --gradient-brand: linear-gradient(135deg, var(--midnight-700) 0%, var(--midnight-800) 100%);
+  --gradient-hero:  linear-gradient(135deg, rgba(17,29,94,0.08) 0%, rgba(13,128,128,0.07) 100%);
+  --gradient-card:  linear-gradient(135deg, rgba(17,29,94,0.06) 0%, rgba(13,128,128,0.06) 100%);
+  --gradient-mesh:
+    radial-gradient(ellipse 90% 70% at 100% -5%,  rgba(13,128,128,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at -10%  45%, rgba(79,70,229,0.10)  0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at  50% 110%, rgba(17,29,94,0.06)   0%, transparent 50%);
+}
+
+/* ─────────────────────────────────────────────
+   2. TYPOGRAPHY
+   Display: Fraunces (editorial serif)
+   Body:    Inter (clean sans-serif)
+   Mono:    JetBrains Mono (data / tags)
+   ───────────────────────────────────────────── */
+
+:root {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* Scale — fluid via clamp() */
+  --text-hero:    clamp(52px, 8.5vw, 104px);
+  --text-h2:      clamp(36px, 5.5vw,  68px);
+  --text-h3:      clamp(22px, 2.8vw,  34px);
+  --text-h4:      clamp(16px, 1.8vw,  21px);
+  --text-body-lg: clamp(17px, 2vw,    21px);
+  --text-body:    16px;
+  --text-sm:      14px;
+  --text-xs:      13px;
+  --text-tag:     11px;
+
+  /* Leading */
+  --leading-tight:  1.06;
+  --leading-snug:   1.3;
+  --leading-normal: 1.65;
+  --leading-relaxed:1.75;
+
+  /* Tracking */
+  --tracking-tight: -0.025em;
+  --tracking-sm:    -0.01em;
+  --tracking-tag:    0.10em;
+  --tracking-label:  0.12em;
+}
+
+/* ─────────────────────────────────────────────
+   3. SPACING & LAYOUT
+   ───────────────────────────────────────────── */
+
+:root {
+  --max-w:        1200px;
+  --section-gap:  clamp(88px, 12vw, 148px);
+  --radius:       16px;
+  --radius-sm:    10px;
+  --radius-xs:    6px;
+  --radius-pill:  100px;
+}
+
+/* ─────────────────────────────────────────────
+   4. ELEVATION & EFFECTS
+   ───────────────────────────────────────────── */
+
+:root {
+  --shadow:       0 8px 40px rgba(0,0,0,0.35);
+  --shadow-sm:    0 4px 20px rgba(0,0,0,0.25);
+  --shadow-glow:  0 0 48px rgba(17,29,94,0.20);
+  --shadow-glow-sm: 0 4px 20px rgba(17,29,94,0.30);
+  --shadow-card:  0 24px 56px rgba(0,0,0,0.35), 0 0 0 1px rgba(17,29,94,0.06);
+}
+
+/* ─────────────────────────────────────────────
+   5. ANIMATION TOKENS
+   ───────────────────────────────────────────── */
+
+:root {
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:  150ms;
+  --duration-base:  250ms;
+  --duration-slow:  800ms;
+}
+
+/* ─────────────────────────────────────────────
+   6. COMPONENT TOKENS
+   ───────────────────────────────────────────── */
+
+/* Buttons */
+:root {
+  --btn-primary-bg:     var(--gradient-brand);
+  --btn-primary-shadow: 0 4px 20px rgba(17,29,94,0.32);
+  --btn-primary-hover-shadow: 0 10px 36px rgba(17,29,94,0.45);
+  --btn-outline-border: rgba(240,238,248,0.12);
+  --btn-outline-hover-border: rgba(240,238,248,0.25);
+}
+
+/* Navigation */
+:root {
+  --nav-scrolled-bg:     rgba(14,19,56,0.82);
+  --nav-scrolled-blur:   24px;
+  --nav-cta-bg:          var(--gradient-brand);
+  --nav-cta-shadow:      0 4px 20px rgba(17,29,94,0.35);
+}
+
+/* Cards */
+:root {
+  --card-hover-gradient: linear-gradient(135deg, rgba(17,29,94,0.06) 0%, rgba(13,128,128,0.06) 100%);
+}
+
+/* Tags / Labels */
+:root {
+  --tag-color:  var(--brand-midnight);
+  --tag-bg:     rgba(17,29,94,0.10);
+  --tag-border: rgba(17,29,94,0.20);
+}
+
+/* Section labels */
+:root {
+  --label-color: var(--brand-midnight-bright);
+  --label-line:  var(--brand-midnight-bright);
+}
+
+/* Proof strip */
+:root {
+  --proof-num-accent: var(--brand-midnight-bright);
+  --proof-bg: linear-gradient(90deg, rgba(17,29,94,0.05) 0%, rgba(79,70,229,0.04) 100%);
+}
+
+
+/* ─────────────────────────────────────────────
+   7. BASE RESETS (apply these in every page)
+   ───────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background:  var(--ink);     /* Light theme: #F4F9F9 */
+  color:       var(--paper);
+  font-family: var(--font-body);
+  line-height: var(--leading-normal);
+  overflow-x:  hidden;
+  cursor:      none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background mesh */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: var(--gradient-mesh);
+}
+
+/* Noise texture */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  opacity: .025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+body > * { position: relative; z-index: 1; }
+
+h1,h2,h3,h4 {
+  font-family: var(--font-display); font-weight: 700;
+  line-height: var(--leading-tight); letter-spacing: var(--tracking-tight);
+}
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); font-family: var(--font-body); font-weight: 600; letter-spacing: var(--tracking-sm); line-height: var(--leading-snug); }
+p  { color: var(--muted); max-width: 62ch; line-height: var(--leading-relaxed); }
+a  { color: inherit; text-decoration: none; }
+strong { color: var(--paper); font-weight: 600; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(20px,5vw,56px); }
+section { padding: var(--section-gap) 0; }
+
+
+/* ─────────────────────────────────────────────
+   BRAND VOICE NOTES
+   ─────────────────────────────────────────────
+
+   Tone: Direct. Confident. Operator-level.
+   Never: Agency jargon, vague promises, passive voice.
+   Always: Specific numbers, honest trade-offs, B2B framing.
+
+   Positioning: "Embedded B2B growth team — without the hire."
+   Target buyer: CMO / VP Marketing / Growth Lead at B2B SaaS,
+                 Professional Services, or B2B product company.
+   Geography: India-first, English-language copy.
+
+   Core messages:
+   ─ We work like an in-house team, not a vendor
+   ─ We're accountable to pipeline and revenue, not vanity metrics
+   ─ We only work with a small roster — focus is the product
+   ─ Systems outlast campaigns; we build infrastructure, not one-offs
+
+   Vocabulary ─ USE:
+     pipeline, MQL, SQL, ACV, CAC, LTV, qualified leads,
+     demand generation, ABM, sales cycle, payback period,
+     content engine, full-funnel, sales enablement, nurture
+
+   Vocabulary ─ AVOID:
+     "innovative", "synergy", "holistic", "best-in-class",
+     "leverage", "impactful", "stakeholders", "bandwidth"
+
+   Headline formula: [Specific claim] + [Qualifier/credibility hook]
+   Example: "₹500Cr+ pipeline generated · 40+ B2B clients"
+
+   CTA copy:
+     Primary: "Book a strategy session →"
+     Secondary: "See how we work"
+     Tertiary: "Read a playbook first"
+
+   ──────────────────────────────────────────── */
+
+
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  DIGITINIZE COLOR SWATCH REFERENCE
+ *  Both scales are rooted in the logo — midnight text + teal dot.
+ * ═══════════════════════════════════════════════════════════════
+ *
+ *  MIDNIGHT BLUE SCALE  (primary — logo text)
+ *  ───────────────────────────────────────────
+ *  ░░░  #F2F3FC  --midnight-50
+ *  ░░░  #E1E4F7  --midnight-100
+ *  ▒▒▒  #BCC2EF  --midnight-200
+ *  ▒▒▒  #8790E0  --midnight-300
+ *  ▓▓▓  #4E5ECB  --midnight-400
+ *  ▓▓▓  #2F45B8  --midnight-500  (bright accent)
+ *  ███  #1D2F8F  --midnight-600  (hover CTA)
+ *  ███  #111D5E  --midnight-700  ★ LOGO PRIMARY
+ *  ███  #0A1440  --midnight-800  (pressed)
+ *  ███  #060C28  --midnight-900
+ *  ███  #030614  --midnight-950
+ *
+ *  TEAL SCALE  (accent — logo dot & icons)
+ *  ────────────────────────────────────────
+ *  ░░░  #F0FDFD  --teal-50
+ *  ░░░  #CCFAFA  --teal-100
+ *  ▒▒▒  #99F0F0  --teal-200
+ *  ▒▒▒  #5CDEDE  --teal-300
+ *  ▓▓▓  #22C7C7  --teal-400
+ *  ▓▓▓  #13BABA  --teal-500  (bright accent)
+ *  ███  #0F9898  --teal-600  (hover)
+ *  ███  #0D8080  --teal-700  ★ LOGO ACCENT
+ *  ███  #096060  --teal-800  (pressed)
+ *  ███  #063D3D  --teal-900
+ *  ███  #032626  --teal-950
+ *
+ *  SUPPORTING
+ *  ──────────
+ *  ███  #4F46E5  --indigo-500   (secondary accent)
+ *  ███  #22C55E  --green-500    (success)
+ *  ███  #F59E0B  --amber-500    (warning)
+ *  ███  #0E1338  --paper        (primary text)
+ *  ░░░  #F4F9F9  --ink          (page background)
+ *
+ * ═══════════════════════════════════════════════════════════════
+ */
