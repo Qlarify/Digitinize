@@ -327,8 +327,8 @@ body::after {
 .svc-icon { width: 52px; height: 52px; margin-bottom: 20px; flex-shrink: 0; }
 
 
-.about-hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; padding-top:140px; padding-bottom:var(--section-gap); }
-@media (max-width:768px) { .about-hero-grid { grid-template-columns:1fr; padding-top:120px; gap:40px; } }
+.about-hero-grid { display:block; padding-top:140px; padding-bottom:var(--section-gap); max-width:72ch; }
+@media (max-width:768px) { .about-hero-grid { padding-top:120px; } }
 .about-img {
   aspect-ratio:4/5; border-radius:20px; max-width:400px;
   background:linear-gradient(135deg, rgba(13,128,128,0.14) 0%, rgba(79,70,229,0.20) 100%);
@@ -393,11 +393,7 @@ body::after {
 
 <div class="container">
   <div class="about-hero-grid">
-    <div class="about-img reveal">
-      <img src="images/zeeshan.jpg" alt="Zeeshan Soudagar, Founder of Digitinize">
-      <div class="about-img-caption">Zeeshan Soudagar<span>Founder &amp; Creative Director</span></div>
-    </div>
-    <div class="reveal reveal-delay-1">
+    <div class="reveal">
       <span class="section-label">The founding story</span>
       <h1 style="font-size:clamp(42px,6vw,72px)">Built by B2B operators,<br>for B2B operators.</h1>
       <p style="font-size:clamp(16px,2vw,18px);margin-top:20px;">Digitinize was founded by Zeeshan Soudagar in 2014 — when systematic demand generation was still rare among Indian B2B companies. Not because he spotted a trend. Because he'd watched too many excellent B2B companies — great products, real value, smart teams — struggle to grow because they were buying generic marketing from generalist agencies.</p>
