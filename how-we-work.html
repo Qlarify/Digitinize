@@ -227,6 +227,26 @@ body::after {
   }
 }
 
+
+/* ── Nav dropdown ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; cursor: default; }
+.nav-dropdown > a .chev { display: inline-block; width: 10px; height: 6px; flex-shrink: 0; transition: transform .2s cubic-bezier(0.16,1,0.3,1); }
+.nav-dropdown:hover > a .chev { transform: rotate(180deg); }
+.nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(-4px); background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 6px 6px; list-style: none; min-width: 230px; box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s, transform .2s cubic-bezier(0.16,1,0.3,1), visibility .2s; z-index: 200; }
+.nav-dropdown-menu::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--muted); transition: background .15s, color .15s; letter-spacing: 0; }
+.nav-dropdown-menu li a::after { display: none !important; }
+.nav-dropdown-menu li a:hover { background: rgba(13,128,128,0.07); color: var(--paper); }
+.nav-dropdown-menu li a .dd-dot { width: 6px; height: 6px; border-radius: 50%; background: #0D8080; opacity: 0.5; flex-shrink: 0; transition: opacity .15s; }
+.nav-dropdown-menu li a:hover .dd-dot { opacity: 1; }
+.mob-services { display: flex; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+.mob-services-label { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--paper); letter-spacing: -0.02em; padding-bottom: 14px; }
+.mob-services-links { display: flex; flex-direction: column; gap: 0; padding-left: 2px; }
+.mob-services-links a { font-family: var(--font-body) !important; font-size: 15px !important; font-weight: 500 !important; color: var(--muted) !important; letter-spacing: 0 !important; border-bottom: none !important; padding: 8px 0 !important; transition: color .15s; }
+.mob-services-links a:hover { color: var(--paper) !important; }
+
 /* ── Footer ── */
 .footer { border-top: 1px solid var(--border); padding: 80px 0 48px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 56px; }
@@ -418,6 +438,24 @@ body::after {
 .guarantee-list li::before { content:'→'; color:var(--signal); font-weight:700; }
 @media (max-width:640px) { .guarantee-card { grid-template-columns:1fr; } }
 
+/* ── Engagement Gantt ── */
+.gantt-section { padding:var(--section-gap) 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:rgba(244,241,232,0.015); }
+.gantt-wrap { overflow-x:auto; margin-top:40px; }
+.gantt-inner { min-width:580px; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.gantt-row { display:grid; grid-template-columns:140px repeat(4,1fr); border-bottom:1px solid var(--border); }
+.gantt-row:last-child { border-bottom:none; }
+.gantt-row.gantt-header { background:rgba(13,128,128,0.05); }
+.gantt-lbl { padding:14px 16px; border-right:1px solid var(--border); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); display:flex; align-items:center; }
+.gantt-header .gantt-lbl { align-items:flex-end; font-size:10px; }
+.gantt-cell { padding:12px 14px; border-right:1px solid var(--border); font-size:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; text-align:center; }
+.gantt-cell:last-child { border-right:none; }
+.gantt-phase-name { font-size:12px; font-weight:700; color:var(--paper); }
+.gantt-phase-time { font-family:var(--font-mono); font-size:10px; color:var(--signal); margin-top:2px; }
+.gbr-full { background:rgba(13,128,128,0.12); border:1px solid rgba(13,128,128,0.28); border-radius:6px; padding:7px 10px; font-size:11px; font-weight:600; color:var(--signal); width:100%; text-align:center; }
+.gbr-light { background:rgba(79,70,229,0.08); border:1px solid rgba(79,70,229,0.2); border-radius:6px; padding:5px 8px; font-size:11px; color:#818CF8; width:100%; text-align:center; }
+.gdel-tag { font-size:10px; background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:4px; padding:3px 7px; color:var(--muted); }
+.gtime-badge { display:inline-flex; align-items:center; gap:4px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.22); border-radius:20px; padding:4px 10px; font-size:10px; font-weight:600; color:#F59E0B; }
+
 </style>
 </head>
 <body>
@@ -473,7 +511,7 @@ body::after {
 <section>
   <div class="container">
     <span class="section-label reveal">The process</span>
-    <h2 class="reveal reveal-delay-1">Four phases. One north star:<br>profitable growth.</h2>
+    <h2 class="reveal reveal-delay-1">Four phases. One north star:<br>qualified pipeline.</h2>
 
     <!-- Process timeline infographic -->
     <div class="reveal reveal-delay-2" style="margin-top:48px;margin-bottom:56px">
@@ -538,7 +576,7 @@ body::after {
         <div class="phase-content">
           <div class="phase-timeline">Weeks 1–2</div>
           <h3>Deep Audit</h3>
-          <p>Before we touch your accounts or write a single brief, we learn your business. Ad accounts, email performance, unit economics, customer data, category dynamics: all of it. We leave no stone unturned because the best growth strategy is built on what's actually true about your brand, not what we assume.</p>
+          <p>We examine your ICP definition, funnel performance, channel mix, tech stack, and competitive position before any execution starts. We audit what's actually happening: where pipeline stalls, which channels underperform, what your ICP really looks like in closed-won data.</p>
           <div class="phase-deliverables">
             <span class="phase-deliverable">Full paid account audit</span>
             <span class="phase-deliverable">Lifecycle health check</span>
@@ -593,13 +631,80 @@ body::after {
         <div class="phase-content">
           <div class="phase-timeline">Week 9 → ongoing</div>
           <h3>Compound &amp; Scale</h3>
-          <p>This is where the work compounds. Weekly iteration loops: what's working gets scaled, what isn't gets killed or rethought. Over months, CAC tends to drop, LTV tends to rise, and revenue becomes more predictable.</p>
+          <p>This is where the work compounds. Weekly iteration loops: what's working gets scaled, what isn't gets killed or rethought. Clients in this phase consistently see lower CAC and stronger retention as the infrastructure compounds.</p>
           <div class="phase-deliverables">
             <span class="phase-deliverable">Weekly optimisation syncs</span>
             <span class="phase-deliverable">Creative refresh cycles</span>
             <span class="phase-deliverable">Budget scaling framework</span>
             <span class="phase-deliverable">Quarterly strategy review</span>
             <span class="phase-deliverable">LTV cohort tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gantt-section">
+  <div class="container">
+    <span class="section-label reveal">Engagement timeline</span>
+    <h2 class="reveal reveal-delay-1">What happens when, and<br>what we need from you.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px;max-width:60ch">Most engagements follow a four-phase arc. Here's what Digitinize does at each stage, what it requires from your side, and what you get out of it.</p>
+    <div class="gantt-wrap reveal">
+      <div class="gantt-inner">
+        <div class="gantt-row gantt-header">
+          <div class="gantt-lbl">Activity</div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Diagnostic</div>
+            <div class="gantt-phase-time">W1 – W2</div>
+          </div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Blueprint</div>
+            <div class="gantt-phase-time">W3</div>
+          </div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Build & Launch</div>
+            <div class="gantt-phase-time">W4 – W8</div>
+          </div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Compound</div>
+            <div class="gantt-phase-time">M3 onwards</div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-lbl">Digitinize</div>
+          <div class="gantt-cell"><div class="gbr-full">ICP, tech stack, funnel &amp; channel audit</div></div>
+          <div class="gantt-cell"><div class="gbr-full">Growth blueprint + 90-day roadmap</div></div>
+          <div class="gantt-cell"><div class="gbr-full">All channels live — campaigns, content, flows</div></div>
+          <div class="gantt-cell"><div class="gbr-full">Continuous optimisation, quarterly strategy</div></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-lbl">Client time</div>
+          <div class="gantt-cell"><span class="gtime-badge">~5–6 hrs / week</span></div>
+          <div class="gantt-cell"><span class="gtime-badge">~3 hrs total</span></div>
+          <div class="gantt-cell"><span class="gtime-badge">~2 hrs / week</span></div>
+          <div class="gantt-cell"><span class="gtime-badge">~1 hr / week</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-lbl">Deliverables</div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">ICP definition</span>
+            <span class="gdel-tag">Funnel map</span>
+            <span class="gdel-tag">Stack audit</span>
+          </div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">Blueprint deck</span>
+            <span class="gdel-tag">Channel roadmap</span>
+          </div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">Live campaigns</span>
+            <span class="gdel-tag">Content calendar</span>
+            <span class="gdel-tag">Reporting dashboards</span>
+          </div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">Weekly reports</span>
+            <span class="gdel-tag">Quarterly reviews</span>
+            <span class="gdel-tag">Pipeline attribution</span>
           </div>
         </div>
       </div>
@@ -662,7 +767,7 @@ body::after {
       </div>
       <div>
         <h3 style="margin-bottom:16px">What we need from you</h3>
-        <p>We work best with founders and operators who are close to their numbers, open to honest feedback, and in it for the long game. If you want someone to tell you what you want to hear, we're not your team.</p>
+        <p>We work best with founders and operators who are close to their numbers, open to direct feedback on what's working and what isn't, backed by data, and in this for the compounding, not the sprint. We'll tell you when a channel isn't working. We'll push back on briefs that won't drive pipeline. We'd rather lose a client than keep one we can't get results for.</p>
         <a href="/contact" class="btn-primary" style="margin-top:28px">Start the process →</a>
       </div>
     </div>
@@ -696,7 +801,7 @@ body::after {
           <li><a href="/services/b2b-seo">SEO &amp; Content</a></li>
           <li><a href="/services/linkedin-ads">LinkedIn &amp; Paid Media</a></li>
           <li><a href="/services/demand-generation">Demand Generation</a></li>
-          <li><a href="/services/authority-positioning">Thought Leadership</a></li>
+          <li><a href="/services/authority-positioning">Authority Positioning</a></li>
           <li><a href="/services/marketing-automation">Marketing Automation</a></li>
         </ul>
       </div>
@@ -712,7 +817,7 @@ body::after {
       <div class="footer-col">
         <h5>Connect</h5>
         <ul>
-          <li><a href="mailto:hello@digitinize.com">hello@digitinize.com</a></li>
+          <li><a href="mailto:info@digitinize.com">info@digitinize.com</a></li>
           <li><a href="https://www.linkedin.com/company/digitinize" target="_blank">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/digitinize" target="_blank">Instagram</a></li>
           <li><a href="/contact">Book a call</a></li>

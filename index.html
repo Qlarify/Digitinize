@@ -50,7 +50,7 @@
     "LinkedIn Advertising",
     "Marketing Automation",
     "Account-Based Marketing",
-    "B2B Thought Leadership"
+    "B2B Authority Positioning"
   ],
   "sameAs": [
     "https://www.linkedin.com/company/digitinize",
@@ -715,6 +715,196 @@ body::after {
   .comparison-table th:nth-child(2), .comparison-table td:nth-child(2) { display: none; }
 }
 
+/* ─── B2B Buying Journey Infographic ─── */
+.journey-section { padding: var(--section-gap) 0; }
+.journey-header { margin-bottom: 40px; }
+.journey-infographic {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.jcol {
+  border-right: 1px solid var(--border);
+  padding: 24px 18px 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative;
+}
+.jcol:last-child { border-right: none; }
+.jcol:nth-child(5) .jstage-hd { background: linear-gradient(135deg, rgba(79,70,229,0.12), rgba(13,128,128,0.08)); }
+.jstage-hd {
+  background: rgba(13,128,128,0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.jstage-num { font-family: var(--font-mono); font-size: 10px; color: var(--signal); letter-spacing: .08em; margin-bottom: 6px; }
+.jstage-name { font-size: 13px; font-weight: 700; color: var(--paper); margin-bottom: 4px; }
+.jstage-timeline { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.jrow-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+.jrow-buyer { font-size: 12px; color: var(--text); line-height: 1.5; min-height: 52px; }
+.jrow-channels { display: flex; flex-wrap: wrap; gap: 5px; min-height: 40px; }
+.jch-pill {
+  font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px;
+  letter-spacing: .04em;
+}
+.ch-seo    { background: rgba(13,128,128,0.12); color: #0D8080; border: 1px solid rgba(13,128,128,0.25); }
+.ch-auth   { background: rgba(17,29,94,0.18); color: #7C85D0; border: 1px solid rgba(79,70,229,0.25); }
+.ch-li     { background: rgba(79,70,229,0.10); color: #818CF8; border: 1px solid rgba(79,70,229,0.25); }
+.ch-demand { background: rgba(245,158,11,0.10); color: #F59E0B; border: 1px solid rgba(245,158,11,0.25); }
+.ch-email  { background: rgba(16,185,129,0.10); color: #10B981; border: 1px solid rgba(16,185,129,0.25); }
+.ch-auto   { background: rgba(139,92,246,0.10); color: #A78BFA; border: 1px solid rgba(139,92,246,0.25); }
+.jrow-tactics { display: flex; flex-wrap: wrap; gap: 5px; }
+.jtag { font-size: 10px; color: var(--muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; }
+.journey-arrow {
+  display: none; /* hidden on mobile, shown on md+ */
+}
+@media (max-width: 860px) {
+  .journey-infographic { grid-template-columns: 1fr 1fr; }
+  .jcol:nth-child(2) { border-right: none; }
+  .jcol:nth-child(4) { border-right: none; }
+  .jcol:nth-child(5) { grid-column: span 2; border-right: none; }
+}
+@media (max-width: 540px) {
+  .journey-infographic { grid-template-columns: 1fr; }
+  .jcol { border-right: none; border-bottom: 1px solid var(--border); }
+  .jcol:last-child { border-bottom: none; }
+  .jcol:nth-child(5) { grid-column: span 1; }
+}
+
+/* ─── Interactive Animations & Infographics ─── */
+
+/* Scroll progress */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 101;
+  background: linear-gradient(90deg, #0D8080, #4F46E5, #13BABA);
+  background-size: 200% 100%; width: 0%; pointer-events: none;
+  border-radius: 0 2px 2px 0;
+  animation: progressShimmer 4s linear infinite;
+}
+@keyframes progressShimmer {
+  0%  { background-position: 200% 0; }
+  100%{ background-position: -200% 0; }
+}
+
+/* Floating hero dots */
+.hero-dot-field {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+}
+.hero-dot-field span {
+  position: absolute; border-radius: 50%;
+  background: rgba(13,128,128,0.35);
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-120px) scale(0.4); opacity: 0; }
+}
+
+/* Hero SVG draw-in */
+.hero-line-main {
+  stroke-dasharray: 700; stroke-dashoffset: 700;
+  animation: svgDraw 2s cubic-bezier(0.16,1,0.3,1) 0.4s forwards;
+}
+.hero-area-main {
+  opacity: 0; animation: svgFade 1.4s ease-out 1.6s forwards;
+}
+.hero-line-secondary {
+  opacity: 0; animation: svgFade 1.2s ease-out 1.8s forwards;
+}
+.hero-area-secondary {
+  opacity: 0; animation: svgFade 1.2s ease-out 2s forwards;
+}
+@keyframes svgDraw { to { stroke-dashoffset: 0; } }
+@keyframes svgFade  { to { opacity: 1; } }
+
+/* ── Connected Revenue Engine Section ── */
+.engine-section { padding: var(--section-gap) 0; }
+.engine-track {
+  display: flex; align-items: flex-start; margin-top: 60px; position: relative;
+}
+.engine-node {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  text-align: center; cursor: pointer; padding: 0 4px;
+}
+.engine-icon {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: var(--card-bg); border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; margin-bottom: 16px;
+  box-shadow: 0 2px 12px rgba(17,29,94,0.06);
+  transition: border-color .35s, background .35s, transform .35s cubic-bezier(0.16,1,0.3,1), box-shadow .35s;
+}
+.engine-icon::before {
+  content: ''; position: absolute; inset: -7px; border-radius: 50%;
+  border: 1.5px solid rgba(13,128,128,0.4); opacity: 0;
+  transform: scale(0.82);
+  transition: opacity .35s cubic-bezier(0.16,1,0.3,1), transform .35s cubic-bezier(0.16,1,0.3,1);
+}
+.engine-node.active .engine-icon,
+.engine-node:hover .engine-icon {
+  border-color: rgba(13,128,128,0.55); background: rgba(13,128,128,0.09);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 48px rgba(13,128,128,0.18), 0 4px 16px rgba(13,128,128,0.10);
+}
+.engine-node.active .engine-icon::before,
+.engine-node:hover .engine-icon::before { opacity: 1; transform: scale(1); }
+.engine-step {
+  font-family: var(--font-mono); font-size: 9px; color: #0D8080;
+  letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px;
+}
+.engine-node h5 {
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  color: var(--paper); margin-bottom: 4px; line-height: 1.3; letter-spacing: -0.01em;
+}
+.engine-node p { font-size: 11px; color: var(--muted); max-width: 11ch; margin: 0 auto; line-height: 1.45; }
+.engine-connector {
+  flex-shrink: 0; width: 40px; display: flex; align-items: center;
+  justify-content: center; padding-top: 44px;
+}
+.engine-connector-svg { width: 40px; height: 16px; overflow: visible; }
+.engine-con-path {
+  opacity: 0; transition: opacity .4s ease;
+}
+.engine-track.animated .engine-connector:nth-child(2)  .engine-con-path { opacity: 1; transition-delay: .25s; }
+.engine-track.animated .engine-connector:nth-child(4)  .engine-con-path { opacity: 1; transition-delay: .55s; }
+.engine-track.animated .engine-connector:nth-child(6)  .engine-con-path { opacity: 1; transition-delay: .85s; }
+.engine-track.animated .engine-connector:nth-child(8)  .engine-con-path { opacity: 1; transition-delay: 1.15s; }
+.engine-detail {
+  margin-top: 40px; min-height: 100px;
+  background: linear-gradient(135deg, rgba(13,128,128,0.07) 0%, rgba(79,70,229,0.04) 100%);
+  border: 1px solid rgba(13,128,128,0.18); border-radius: 16px;
+  padding: 28px 40px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+  transition: all .4s cubic-bezier(0.16,1,0.3,1);
+}
+.engine-detail::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(180deg, #0D8080, #4F46E5); border-radius: 2px;
+}
+.engine-detail-label {
+  font-family: var(--font-mono); font-size: 10px; color: #0D8080;
+  letter-spacing: .11em; text-transform: uppercase; margin-bottom: 10px;
+  transition: opacity .2s;
+}
+.engine-detail-body {
+  font-size: 15px; color: var(--paper); line-height: 1.75; max-width: 74ch;
+  transition: opacity .25s;
+}
+.engine-detail.updating .engine-detail-label,
+.engine-detail.updating .engine-detail-body { opacity: 0; }
+@media (max-width: 860px) {
+  .engine-track { flex-wrap: wrap; justify-content: center; gap: 24px 8px; }
+  .engine-connector { display: none; }
+  .engine-node { width: calc(33% - 8px); flex: none; }
+}
+@media (max-width: 540px) { .engine-node { width: calc(50% - 8px); } }
+
 /* CTA section */
 .cta-section {
   text-align: center;
@@ -742,6 +932,7 @@ body::after {
 </style>
 </head>
 <body>
+<div class="scroll-progress"></div>
 <div class="cursor"></div>
 <div class="cursor-ring"></div>
 
@@ -786,15 +977,16 @@ body::after {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-dot-field"></div>
   <div class="hero-grid-line"></div>
   <div class="container">
     <div class="hero-split">
       <div class="hero-content">
         <div class="hero-eyebrow reveal">B2B Revenue Marketing</div>
-        <h1 class="reveal reveal-delay-1">Your B2B growth team.<br><em>Built in, not bolted on.</em></h1>
-        <p class="hero-sub reveal reveal-delay-2">Senior revenue marketers embedded inside your business — accountable to pipeline, not presentations. We run the marketing. You run the company.</p>
+        <h1 class="reveal reveal-delay-1">Your B2B growth team.<br><em>Embedded in your team. Accountable to your pipeline.</em></h1>
+        <p class="hero-sub reveal reveal-delay-2">Senior revenue marketers embedded inside your business — accountable to pipeline, not activity reports.</p>
         <div class="hero-actions reveal reveal-delay-3">
-          <a href="/contact" class="btn-primary">Let's talk →</a>
+          <a href="/contact" class="btn-primary" style="font-weight:700">Let's talk →</a>
           <a href="/how-we-work" class="btn-outline">See how we work</a>
         </div>
         <p class="reveal reveal-delay-4" style="margin-top:20px;font-size:13px;color:var(--muted);letter-spacing:0.01em">90% client retention · 18-month average engagement · 10 years B2B only</p>
@@ -853,13 +1045,13 @@ body::after {
           <text x="28" y="300" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">2×</text>
           <text x="28" y="340" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">1×</text>
           <!-- Area fill -->
-          <path d="M 60 336 L 130 316 L 200 296 L 270 268 L 340 236 L 410 205 L 484 176 L 484 356 L 60 356 Z" fill="url(#areaFill)"/>
+          <path class="hero-area-main" d="M 60 336 L 130 316 L 200 296 L 270 268 L 340 236 L 410 205 L 484 176 L 484 356 L 60 356 Z" fill="url(#areaFill)"/>
           <!-- Indigo secondary area -->
-          <path d="M 60 348 L 130 342 L 200 334 L 270 326 L 340 318 L 410 308 L 484 298 L 484 356 L 60 356 Z" fill="url(#indigoFill)"/>
+          <path class="hero-area-secondary" d="M 60 348 L 130 342 L 200 334 L 270 326 L 340 318 L 410 308 L 484 298 L 484 356 L 60 356 Z" fill="url(#indigoFill)"/>
           <!-- Coral revenue line -->
-          <path d="M 60 336 L 130 316 L 200 296 L 270 268 L 340 236 L 410 205 L 484 176" stroke="#0D8080" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="hero-line-main" d="M 60 336 L 130 316 L 200 296 L 270 268 L 340 236 L 410 205 L 484 176" stroke="#0D8080" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <!-- Indigo target line -->
-          <path d="M 60 348 L 130 342 L 200 334 L 270 326 L 340 318 L 410 308 L 484 298" stroke="#4F46E5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+          <path class="hero-line-secondary" d="M 60 348 L 130 342 L 200 334 L 270 326 L 340 318 L 410 308 L 484 298" stroke="#4F46E5" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
           <!-- Data points -->
           <circle cx="270" cy="268" r="4" fill="#0D8080" stroke="#0E1338" stroke-width="2"/>
           <circle cx="484" cy="176" r="5" fill="#0D8080" stroke="#131B4A" stroke-width="2" filter="url(#dotglow)"/>
@@ -996,7 +1188,7 @@ body::after {
           <path d="M14 8v5l3 3" stroke="#4F46E5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="14" cy="13" r="2" fill="#0D8080"/>
         </svg>
-        <span>Healthcare B2B</span>
+        <span>Healthcare & Healthtech</span>
       </div>
       <div class="industry-tile reveal reveal-delay-2">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1185,11 +1377,154 @@ body::after {
   </div>
 </section>
 
+<!-- B2B BUYING JOURNEY -->
+<section class="journey-section">
+  <div class="container">
+    <div class="journey-header">
+      <span class="section-label reveal">How B2B buyers actually buy</span>
+      <h2 class="reveal reveal-delay-1">Map your marketing to the buying journey.</h2>
+      <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Most agencies run tactics. We run a full-funnel programme tied to where your buyers actually are — and what moves them forward at each stage.</p>
+    </div>
+    <div class="journey-infographic reveal">
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 01</div>
+          <div class="jstage-name">Problem Aware</div>
+          <div class="jstage-timeline">Months 0–3</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Recognises a problem but hasn't framed it as a buying opportunity yet</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-seo">SEO</span>
+            <span class="jch-pill ch-auth">Authority Positioning</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Topical clusters</span>
+            <span class="jtag">Pain-point content</span>
+            <span class="jtag">Exec LinkedIn posts</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 02</div>
+          <div class="jstage-name">Solution Aware</div>
+          <div class="jstage-timeline">Months 3–6</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Actively researching solutions and building an internal case</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-auth">Authority</span>
+            <span class="jch-pill ch-seo">SEO</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Comparison guides</span>
+            <span class="jtag">Case studies</span>
+            <span class="jtag">ICP whitepapers</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 03</div>
+          <div class="jstage-name">Vendor Evaluation</div>
+          <div class="jstage-timeline">Months 6–9</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Shortlisting vendors, running internal reviews, assessing risk</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-li">LinkedIn Ads</span>
+            <span class="jch-pill ch-demand">Demand Gen</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">ABM retargeting</span>
+            <span class="jtag">Champion nurture</span>
+            <span class="jtag">ROI calculators</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 04</div>
+          <div class="jstage-name">Decision</div>
+          <div class="jstage-timeline">Months 9–12</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Ready to commit — needs confidence, not more information</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-email">Email</span>
+            <span class="jch-pill ch-demand">Demand Gen</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Proof sequences</span>
+            <span class="jtag">Sales enablement</span>
+            <span class="jtag">Direct outreach</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 05</div>
+          <div class="jstage-name">Expansion</div>
+          <div class="jstage-timeline">Month 12+</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Customer — primed for upsell, renewal, and referral if nurtured right</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-auto">Automation</span>
+            <span class="jch-pill ch-email">Email</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Lifecycle sequences</span>
+            <span class="jtag">NPS + advocacy</span>
+            <span class="jtag">Cross-sell flows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- COMPARISON TABLE -->
 <section class="comparison-section" style="padding:var(--section-gap) 0">
   <div class="container">
     <span class="section-label reveal">Why Digitinize</span>
-    <h2 class="reveal reveal-delay-1">Three options. One obvious choice.</h2>
+    <h2 class="reveal reveal-delay-1">Three paths to B2B growth. Here's how they compare.</h2>
     <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Every B2B leader evaluating growth has the same three paths. Here's how they actually compare.</p>
     <div class="reveal reveal-delay-3" style="overflow-x:auto;margin-top:8px">
       <table class="comparison-table">
@@ -1238,6 +1573,12 @@ body::after {
             <td><span class="cross">✕</span><br><span style="font-size:11px">Salary + benefits + tools</span></td>
             <td class="col-us"><span class="check">✓</span><br><span style="font-size:11px">Senior team, fraction of cost</span></td>
           </tr>
+          <tr style="background:rgba(13,128,128,0.03)">
+            <td style="font-weight:600">Approximate annual investment</td>
+            <td><span style="font-size:13px;font-weight:600;color:var(--muted)">₹30L – 60L</span><br><span style="font-size:11px">Retainer + ad spend</span></td>
+            <td><span style="font-size:13px;font-weight:600;color:var(--muted)">₹45L – 90L</span><br><span style="font-size:11px">Salary + PF + tools + mgmt</span></td>
+            <td class="col-us"><span style="font-size:13px;font-weight:700;color:var(--signal)">₹12L – 24L</span><br><span style="font-size:11px">Full senior team, all 5 channels</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -1248,7 +1589,7 @@ body::after {
 <section class="services-section">
   <div class="container">
     <span class="section-label reveal">What we do</span>
-    <h2 class="reveal reveal-delay-1">Five channels. One revenue engine.<br>Tightly connected.</h2>
+    <h2 class="reveal reveal-delay-1">Five channels. One revenue engine.<br>Each one feeds the others.</h2>
     <p class="reveal reveal-delay-2" style="margin-top:16px;font-size:18px;">In B2B, isolated tactics don't compound. We build and run five connected marketing channels — each one designed to feed the others, and all of them accountable to pipeline.</p>
     <div class="grid-3" style="margin-top:48px">
       <div class="card service-card reveal reveal-delay-1">
@@ -1346,7 +1687,7 @@ body::after {
           <li>Newsletter automation wired into sales CRM for re-engagement</li>
         </ul>
         <div class="case-result">
-          <div class="case-result-num">Organic inbound</div>
+          <div class="case-result-num">Consistent organic pipeline from search, 10+ months compounding</div>
           <p class="case-result-ctx">Organic share of pipeline became a material contributor over the first year.</p>
         </div>
       </div>
@@ -1360,7 +1701,7 @@ body::after {
           <li>Structured creative testing with a documented winner framework</li>
         </ul>
         <div class="case-result">
-          <div class="case-result-num">Better unit economics</div>
+          <div class="case-result-num">Lower CAC, stronger LTV ratio over 12 months</div>
           <p class="case-result-ctx">ROAS improved and cost per SQL fell over the first two quarters of the engagement.</p>
         </div>
       </div>
@@ -1374,12 +1715,147 @@ body::after {
           <li>Pillar pieces positioning the founder as a category voice</li>
         </ul>
         <div class="case-result">
-          <div class="case-result-num">Inbound, unpaid</div>
+          <div class="case-result-num">Qualified inbound from content — no paid dependency</div>
           <p class="case-result-ctx">A consistent flow of qualified inbound conversations, without paid spend, by the end of the first year.</p>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- CONNECTED REVENUE ENGINE -->
+<section class="engine-section">
+  <div class="container">
+    <span class="section-label reveal">The connected engine</span>
+    <h2 class="reveal reveal-delay-1">Five channels. Each one feeds the next.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px;max-width:60ch">In isolated B2B marketing, every channel is a silo. We connect them into a single compounding engine — where each stage makes the next one more effective. Hover each stage to see how it fits.</p>
+
+    <div class="engine-track reveal reveal-delay-3">
+
+      <!-- Node 1 -->
+      <div class="engine-node" data-label="Stage 01 — ICP &amp; Targeting"
+        data-detail="We start by defining your Ideal Customer Profile at the deal level — firmographics, intent signals, deal triggers, and the objections that stall your best opportunities. Every channel we build downstream is engineered around this specific buyer profile, not a generic persona.">
+        <div class="engine-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="12" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+            <circle cx="18" cy="18" r="7"  stroke="#4F46E5" stroke-width="1.5" fill="none"/>
+            <circle cx="18" cy="18" r="2.5" fill="#0D8080"/>
+            <line x1="18" y1="3"  x2="18" y2="8"  stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="28" x2="18" y2="33" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="3"  y1="18" x2="8"  y2="18" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="28" y1="18" x2="33" y2="18" stroke="#0D8080" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="engine-step">Stage 01</span>
+        <h5>ICP &amp; Targeting</h5>
+        <p>Know exactly who you're building for</p>
+      </div>
+
+      <!-- Connector 1→2 -->
+      <div class="engine-connector">
+        <svg class="engine-connector-svg" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line class="engine-con-path" x1="0" y1="8" x2="30" y2="8" stroke="rgba(13,128,128,0.5)" stroke-width="1.5"/>
+          <polyline class="engine-con-path" points="24,4 32,8 24,12" stroke="rgba(13,128,128,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Node 2 -->
+      <div class="engine-node" data-label="Stage 02 — SEO &amp; Content"
+        data-detail="We build topical authority in your category with search-intent content designed for B2B buying cycles that span 3–12 months. Organic search becomes a pull channel — positioning you as the obvious answer to the searches your buyers run before they request a demo.">
+        <div class="engine-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="15" r="8" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+            <line x1="21" y1="21" x2="30" y2="30" stroke="#0D8080" stroke-width="2" stroke-linecap="round"/>
+            <line x1="15" y1="11" x2="15" y2="8" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round"/>
+            <polyline points="12,10 15,7 18,10" fill="none" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="11" y1="15" x2="19" y2="15" stroke="#0D8080" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+        </div>
+        <span class="engine-step">Stage 02</span>
+        <h5>SEO &amp; Content</h5>
+        <p>Pull buyers in with authority content</p>
+      </div>
+
+      <!-- Connector 2→3 -->
+      <div class="engine-connector">
+        <svg class="engine-connector-svg" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line class="engine-con-path" x1="0" y1="8" x2="30" y2="8" stroke="rgba(13,128,128,0.5)" stroke-width="1.5"/>
+          <polyline class="engine-con-path" points="24,4 32,8 24,12" stroke="rgba(13,128,128,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Node 3 -->
+      <div class="engine-node" data-label="Stage 03 — LinkedIn &amp; Paid Media"
+        data-detail="LinkedIn campaigns and Google Ads engineered around pipeline metrics — not CPM benchmarks. We treat paid as a revenue channel: every creative, targeting cluster, and bid strategy is optimised against sales-qualified conversations, not form fills or impressions.">
+        <div class="engine-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3"  y="22" width="7"  height="10" rx="2" fill="#4F46E5" opacity="0.5"/>
+            <rect x="13" y="16" width="7"  height="16" rx="2" fill="#0D8080" opacity="0.7"/>
+            <rect x="23" y="9"  width="7"  height="23" rx="2" fill="#0D8080"/>
+            <polyline points="5,22 16,16 26,9" fill="none" stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 2"/>
+          </svg>
+        </div>
+        <span class="engine-step">Stage 03</span>
+        <h5>LinkedIn &amp; Paid</h5>
+        <p>Reach ICP buyers at the right moment</p>
+      </div>
+
+      <!-- Connector 3→4 -->
+      <div class="engine-connector">
+        <svg class="engine-connector-svg" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line class="engine-con-path" x1="0" y1="8" x2="30" y2="8" stroke="rgba(13,128,128,0.5)" stroke-width="1.5"/>
+          <polyline class="engine-con-path" points="24,4 32,8 24,12" stroke="rgba(13,128,128,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Node 4 -->
+      <div class="engine-node" data-label="Stage 04 — Demand Gen &amp; Nurture"
+        data-detail="Multi-touch nurture sequences, lead scoring models, and CRM workflows designed for complex B2B buying cycles. We keep qualified prospects warm across weeks or months — turning first engagement into a sales-ready conversation without manual follow-up.">
+        <div class="engine-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="28" height="18" rx="4" stroke="#0D8080" stroke-width="1.8" fill="none"/>
+            <polyline points="4,10 18,20 32,10" fill="none" stroke="#0D8080" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="20" y="20" width="14" height="10" rx="3" fill="#4F46E5" opacity="0.85"/>
+            <circle cx="23" cy="28" r="1.5" fill="#fff"/>
+            <circle cx="27" cy="28" r="1.5" fill="#fff"/>
+            <circle cx="31" cy="28" r="1.5" fill="#fff"/>
+          </svg>
+        </div>
+        <span class="engine-step">Stage 04</span>
+        <h5>Demand Gen &amp; Email</h5>
+        <p>Nurture prospects to sales-ready</p>
+      </div>
+
+      <!-- Connector 4→5 -->
+      <div class="engine-connector">
+        <svg class="engine-connector-svg" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line class="engine-con-path" x1="0" y1="8" x2="30" y2="8" stroke="rgba(13,128,128,0.5)" stroke-width="1.5"/>
+          <polyline class="engine-con-path" points="24,4 32,8 24,12" stroke="rgba(13,128,128,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Node 5 -->
+      <div class="engine-node" data-label="Stage 05 — Authority &amp; Pipeline"
+        data-detail="Executive LinkedIn positioning and brand narrative that makes your ICP think of you first. Authority compounds over time — it improves every other channel's conversion rate and generates qualified inbound conversations that no paid spend can manufacture at the same trust level.">
+        <div class="engine-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 18 6 L 22 14 L 31 15.5 L 24.5 21.5 L 26 31 L 18 26.5 L 10 31 L 11.5 21.5 L 5 15.5 L 14 14 Z" stroke="#0D8080" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+            <circle cx="18" cy="18" r="3" fill="#0D8080" opacity="0.7"/>
+          </svg>
+        </div>
+        <span class="engine-step">Stage 05</span>
+        <h5>Authority &amp; Pipeline</h5>
+        <p>Trust compounds across every channel</p>
+      </div>
+
+    </div><!-- /.engine-track -->
+
+    <div class="engine-detail reveal">
+      <div class="engine-detail-label">Hover a stage above to explore how it fits the engine</div>
+      <div class="engine-detail-body">Each stage is designed to make the next one more effective. ICP clarity sharpens every ad and every keyword. Authority content improves paid conversion rates. Nurture sequences reduce the time from first touch to sales conversation. The engine compounds — and so do your results.</div>
+    </div>
+
   </div>
 </section>
 
@@ -1520,7 +1996,7 @@ body::after {
       <div class="footer-col">
         <h5>Connect</h5>
         <ul>
-          <li><a href="mailto:hello@digitinize.com">hello@digitinize.com</a></li>
+          <li><a href="mailto:info@digitinize.com">info@digitinize.com</a></li>
           <li><a href="https://www.linkedin.com/company/digitinize" target="_blank">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/digitinize" target="_blank">Instagram</a></li>
           <li><a href="/contact">Book a call</a></li>
@@ -1592,6 +2068,85 @@ const co = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); co.unobserve(e.target); } });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+
+// ── Scroll progress bar ──
+const scrollProgress = document.querySelector('.scroll-progress');
+if (scrollProgress) {
+  window.addEventListener('scroll', () => {
+    const st = document.documentElement.scrollTop;
+    const dh = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress.style.width = (dh > 0 ? (st / dh * 100) : 0) + '%';
+  }, { passive: true });
+}
+
+// ── Floating dots in hero ──
+(function () {
+  const field = document.querySelector('.hero-dot-field');
+  if (!field) return;
+  for (let i = 0; i < 20; i++) {
+    const dot = document.createElement('span');
+    const size = Math.random() * 4 + 2;
+    dot.style.cssText =
+      'width:' + size + 'px;height:' + size + 'px;' +
+      'left:' + (Math.random() * 100) + '%;' +
+      'top:' + (40 + Math.random() * 60) + '%;' +
+      'animation-duration:' + (Math.random() * 8 + 6) + 's;' +
+      'animation-delay:' + (Math.random() * 8) + 's;';
+    field.appendChild(dot);
+  }
+})();
+
+// ── Revenue Engine section ──
+const engineTrack = document.querySelector('.engine-track');
+const engineDetail = document.querySelector('.engine-detail');
+const engineLabel  = document.querySelector('.engine-detail-label');
+const engineBody   = document.querySelector('.engine-detail-body');
+if (engineTrack) {
+  // Animate connectors when track scrolls into view
+  const engineObs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { engineTrack.classList.add('animated'); engineObs.disconnect(); }
+  }, { threshold: 0.3 });
+  engineObs.observe(engineTrack);
+
+  // Hover interaction — update detail panel
+  document.querySelectorAll('.engine-node').forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      document.querySelectorAll('.engine-node').forEach(n => n.classList.remove('active'));
+      node.classList.add('active');
+      engineDetail.classList.add('updating');
+      setTimeout(() => {
+        engineLabel.textContent = node.dataset.label;
+        engineBody.textContent  = node.dataset.detail;
+        engineDetail.classList.remove('updating');
+      }, 180);
+    });
+    node.addEventListener('mouseleave', () => {
+      node.classList.remove('active');
+    });
+  });
+}
+
+// ── 3D tilt on cards ──
+document.querySelectorAll('.metric-chart-card, .case-card, .testimonial-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform = 'perspective(900px) rotateX(' + (-y * 5) + 'deg) rotateY(' + (x * 5) + 'deg) translateY(-6px)';
+  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+});
+
+// ── Magnetic buttons ──
+document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = (e.clientX - (r.left + r.width  / 2)) * 0.18;
+    const y = (e.clientY - (r.top  + r.height / 2)) * 0.22;
+    btn.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
 </script>
 </body>
 </html>

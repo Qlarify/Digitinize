@@ -202,6 +202,26 @@ body::after {
   }
 }
 
+
+/* ── Nav dropdown ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; cursor: default; }
+.nav-dropdown > a .chev { display: inline-block; width: 10px; height: 6px; flex-shrink: 0; transition: transform .2s cubic-bezier(0.16,1,0.3,1); }
+.nav-dropdown:hover > a .chev { transform: rotate(180deg); }
+.nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(-4px); background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 6px 6px; list-style: none; min-width: 230px; box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s, transform .2s cubic-bezier(0.16,1,0.3,1), visibility .2s; z-index: 200; }
+.nav-dropdown-menu::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--muted); transition: background .15s, color .15s; letter-spacing: 0; }
+.nav-dropdown-menu li a::after { display: none !important; }
+.nav-dropdown-menu li a:hover { background: rgba(13,128,128,0.07); color: var(--paper); }
+.nav-dropdown-menu li a .dd-dot { width: 6px; height: 6px; border-radius: 50%; background: #0D8080; opacity: 0.5; flex-shrink: 0; transition: opacity .15s; }
+.nav-dropdown-menu li a:hover .dd-dot { opacity: 1; }
+.mob-services { display: flex; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+.mob-services-label { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--paper); letter-spacing: -0.02em; padding-bottom: 14px; }
+.mob-services-links { display: flex; flex-direction: column; gap: 0; padding-left: 2px; }
+.mob-services-links a { font-family: var(--font-body) !important; font-size: 15px !important; font-weight: 500 !important; color: var(--muted) !important; letter-spacing: 0 !important; border-bottom: none !important; padding: 8px 0 !important; transition: color .15s; }
+.mob-services-links a:hover { color: var(--paper) !important; }
+
 /* ── Footer ── */
 .footer { border-top: 1px solid var(--border); padding: 80px 0 48px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 56px; }
@@ -430,8 +450,8 @@ body::after {
 <section class="page-hero">
   <div class="container">
     <span class="section-label reveal">Playbooks</span>
-    <h1 class="reveal reveal-delay-1">10 years of B2B growth.<br>Documented.</h1>
-    <p class="reveal reveal-delay-2">We've distilled the frameworks, tactics, and decision trees from 10 years of B2B growth work into free playbooks. No email gate. No upsell sequence. Just the actual thinking.</p>
+    <h1 class="reveal reveal-delay-1">The operational thinking behind 10 years of B2B growth. Published as we go.</h1>
+    <p class="reveal reveal-delay-2">We've distilled the frameworks, tactics, and decision trees from 10 years of B2B growth work into free playbooks. No email gate. No upsell sequence. The frameworks we use with clients, published for anyone who wants them.</p>
   </div>
 </section>
 
@@ -448,7 +468,7 @@ body::after {
           <div class="playbook-tags">
             <span class="tag">Paid</span><span class="tag">Analytics</span>
           </div>
-          <a href="/contact" class="playbook-download">Download free →</a>
+          <a href="/contact" class="playbook-download">Notify me when published →</a>
         </div>
       </div>
       <div class="playbook-card reveal reveal-delay-2">
@@ -461,7 +481,7 @@ body::after {
           <div class="playbook-tags">
             <span class="tag">Lifecycle</span><span class="tag">Email</span><span class="tag">Automation</span>
           </div>
-          <a href="/contact" class="playbook-download">Download free →</a>
+          <a href="/contact" class="playbook-download">Notify me when published →</a>
         </div>
       </div>
       <div class="playbook-card reveal reveal-delay-3">
@@ -474,7 +494,7 @@ body::after {
           <div class="playbook-tags">
             <span class="tag">Content</span><span class="tag">Paid</span>
           </div>
-          <a href="/contact" class="playbook-download">Download free →</a>
+          <a href="/contact" class="playbook-download">Notify me when published →</a>
         </div>
       </div>
       <div class="playbook-card reveal reveal-delay-1">
@@ -487,7 +507,7 @@ body::after {
           <div class="playbook-tags">
             <span class="tag">Analytics</span><span class="tag">Attribution</span>
           </div>
-          <a href="/contact" class="playbook-download">Download free →</a>
+          <a href="/contact" class="playbook-download">Notify me when published →</a>
         </div>
       </div>
       <div class="playbook-card reveal reveal-delay-2">
@@ -514,7 +534,7 @@ body::after {
           <div class="playbook-tags">
             <span class="tag">Retention</span><span class="tag">Expansion</span>
           </div>
-          <a href="/contact" class="playbook-download">Download free →</a>
+          <a href="/contact" class="playbook-download">Notify me when published →</a>
         </div>
       </div>
     </div>
@@ -527,7 +547,7 @@ body::after {
       <h2>Want the thinking behind<br>the playbooks?</h2>
       <p>Book a strategy call. We'll walk through your specific situation. No playbook required.</p>
       <div class="cta-actions">
-        <a href="/contact" class="btn-primary">Book a free call →</a>
+        <a href="/contact" class="btn-primary">Book a fit call →</a>
       </div>
     </div>
   </div>
@@ -547,7 +567,7 @@ body::after {
           <li><a href="/services/b2b-seo">SEO &amp; Content</a></li>
           <li><a href="/services/linkedin-ads">LinkedIn &amp; Paid Media</a></li>
           <li><a href="/services/demand-generation">Demand Generation</a></li>
-          <li><a href="/services/authority-positioning">Thought Leadership</a></li>
+          <li><a href="/services/authority-positioning">Authority Positioning</a></li>
           <li><a href="/services/marketing-automation">Marketing Automation</a></li>
         </ul>
       </div>
@@ -563,7 +583,7 @@ body::after {
       <div class="footer-col">
         <h5>Connect</h5>
         <ul>
-          <li><a href="mailto:hello@digitinize.com">hello@digitinize.com</a></li>
+          <li><a href="mailto:info@digitinize.com">info@digitinize.com</a></li>
           <li><a href="https://www.linkedin.com/company/digitinize" target="_blank">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/digitinize" target="_blank">Instagram</a></li>
           <li><a href="/contact">Book a call</a></li>
