@@ -211,6 +211,26 @@ body::after {
   }
 }
 
+
+/* ── Nav dropdown ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; cursor: default; }
+.nav-dropdown > a .chev { display: inline-block; width: 10px; height: 6px; flex-shrink: 0; transition: transform .2s cubic-bezier(0.16,1,0.3,1); }
+.nav-dropdown:hover > a .chev { transform: rotate(180deg); }
+.nav-dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(-4px); background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 6px 6px; list-style: none; min-width: 230px; box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s, transform .2s cubic-bezier(0.16,1,0.3,1), visibility .2s; z-index: 200; }
+.nav-dropdown-menu::before { content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px; }
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--muted); transition: background .15s, color .15s; letter-spacing: 0; }
+.nav-dropdown-menu li a::after { display: none !important; }
+.nav-dropdown-menu li a:hover { background: rgba(13,128,128,0.07); color: var(--paper); }
+.nav-dropdown-menu li a .dd-dot { width: 6px; height: 6px; border-radius: 50%; background: #0D8080; opacity: 0.5; flex-shrink: 0; transition: opacity .15s; }
+.nav-dropdown-menu li a:hover .dd-dot { opacity: 1; }
+.mob-services { display: flex; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+.mob-services-label { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--paper); letter-spacing: -0.02em; padding-bottom: 14px; }
+.mob-services-links { display: flex; flex-direction: column; gap: 0; padding-left: 2px; }
+.mob-services-links a { font-family: var(--font-body) !important; font-size: 15px !important; font-weight: 500 !important; color: var(--muted) !important; letter-spacing: 0 !important; border-bottom: none !important; padding: 8px 0 !important; transition: color .15s; }
+.mob-services-links a:hover { color: var(--paper) !important; }
+
 /* ── Footer ── */
 .footer { border-top: 1px solid var(--border); padding: 80px 0 48px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 56px; }
