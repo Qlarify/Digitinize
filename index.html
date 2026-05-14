@@ -216,6 +216,58 @@ body::after {
   }
 }
 
+/* ── Nav dropdown ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: inline-flex; align-items: center; gap: 5px; }
+.nav-dropdown > a .chev {
+  display: inline-block; width: 10px; height: 6px; flex-shrink: 0;
+  transition: transform .2s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-dropdown:hover > a .chev { transform: rotate(180deg); }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 16px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 12px; padding: 6px; list-style: none;
+  min-width: 230px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .2s, transform .2s cubic-bezier(0.16,1,0.3,1), visibility .2s;
+  z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu li a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 8px;
+  font-size: 13px; font-weight: 500; color: var(--muted);
+  transition: background .15s, color .15s;
+  letter-spacing: 0;
+}
+.nav-dropdown-menu li a::after { display: none !important; }
+.nav-dropdown-menu li a:hover { background: rgba(13,128,128,0.07); color: var(--paper); }
+.nav-dropdown-menu li a .dd-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #0D8080; opacity: 0.5; flex-shrink: 0; transition: opacity .15s;
+}
+.nav-dropdown-menu li a:hover .dd-dot { opacity: 1; }
+/* Mobile services sub-nav */
+.mob-services { display: flex; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+.mob-services-label {
+  font-family: var(--font-display); font-size: 40px; font-weight: 700;
+  color: var(--paper); letter-spacing: -0.02em; padding-bottom: 14px;
+}
+.mob-services-links { display: flex; flex-direction: column; gap: 0; padding-left: 2px; }
+.mob-services-links a {
+  font-family: var(--font-body) !important; font-size: 15px !important; font-weight: 500 !important;
+  color: var(--muted) !important; letter-spacing: 0 !important;
+  border-bottom: none !important; padding: 8px 0 !important;
+  transition: color .15s;
+}
+.mob-services-links a:hover { color: var(--paper) !important; }
+
 /* ── Footer ── */
 .footer { border-top: 1px solid var(--border); padding: 80px 0 48px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 56px; }
@@ -692,20 +744,38 @@ body::after {
 <nav class="nav">
   <a href="index.html" class="nav-logo">Digitinize <span style="color:#0D8080">Creative</span><span>.</span></a>
   <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li>
-<li><a href="services.html" class="">Growth Services</a></li>
+<li class="nav-dropdown">
+  <a href="/services" class="">Services <svg class="chev" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <ul class="nav-dropdown-menu">
+    <li><a href="/services/b2b-seo"><span class="dd-dot"></span>B2B SEO &amp; Content</a></li>
+    <li><a href="/services/linkedin-ads"><span class="dd-dot"></span>LinkedIn &amp; Paid Media</a></li>
+    <li><a href="/services/demand-generation"><span class="dd-dot"></span>Demand Generation</a></li>
+    <li><a href="/services/authority-positioning"><span class="dd-dot"></span>Authority Positioning</a></li>
+    <li><a href="/services/marketing-automation"><span class="dd-dot"></span>Marketing Automation</a></li>
+  </ul>
+</li>
 <li><a href="how-we-work.html" class="">How We Work</a></li>
 <li><a href="about.html" class="">About</a></li>
 <li><a href="playbooks.html" class="">Playbooks</a></li></ul>
-  <a href="contact.html" class="nav-cta">Apply to work with us →</a>
+  <a href="contact.html" class="nav-cta">Let's talk →</a>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile">
   <a href="index.html">Home</a>
-<a href="services.html">Growth Services</a>
+<div class="mob-services">
+  <a href="/services" class="mob-services-label">Services</a>
+  <div class="mob-services-links">
+    <a href="/services/b2b-seo">→ B2B SEO &amp; Content</a>
+    <a href="/services/linkedin-ads">→ LinkedIn &amp; Paid Media</a>
+    <a href="/services/demand-generation">→ Demand Generation</a>
+    <a href="/services/authority-positioning">→ Authority Positioning</a>
+    <a href="/services/marketing-automation">→ Marketing Automation</a>
+  </div>
+</div>
 <a href="how-we-work.html">How We Work</a>
 <a href="about.html">About</a>
 <a href="playbooks.html">Playbooks</a>
-  <a href="contact.html" class="mob-cta">Apply to work with us →</a>
+  <a href="contact.html" class="mob-cta">Let's talk →</a>
 </div>
 
 
@@ -720,7 +790,7 @@ body::after {
         <h1 class="reveal reveal-delay-1">Your B2B growth team.<br><em>Built in, not bolted on.</em></h1>
         <p class="hero-sub reveal reveal-delay-2">Senior revenue marketers embedded inside your business — accountable to pipeline, not presentations. We run the marketing. You run the company.</p>
         <div class="hero-actions reveal reveal-delay-3">
-          <a href="contact.html" class="btn-primary">Apply to work with us →</a>
+          <a href="contact.html" class="btn-primary">Let's talk →</a>
           <a href="how-we-work.html" class="btn-outline">See how we work</a>
         </div>
         <p class="reveal reveal-delay-4" style="margin-top:20px;font-size:13px;color:var(--muted);letter-spacing:0.01em">90% client retention · 18-month average engagement · 10 years B2B only</p>
@@ -1188,7 +1258,7 @@ body::after {
         <h4>Organic Search &amp; Content</h4>
         <p>Technical SEO, editorial strategy, and topical authority built for complex B2B buying cycles. We turn organic search from a vanity traffic source into a qualified pipeline channel.</p>
         <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: steady, compounding lift in qualified organic traffic over 6–12 months</div>
-        <a href="services.html#seo" class="learn">Learn more →</a>
+        <a href="/services/b2b-seo" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-2">
         <div class="service-num">02</div>
@@ -1202,7 +1272,7 @@ body::after {
         <h4>LinkedIn &amp; Paid Media</h4>
         <p>LinkedIn campaigns, Google Ads, and programmatic, structured around your ICP and deal size, not CPM benchmarks. We run paid as a revenue channel, not a brand spend.</p>
         <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: meaningful ROAS lift on existing paid portfolios — without new budget</div>
-        <a href="services.html#paid" class="learn">Learn more →</a>
+        <a href="/services/linkedin-ads" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-3">
         <div class="service-num">03</div>
@@ -1215,7 +1285,7 @@ body::after {
         <h4>Demand Generation</h4>
         <p>Multi-touch B2B campaigns designed for long buying cycles, from first awareness through sales-ready conversation. Tight alignment to sales handoff throughout.</p>
         <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: stronger MQL→SQL conversion once targeting and qualification tighten</div>
-        <a href="services.html#demand" class="learn">Learn more →</a>
+        <a href="/services/demand-generation" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-4">
         <div class="service-num">04</div>
@@ -1233,7 +1303,7 @@ body::after {
         <h4>Authority Positioning &amp; B2B Social</h4>
         <p>Executive positioning on LinkedIn, corporate brand narrative, and content that makes your ICP think of you first. In B2B, trust is the product. We build it at scale.</p>
         <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: a steady lift in qualified inbound conversations once positioning compounds</div>
-        <a href="services.html#social" class="learn">Learn more →</a>
+        <a href="/services/authority-positioning" class="learn">Learn more →</a>
       </div>
       <div class="card service-card reveal reveal-delay-5">
         <div class="service-num">05</div>
@@ -1249,7 +1319,7 @@ body::after {
         <h4>Marketing Automation &amp; Email</h4>
         <p>Automated sequences, lead scoring, and CRM workflow design built for B2B sales cycles that span weeks or months. Systems that scale, not email blasts you rebuild every quarter.</p>
         <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: tighter, more predictable sales cycles as nurture and scoring mature</div>
-        <a href="services.html#email" class="learn">Learn more →</a>
+        <a href="/services/marketing-automation" class="learn">Learn more →</a>
       </div>
     </div>
   </div>
@@ -1408,7 +1478,7 @@ body::after {
       <h2>If you want a growth partner that thinks like an operator and executes like a team —</h2>
       <p>We take on 4–6 new client partnerships per year. If you're evaluating growth partners, now is the right time to start the conversation.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn-primary">Apply to work with us →</a>
+        <a href="contact.html" class="btn-primary">Let's talk →</a>
         <a href="how-we-work.html" class="btn-outline">Read how we work first</a>
       </div>
       <p style="margin-top:24px;font-size:13px;color:var(--muted);max-width:none;text-align:center">90% retention · 18-month average tenure · 10 years B2B only · No account managers</p>
@@ -1427,11 +1497,11 @@ body::after {
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
-          <li><a href="services.html#seo">SEO &amp; Content</a></li>
-          <li><a href="services.html#paid">LinkedIn &amp; Paid Media</a></li>
-          <li><a href="services.html#demand">Demand Generation</a></li>
-          <li><a href="services.html#social">B2B Social &amp; Thought Leadership</a></li>
-          <li><a href="services.html#email">Marketing Automation</a></li>
+          <li><a href="/services/b2b-seo">SEO &amp; Content</a></li>
+          <li><a href="/services/linkedin-ads">LinkedIn &amp; Paid Media</a></li>
+          <li><a href="/services/demand-generation">Demand Generation</a></li>
+          <li><a href="/services/authority-positioning">Authority Positioning</a></li>
+          <li><a href="/services/marketing-automation">Marketing Automation</a></li>
         </ul>
       </div>
       <div class="footer-col">
