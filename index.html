@@ -225,15 +225,19 @@ body::after {
 }
 .nav-dropdown:hover > a .chev { transform: rotate(180deg); }
 .nav-dropdown-menu {
-  position: absolute; top: calc(100% + 16px); left: 50%;
-  transform: translateX(-50%) translateY(-6px);
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(-4px);
   background: #fff; border: 1px solid var(--border);
-  border-radius: 12px; padding: 6px; list-style: none;
+  border-radius: 12px; padding: 14px 6px 6px; list-style: none;
   min-width: 230px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
   opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity .2s, transform .2s cubic-bezier(0.16,1,0.3,1), visibility .2s;
   z-index: 200;
+}
+/* Invisible bridge fills the gap so hover doesn't drop when moving toward menu */
+.nav-dropdown-menu::before {
+  content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px;
 }
 .nav-dropdown:hover .nav-dropdown-menu {
   opacity: 1; visibility: visible; pointer-events: auto;
@@ -742,8 +746,8 @@ body::after {
 <div class="cursor-ring"></div>
 
 <nav class="nav">
-  <a href="index.html" class="nav-logo">Digitinize <span style="color:#0D8080">Creative</span><span>.</span></a>
-  <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li>
+  <a href="/" class="nav-logo">Digitinize <span style="color:#0D8080">Creative</span><span>.</span></a>
+  <ul class="nav-links"><li><a href="/" class="active">Home</a></li>
 <li class="nav-dropdown">
   <a href="/services" class="">Services <svg class="chev" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <ul class="nav-dropdown-menu">
@@ -754,14 +758,14 @@ body::after {
     <li><a href="/services/marketing-automation"><span class="dd-dot"></span>Marketing Automation</a></li>
   </ul>
 </li>
-<li><a href="how-we-work.html" class="">How We Work</a></li>
-<li><a href="about.html" class="">About</a></li>
-<li><a href="playbooks.html" class="">Playbooks</a></li></ul>
-  <a href="contact.html" class="nav-cta">Let's talk →</a>
+<li><a href="/how-we-work" class="">How We Work</a></li>
+<li><a href="/about" class="">About</a></li>
+<li><a href="/playbooks" class="">Playbooks</a></li></ul>
+  <a href="/contact" class="nav-cta">Let's talk →</a>
   <div class="nav-hamburger"><span></span><span></span><span></span></div>
 </nav>
 <div class="nav-mobile">
-  <a href="index.html">Home</a>
+  <a href="/">Home</a>
 <div class="mob-services">
   <a href="/services" class="mob-services-label">Services</a>
   <div class="mob-services-links">
@@ -772,10 +776,10 @@ body::after {
     <a href="/services/marketing-automation">→ Marketing Automation</a>
   </div>
 </div>
-<a href="how-we-work.html">How We Work</a>
-<a href="about.html">About</a>
-<a href="playbooks.html">Playbooks</a>
-  <a href="contact.html" class="mob-cta">Let's talk →</a>
+<a href="/how-we-work">How We Work</a>
+<a href="/about">About</a>
+<a href="/playbooks">Playbooks</a>
+  <a href="/contact" class="mob-cta">Let's talk →</a>
 </div>
 
 
@@ -790,8 +794,8 @@ body::after {
         <h1 class="reveal reveal-delay-1">Your B2B growth team.<br><em>Built in, not bolted on.</em></h1>
         <p class="hero-sub reveal reveal-delay-2">Senior revenue marketers embedded inside your business — accountable to pipeline, not presentations. We run the marketing. You run the company.</p>
         <div class="hero-actions reveal reveal-delay-3">
-          <a href="contact.html" class="btn-primary">Let's talk →</a>
-          <a href="how-we-work.html" class="btn-outline">See how we work</a>
+          <a href="/contact" class="btn-primary">Let's talk →</a>
+          <a href="/how-we-work" class="btn-outline">See how we work</a>
         </div>
         <p class="reveal reveal-delay-4" style="margin-top:20px;font-size:13px;color:var(--muted);letter-spacing:0.01em">90% client retention · 18-month average engagement · 10 years B2B only</p>
       </div>
@@ -1174,7 +1178,7 @@ body::after {
             <li>Systems that compound: infrastructure that gets more efficient over time</li>
             <li>Long-term by design: 18-month average engagement, not a 90-day sprint</li>
           </ul>
-          <a href="how-we-work.html" class="btn-primary" style="margin-top:28px">See how we work →</a>
+          <a href="/how-we-work" class="btn-primary" style="margin-top:28px">See how we work →</a>
         </div>
       </div>
     </div>
@@ -1407,7 +1411,7 @@ body::after {
       </div>
     </div>
     <div style="text-align:center;margin-top:48px" class="reveal">
-      <a href="how-we-work.html" class="btn-outline">Full engagement detail →</a>
+      <a href="/how-we-work" class="btn-outline">Full engagement detail →</a>
     </div>
   </div>
 </section>
@@ -1425,7 +1429,7 @@ body::after {
           Zeeshan Soudagar
           <span>Founder &amp; Creative Director, Digitinize · 10 years B2B only</span>
         </div>
-        <a href="about.html" style="display:inline-block;margin-top:24px;font-size:14px;color:var(--signal);font-weight:500">Read the full story →</a>
+        <a href="/about" style="display:inline-block;margin-top:24px;font-size:14px;color:var(--signal);font-weight:500">Read the full story →</a>
       </div>
     </div>
   </div>
@@ -1478,8 +1482,8 @@ body::after {
       <h2>If you want a growth partner that thinks like an operator and executes like a team —</h2>
       <p>We take on 4–6 new client partnerships per year. If you're evaluating growth partners, now is the right time to start the conversation.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn-primary">Let's talk →</a>
-        <a href="how-we-work.html" class="btn-outline">Read how we work first</a>
+        <a href="/contact" class="btn-primary">Let's talk →</a>
+        <a href="/how-we-work" class="btn-outline">Read how we work first</a>
       </div>
       <p style="margin-top:24px;font-size:13px;color:var(--muted);max-width:none;text-align:center">90% retention · 18-month average tenure · 10 years B2B only · No account managers</p>
     </div>
@@ -1507,10 +1511,10 @@ body::after {
       <div class="footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="how-we-work.html">How We Work</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="playbooks.html">Playbooks</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/how-we-work">How We Work</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/playbooks">Playbooks</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1519,7 +1523,7 @@ body::after {
           <li><a href="mailto:hello@digitinize.com">hello@digitinize.com</a></li>
           <li><a href="https://www.linkedin.com/company/digitinize" target="_blank">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/digitinize" target="_blank">Instagram</a></li>
-          <li><a href="contact.html">Book a call</a></li>
+          <li><a href="/contact">Book a call</a></li>
         </ul>
       </div>
     </div>
