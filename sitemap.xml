@@ -11,6 +11,31 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://digitinize.com/services/b2b-seo</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://digitinize.com/services/linkedin-ads</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://digitinize.com/services/demand-generation</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://digitinize.com/services/authority-positioning</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://digitinize.com/services/marketing-automation</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://digitinize.com/how-we-work</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -24,6 +49,11 @@
     <loc>https://digitinize.com/playbooks</loc>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://digitinize.com/playbooks/b2b-pipeline-audit</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://digitinize.com/contact</loc>
