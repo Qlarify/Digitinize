@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/services", "dest": "/services.html" },
+    { "src": "/services/b2b-seo", "dest": "/services/b2b-seo.html" },
+    { "src": "/services/linkedin-ads", "dest": "/services/linkedin-ads.html" },
+    { "src": "/services/demand-generation", "dest": "/services/demand-generation.html" },
+    { "src": "/services/authority-positioning", "dest": "/services/authority-positioning.html" },
+    { "src": "/services/marketing-automation", "dest": "/services/marketing-automation.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/how-we-work", "dest": "/how-we-work.html" },
+    { "src": "/contact", "dest": "/contact.html" },
+    { "src": "/playbooks", "dest": "/playbooks.html" },
+    { "src": "/playbooks/b2b-pipeline-audit", "dest": "/playbooks/b2b-pipeline-audit.html" }
+  ]
+}
