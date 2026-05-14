@@ -438,6 +438,24 @@ body::after {
 .guarantee-list li::before { content:'→'; color:var(--signal); font-weight:700; }
 @media (max-width:640px) { .guarantee-card { grid-template-columns:1fr; } }
 
+/* ── Engagement Gantt ── */
+.gantt-section { padding:var(--section-gap) 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:rgba(244,241,232,0.015); }
+.gantt-wrap { overflow-x:auto; margin-top:40px; }
+.gantt-inner { min-width:580px; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.gantt-row { display:grid; grid-template-columns:140px repeat(4,1fr); border-bottom:1px solid var(--border); }
+.gantt-row:last-child { border-bottom:none; }
+.gantt-row.gantt-header { background:rgba(13,128,128,0.05); }
+.gantt-lbl { padding:14px 16px; border-right:1px solid var(--border); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); display:flex; align-items:center; }
+.gantt-header .gantt-lbl { align-items:flex-end; font-size:10px; }
+.gantt-cell { padding:12px 14px; border-right:1px solid var(--border); font-size:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; text-align:center; }
+.gantt-cell:last-child { border-right:none; }
+.gantt-phase-name { font-size:12px; font-weight:700; color:var(--paper); }
+.gantt-phase-time { font-family:var(--font-mono); font-size:10px; color:var(--signal); margin-top:2px; }
+.gbr-full { background:rgba(13,128,128,0.12); border:1px solid rgba(13,128,128,0.28); border-radius:6px; padding:7px 10px; font-size:11px; font-weight:600; color:var(--signal); width:100%; text-align:center; }
+.gbr-light { background:rgba(79,70,229,0.08); border:1px solid rgba(79,70,229,0.2); border-radius:6px; padding:5px 8px; font-size:11px; color:#818CF8; width:100%; text-align:center; }
+.gdel-tag { font-size:10px; background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:4px; padding:3px 7px; color:var(--muted); }
+.gtime-badge { display:inline-flex; align-items:center; gap:4px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.22); border-radius:20px; padding:4px 10px; font-size:10px; font-weight:600; color:#F59E0B; }
+
 </style>
 </head>
 <body>
@@ -620,6 +638,73 @@ body::after {
             <span class="phase-deliverable">Budget scaling framework</span>
             <span class="phase-deliverable">Quarterly strategy review</span>
             <span class="phase-deliverable">LTV cohort tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gantt-section">
+  <div class="container">
+    <span class="section-label reveal">Engagement timeline</span>
+    <h2 class="reveal reveal-delay-1">What happens when, and<br>what we need from you.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px;max-width:60ch">Most engagements follow a four-phase arc. Here's what Digitinize does at each stage, what it requires from your side, and what you get out of it.</p>
+    <div class="gantt-wrap reveal">
+      <div class="gantt-inner">
+        <div class="gantt-row gantt-header">
+          <div class="gantt-lbl">Activity</div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Diagnostic</div>
+            <div class="gantt-phase-time">W1 – W2</div>
+          </div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Blueprint</div>
+            <div class="gantt-phase-time">W3</div>
+          </div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Build & Launch</div>
+            <div class="gantt-phase-time">W4 – W8</div>
+          </div>
+          <div class="gantt-cell">
+            <div class="gantt-phase-name">Compound</div>
+            <div class="gantt-phase-time">M3 onwards</div>
+          </div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-lbl">Digitinize</div>
+          <div class="gantt-cell"><div class="gbr-full">ICP, tech stack, funnel &amp; channel audit</div></div>
+          <div class="gantt-cell"><div class="gbr-full">Growth blueprint + 90-day roadmap</div></div>
+          <div class="gantt-cell"><div class="gbr-full">All channels live — campaigns, content, flows</div></div>
+          <div class="gantt-cell"><div class="gbr-full">Continuous optimisation, quarterly strategy</div></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-lbl">Client time</div>
+          <div class="gantt-cell"><span class="gtime-badge">~5–6 hrs / week</span></div>
+          <div class="gantt-cell"><span class="gtime-badge">~3 hrs total</span></div>
+          <div class="gantt-cell"><span class="gtime-badge">~2 hrs / week</span></div>
+          <div class="gantt-cell"><span class="gtime-badge">~1 hr / week</span></div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-lbl">Deliverables</div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">ICP definition</span>
+            <span class="gdel-tag">Funnel map</span>
+            <span class="gdel-tag">Stack audit</span>
+          </div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">Blueprint deck</span>
+            <span class="gdel-tag">Channel roadmap</span>
+          </div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">Live campaigns</span>
+            <span class="gdel-tag">Content calendar</span>
+            <span class="gdel-tag">Reporting dashboards</span>
+          </div>
+          <div class="gantt-cell">
+            <span class="gdel-tag">Weekly reports</span>
+            <span class="gdel-tag">Quarterly reviews</span>
+            <span class="gdel-tag">Pipeline attribution</span>
           </div>
         </div>
       </div>

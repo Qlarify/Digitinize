@@ -715,6 +715,66 @@ body::after {
   .comparison-table th:nth-child(2), .comparison-table td:nth-child(2) { display: none; }
 }
 
+/* ─── B2B Buying Journey Infographic ─── */
+.journey-section { padding: var(--section-gap) 0; }
+.journey-header { margin-bottom: 40px; }
+.journey-infographic {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+.jcol {
+  border-right: 1px solid var(--border);
+  padding: 24px 18px 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative;
+}
+.jcol:last-child { border-right: none; }
+.jcol:nth-child(5) .jstage-hd { background: linear-gradient(135deg, rgba(79,70,229,0.12), rgba(13,128,128,0.08)); }
+.jstage-hd {
+  background: rgba(13,128,128,0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.jstage-num { font-family: var(--font-mono); font-size: 10px; color: var(--signal); letter-spacing: .08em; margin-bottom: 6px; }
+.jstage-name { font-size: 13px; font-weight: 700; color: var(--paper); margin-bottom: 4px; }
+.jstage-timeline { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+.jrow-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+.jrow-buyer { font-size: 12px; color: var(--text); line-height: 1.5; min-height: 52px; }
+.jrow-channels { display: flex; flex-wrap: wrap; gap: 5px; min-height: 40px; }
+.jch-pill {
+  font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px;
+  letter-spacing: .04em;
+}
+.ch-seo    { background: rgba(13,128,128,0.12); color: #0D8080; border: 1px solid rgba(13,128,128,0.25); }
+.ch-auth   { background: rgba(17,29,94,0.18); color: #7C85D0; border: 1px solid rgba(79,70,229,0.25); }
+.ch-li     { background: rgba(79,70,229,0.10); color: #818CF8; border: 1px solid rgba(79,70,229,0.25); }
+.ch-demand { background: rgba(245,158,11,0.10); color: #F59E0B; border: 1px solid rgba(245,158,11,0.25); }
+.ch-email  { background: rgba(16,185,129,0.10); color: #10B981; border: 1px solid rgba(16,185,129,0.25); }
+.ch-auto   { background: rgba(139,92,246,0.10); color: #A78BFA; border: 1px solid rgba(139,92,246,0.25); }
+.jrow-tactics { display: flex; flex-wrap: wrap; gap: 5px; }
+.jtag { font-size: 10px; color: var(--muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 4px; padding: 2px 7px; }
+.journey-arrow {
+  display: none; /* hidden on mobile, shown on md+ */
+}
+@media (max-width: 860px) {
+  .journey-infographic { grid-template-columns: 1fr 1fr; }
+  .jcol:nth-child(2) { border-right: none; }
+  .jcol:nth-child(4) { border-right: none; }
+  .jcol:nth-child(5) { grid-column: span 2; border-right: none; }
+}
+@media (max-width: 540px) {
+  .journey-infographic { grid-template-columns: 1fr; }
+  .jcol { border-right: none; border-bottom: 1px solid var(--border); }
+  .jcol:last-child { border-bottom: none; }
+  .jcol:nth-child(5) { grid-column: span 1; }
+}
+
 /* ─── Interactive Animations & Infographics ─── */
 
 /* Scroll progress */
@@ -1317,6 +1377,149 @@ body::after {
   </div>
 </section>
 
+<!-- B2B BUYING JOURNEY -->
+<section class="journey-section">
+  <div class="container">
+    <div class="journey-header">
+      <span class="section-label reveal">How B2B buyers actually buy</span>
+      <h2 class="reveal reveal-delay-1">Map your marketing to the buying journey.</h2>
+      <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Most agencies run tactics. We run a full-funnel programme tied to where your buyers actually are — and what moves them forward at each stage.</p>
+    </div>
+    <div class="journey-infographic reveal">
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 01</div>
+          <div class="jstage-name">Problem Aware</div>
+          <div class="jstage-timeline">Months 0–3</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Recognises a problem but hasn't framed it as a buying opportunity yet</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-seo">SEO</span>
+            <span class="jch-pill ch-auth">Thought Leadership</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Topical clusters</span>
+            <span class="jtag">Pain-point content</span>
+            <span class="jtag">Exec LinkedIn posts</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 02</div>
+          <div class="jstage-name">Solution Aware</div>
+          <div class="jstage-timeline">Months 3–6</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Actively researching solutions and building an internal case</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-auth">Authority</span>
+            <span class="jch-pill ch-seo">SEO</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Comparison guides</span>
+            <span class="jtag">Case studies</span>
+            <span class="jtag">ICP whitepapers</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 03</div>
+          <div class="jstage-name">Vendor Evaluation</div>
+          <div class="jstage-timeline">Months 6–9</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Shortlisting vendors, running internal reviews, assessing risk</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-li">LinkedIn Ads</span>
+            <span class="jch-pill ch-demand">Demand Gen</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">ABM retargeting</span>
+            <span class="jtag">Champion nurture</span>
+            <span class="jtag">ROI calculators</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 04</div>
+          <div class="jstage-name">Decision</div>
+          <div class="jstage-timeline">Months 9–12</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Ready to commit — needs confidence, not more information</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-email">Email</span>
+            <span class="jch-pill ch-demand">Demand Gen</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Proof sequences</span>
+            <span class="jtag">Sales enablement</span>
+            <span class="jtag">Direct outreach</span>
+          </div>
+        </div>
+      </div>
+      <div class="jcol">
+        <div class="jstage-hd">
+          <div class="jstage-num">STAGE 05</div>
+          <div class="jstage-name">Expansion</div>
+          <div class="jstage-timeline">Month 12+</div>
+        </div>
+        <div>
+          <div class="jrow-label">Buyer state</div>
+          <div class="jrow-buyer">Customer — primed for upsell, renewal, and referral if nurtured right</div>
+        </div>
+        <div>
+          <div class="jrow-label">Channels we run</div>
+          <div class="jrow-channels">
+            <span class="jch-pill ch-auto">Automation</span>
+            <span class="jch-pill ch-email">Email</span>
+          </div>
+        </div>
+        <div>
+          <div class="jrow-label">Tactics</div>
+          <div class="jrow-tactics">
+            <span class="jtag">Lifecycle sequences</span>
+            <span class="jtag">NPS + advocacy</span>
+            <span class="jtag">Cross-sell flows</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- COMPARISON TABLE -->
 <section class="comparison-section" style="padding:var(--section-gap) 0">
   <div class="container">
@@ -1369,6 +1572,12 @@ body::after {
             <td><span class="partial">~</span><br><span style="font-size:11px">Margin-heavy model</span></td>
             <td><span class="cross">✕</span><br><span style="font-size:11px">Salary + benefits + tools</span></td>
             <td class="col-us"><span class="check">✓</span><br><span style="font-size:11px">Senior team, fraction of cost</span></td>
+          </tr>
+          <tr style="background:rgba(13,128,128,0.03)">
+            <td style="font-weight:600">Approximate annual investment</td>
+            <td><span style="font-size:13px;font-weight:600;color:var(--muted)">₹30L – 60L</span><br><span style="font-size:11px">Retainer + ad spend</span></td>
+            <td><span style="font-size:13px;font-weight:600;color:var(--muted)">₹45L – 90L</span><br><span style="font-size:11px">Salary + PF + tools + mgmt</span></td>
+            <td class="col-us"><span style="font-size:13px;font-weight:700;color:var(--signal)">₹12L – 24L</span><br><span style="font-size:11px">Full senior team, all 5 channels</span></td>
           </tr>
         </tbody>
       </table>
