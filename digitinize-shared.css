@@ -8,7 +8,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: #F4F9F9;
+  background: linear-gradient(160deg, #EAF4F4 0%, #F4F9F9 35%, #F1F3FB 70%, #EFF4FB 100%);
   color: #0E1338;
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.65;
@@ -58,9 +58,10 @@ section { padding: var(--section-gap) 0; }
 body::before {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(ellipse 90% 70% at 100% -5%, rgba(13,128,128,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 60% at -10% 45%, rgba(79,70,229,0.05) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 50% 110%, rgba(79,70,229,0.03) 0%, transparent 50%);
+    radial-gradient(ellipse 90% 60% at 105%  -8%,  rgba(13,128,128,0.18) 0%, transparent 52%),
+    radial-gradient(ellipse 65% 55% at  -8%  48%,  rgba(17,29,94,0.13)  0%, transparent 52%),
+    radial-gradient(ellipse 55% 45% at  52% 108%,  rgba(79,70,229,0.12) 0%, transparent 48%),
+    radial-gradient(ellipse 40% 35% at  50%  52%,  rgba(13,128,128,0.04) 0%, transparent 60%);
 }
 body > * { position: relative; z-index: 1; }
 body::after {
