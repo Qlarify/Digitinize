@@ -60,6 +60,19 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is revenue marketing?", "acceptedAnswer": {"@type": "Answer", "text": "Revenue marketing is a model where the marketing team is held accountable to pipeline and closed revenue — not impressions, MQLs, or traffic. Every channel is measured against pipeline contribution, not activity reports."}},
+    {"@type": "Question", "name": "What does an embedded B2B marketing agency do?", "acceptedAnswer": {"@type": "Answer", "text": "An embedded agency operates inside your business — in your Slack, standups, and strategy calls — owning channels, strategy, and execution while measuring themselves against your pipeline number."}},
+    {"@type": "Question", "name": "B2B marketing agency vs in-house team — which is better?", "acceptedAnswer": {"@type": "Answer", "text": "In-house wins on institutional knowledge. Agencies win on breadth of skill and channel expertise. The common pattern: an in-house generalist coordinates strategy while the agency operates as the senior execution layer for specialised channels."}},
+    {"@type": "Question", "name": "How much does B2B marketing cost in India?", "acceptedAnswer": {"@type": "Answer", "text": "A meaningful B2B marketing program in India typically runs ₹4L–₹15L/month. SEO: ₹1.5L–₹3L. LinkedIn ads: ₹4L–₹8L. Demand gen and ABM: ₹6L–₹15L. Marketing automation: ₹2L–₹5L one-time setup."}},
+    {"@type": "Question", "name": "What is the difference between demand generation and lead generation?", "acceptedAnswer": {"@type": "Answer", "text": "Lead generation captures buyers already in-market. Demand generation creates the conditions for that — building awareness across the 90–95% of your market not ready to buy today. B2B companies with long sales cycles need both."}}
+  ]
+}
+</script>
 <!-- GA4: Replace G-XXXXXXXXXX with your Measurement ID -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
@@ -979,6 +992,12 @@ body::after {
 .industry-tile:hover { border-color: rgba(13,128,128,0.4); box-shadow: 0 8px 24px rgba(13,128,128,0.12); transform: translateY(-4px); }
 .industry-tile svg { transition: transform .25s cubic-bezier(0.16,1,0.3,1); }
 .industry-tile:hover svg { transform: scale(1.15) rotate(-5deg); }
+
+.faq { display: flex; flex-direction: column; gap: 16px; max-width: 800px; margin-top: 32px; }
+.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; transition: border-color .2s; }
+.faq-item:hover { border-color: var(--border-hover); }
+.faq-item h3 { font-family: var(--font-body); font-size: 17px; font-weight: 600; color: var(--paper); margin-bottom: 10px; letter-spacing: -0.005em; }
+.faq-item p { font-size: 15px; max-width: none; }
 
 </style>
 </head>
@@ -2081,6 +2100,21 @@ body::after {
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section-alt">
+  <div class="container">
+    <span class="section-label reveal">Common Questions</span>
+    <h2 class="reveal reveal-delay-1" style="max-width:20ch;margin-bottom:48px">Questions we hear most often.</h2>
+    <div class="faq">
+      <div class="faq-item reveal"><h3>What is revenue marketing?</h3><p>Revenue marketing is a model where the marketing team is held accountable to pipeline and closed revenue — not impressions, MQLs, or traffic. Instead of reporting vanity metrics, revenue marketing teams build attribution into the CRM from day one and own a pipeline number alongside sales. It's the model we use at Digitinize: every channel we run is measured against pipeline contribution, not activity reports.</p></div>
+      <div class="faq-item reveal"><h3>What does an embedded B2B marketing agency do?</h3><p>An embedded agency operates inside your business rather than at arm's length. That means we're in your Slack, your standups, your strategy calls — not sending a monthly report from the outside. We own the channels, the strategy, and the execution, and we measure ourselves against your pipeline number. The model produces faster iteration, tighter sales-marketing alignment, and better outcomes than traditional retainer engagements where the agency never sees inside the business.</p></div>
+      <div class="faq-item reveal"><h3>B2B marketing agency vs in-house team — which is better?</h3><p>In-house wins on institutional knowledge and availability. Agencies win on breadth of skill, speed to hire, and channel expertise that no single in-house hire can replicate. The most common pattern we see: an in-house generalist or marketing manager coordinates strategy, while we operate as the senior execution layer for channels that need specialisation (SEO, LinkedIn ads, automation). This is cheaper than building a full in-house team and faster than waiting 18 months to hire and onboard one.</p></div>
+      <div class="faq-item reveal"><h3>How much does B2B marketing cost in India?</h3><p>A meaningful B2B marketing program in India typically runs ₹4L–₹15L/month depending on which channels you're running. SEO and content: ₹1.5L–₹3L/month. LinkedIn ads (including media spend): ₹4L–₹8L/month. Demand gen and ABM: ₹6L–₹15L/month. Marketing automation setup: ₹2L–₹5L one-time, ₹1.5L–₹3L/month ongoing. Authority positioning/LinkedIn ghostwriting: ₹1.5L–₹2.5L/month. Most clients start with one or two channels and expand as results compound.</p></div>
+      <div class="faq-item reveal"><h3>What is the difference between demand generation and lead generation?</h3><p>Lead generation captures buyers who are already in-market — they've raised their hand, filled a form, or responded to outreach. Demand generation creates the conditions for that hand-raise: building awareness and trust across the 90–95% of your market that isn't ready to buy today. Lead gen optimises for volume now; demand gen optimises for pipeline quality over 6–18 months. B2B companies with long sales cycles typically need both — but most under-invest in demand gen and wonder why their lead gen pipeline never converts.</p></div>
     </div>
   </div>
 </section>
