@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Embedded Revenue Marketing Agency | Digitinize</title>
-<meta name="description" content="Senior marketers embedded inside your business — accountable to pipeline, not presentations. Demand generation, SEO, LinkedIn ads, and automation. Founded 2014.">
+<meta name="description" content="Senior marketers embedded inside your business — accountable to pipeline, not presentations. Demand generation, SEO, LinkedIn ads, automation, website development, UI/UX design, and apps. Founded 2014.">
 <meta property="og:title" content="Embedded Revenue Marketing Agency | Digitinize">
-<meta property="og:description" content="Senior marketers embedded inside your business — accountable to pipeline, not presentations. Demand generation, SEO, LinkedIn ads, and automation. Founded 2014.">
+<meta property="og:description" content="Senior marketers embedded inside your business — accountable to pipeline, not presentations. Demand generation, SEO, LinkedIn ads, automation, website development, UI/UX design, and apps. Founded 2014.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta property="og:url" content="https://digitinize.vercel.app/">
@@ -55,7 +55,11 @@
     "Account-Based Marketing",
     "Authority Positioning",
     "Executive Social Media",
-    "Performance Marketing"
+    "Performance Marketing",
+    "Website Development",
+    "UI/UX Design",
+    "Mobile App Development",
+    "Web Application Development"
   ],
   "sameAs": [
     "https://www.linkedin.com/company/digitinize",
@@ -288,6 +292,20 @@ body::after {
   background: #0D8080; opacity: 0.5; flex-shrink: 0; transition: opacity .15s;
 }
 .nav-dropdown-menu li a:hover .dd-dot { opacity: 1; }
+.nav-dropdown-menu .dd-group-label {
+  padding: 10px 12px 4px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(14,19,56,0.45); pointer-events: none;
+}
+.nav-dropdown-menu .dd-group-label:not(:first-child) {
+  border-top: 1px solid rgba(14,19,56,0.08); margin-top: 6px; padding-top: 10px;
+}
+.nav:not(.scrolled) .nav-dropdown-menu .dd-group-label {
+  color: rgba(220,235,235,0.4);
+}
+.nav:not(.scrolled) .nav-dropdown-menu .dd-group-label:not(:first-child) {
+  border-top-color: rgba(255,255,255,0.08);
+}
 /* Mobile services sub-nav */
 .mob-services { display: flex; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
 .mob-services-label {
@@ -1079,11 +1097,16 @@ body::after {
 <li class="nav-dropdown">
   <a class="" tabindex="0">Services <svg class="chev" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <ul class="nav-dropdown-menu">
+    <li class="dd-group-label">Growth Marketing</li>
     <li><a href="/services/b2b-seo"><span class="dd-dot"></span>B2B SEO &amp; Content</a></li>
     <li><a href="/services/linkedin-ads"><span class="dd-dot"></span>LinkedIn &amp; Paid Media</a></li>
     <li><a href="/services/demand-generation"><span class="dd-dot"></span>Demand Generation</a></li>
     <li><a href="/services/authority-positioning"><span class="dd-dot"></span>Authority Positioning</a></li>
     <li><a href="/services/marketing-automation"><span class="dd-dot"></span>Marketing Automation</a></li>
+    <li class="dd-group-label">Build &amp; Design</li>
+    <li><a href="/services/website-development"><span class="dd-dot"></span>Website Development</a></li>
+    <li><a href="/services/ui-ux-design"><span class="dd-dot"></span>UI / UX Design</a></li>
+    <li><a href="/services/app-development"><span class="dd-dot"></span>App Development</a></li>
   </ul>
 </li>
 <li><a href="/how-we-work" class="">How We Work</a></li>
@@ -1102,6 +1125,9 @@ body::after {
     <a href="/services/demand-generation">→ Demand Generation</a>
     <a href="/services/authority-positioning">→ Authority Positioning</a>
     <a href="/services/marketing-automation">→ Marketing Automation</a>
+    <a href="/services/website-development">→ Website Development</a>
+    <a href="/services/ui-ux-design">→ UI / UX Design</a>
+    <a href="/services/app-development">→ App Development</a>
   </div>
 </div>
 <a href="/how-we-work">How We Work</a>
@@ -1228,24 +1254,24 @@ body::after {
   <div class="marquee-track">
     <span class="marquee-item"><span>✦</span> Demand Generation India</span>
     <span class="marquee-item"><span>✦</span> LinkedIn Advertising Agency</span>
-    <span class="marquee-item"><span>✦</span> ABM Campaigns Bangalore</span>
+    <span class="marquee-item"><span>✦</span> Website Development Bangalore</span>
     <span class="marquee-item"><span>✦</span> SEO &amp; Content Marketing</span>
+    <span class="marquee-item"><span>✦</span> UI / UX Design India</span>
     <span class="marquee-item"><span>✦</span> Marketing Automation India</span>
+    <span class="marquee-item"><span>✦</span> App Development India</span>
+    <span class="marquee-item"><span>✦</span> ABM Campaigns Bangalore</span>
     <span class="marquee-item"><span>✦</span> Growth Partner India</span>
-    <span class="marquee-item"><span>✦</span> Pipeline Generation Bangalore</span>
     <span class="marquee-item"><span>✦</span> Revenue Attribution</span>
-    <span class="marquee-item"><span>✦</span> Marketing Agency India</span>
-    <span class="marquee-item"><span>✦</span> Pipeline Generation India</span>
     <span class="marquee-item"><span>✦</span> Demand Generation India</span>
     <span class="marquee-item"><span>✦</span> LinkedIn Advertising Agency</span>
-    <span class="marquee-item"><span>✦</span> ABM Campaigns Bangalore</span>
+    <span class="marquee-item"><span>✦</span> Website Development Bangalore</span>
     <span class="marquee-item"><span>✦</span> SEO &amp; Content Marketing</span>
+    <span class="marquee-item"><span>✦</span> UI / UX Design India</span>
     <span class="marquee-item"><span>✦</span> Marketing Automation India</span>
+    <span class="marquee-item"><span>✦</span> App Development India</span>
+    <span class="marquee-item"><span>✦</span> ABM Campaigns Bangalore</span>
     <span class="marquee-item"><span>✦</span> Growth Partner India</span>
-    <span class="marquee-item"><span>✦</span> Pipeline Generation Bangalore</span>
     <span class="marquee-item"><span>✦</span> Revenue Attribution</span>
-    <span class="marquee-item"><span>✦</span> Marketing Agency India</span>
-    <span class="marquee-item"><span>✦</span> Pipeline Generation India</span>
   </div>
 </div>
 
@@ -1891,6 +1917,74 @@ body::after {
   </div>
 </section>
 
+<!-- BUILD & DESIGN SERVICES -->
+<section style="padding:0 0 var(--section-gap)">
+  <div class="container">
+    <span class="section-label reveal">The foundation</span>
+    <h2 class="reveal reveal-delay-1">Three build services.<br>The foundation pipeline runs on.</h2>
+    <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px;max-width:62ch">Pipeline doesn't compound on a broken funnel. We design and build the digital foundation your growth engine sits on — websites that convert, products people actually use, and the experiences in between.</p>
+
+    <div class="services-grid" style="margin-top:48px">
+      <div class="card service-card reveal">
+        <div class="service-num">06</div>
+        <svg class="svc-icon" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="44" height="32" rx="4" stroke="#0D8080" stroke-width="2.5" fill="none"/>
+          <line x1="4" y1="16" x2="48" y2="16" stroke="#0D8080" stroke-width="2"/>
+          <circle cx="9" cy="12" r="1.4" fill="#4F46E5"/>
+          <circle cx="14" cy="12" r="1.4" fill="#4F46E5"/>
+          <circle cx="19" cy="12" r="1.4" fill="#4F46E5"/>
+          <rect x="10" y="22" width="14" height="3" rx="1" fill="#4F46E5" opacity="0.7"/>
+          <rect x="10" y="28" width="20" height="3" rx="1" fill="#4F46E5" opacity="0.5"/>
+          <rect x="10" y="34" width="10" height="3" rx="1" fill="#4F46E5" opacity="0.5"/>
+          <rect x="32" y="22" width="10" height="15" rx="2" fill="#0D8080" opacity="0.9"/>
+          <rect x="18" y="44" width="16" height="3" rx="1" fill="#4F46E5"/>
+        </svg>
+        <h4>Website Development</h4>
+        <p>Marketing sites and product surfaces built for speed, SEO, and conversion. From corporate sites to high-traffic landing pages — engineered on the stack that fits your team, not ours.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: faster Core Web Vitals and measurable conversion lift on key pages</div>
+        <a href="/services/website-development" class="learn">Explore Website Development →</a>
+      </div>
+
+      <div class="card service-card reveal reveal-delay-1">
+        <div class="service-num">07</div>
+        <svg class="svc-icon" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="6" width="40" height="40" rx="4" stroke="#0D8080" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="14" r="3" fill="#4F46E5"/>
+          <rect x="22" y="11" width="20" height="3" rx="1" fill="#0D8080" opacity="0.9"/>
+          <rect x="22" y="17" width="14" height="3" rx="1" fill="#0D8080" opacity="0.6"/>
+          <rect x="10" y="26" width="14" height="14" rx="2" fill="#4F46E5" opacity="0.7"/>
+          <path d="M 28 28 L 32 32 L 36 26 L 42 34" stroke="#0D8080" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="32" r="1.6" fill="#0D8080"/>
+          <circle cx="36" cy="26" r="1.6" fill="#0D8080"/>
+          <circle cx="42" cy="34" r="1.6" fill="#0D8080"/>
+        </svg>
+        <h4>UI / UX Design</h4>
+        <p>Interface design and user experience for marketing sites, dashboards, and product surfaces. Research-led, designed for the user, built clean for engineering handoff.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: measurable lift in task completion and engagement on critical flows</div>
+        <a href="/services/ui-ux-design" class="learn">Explore UI/UX Design →</a>
+      </div>
+
+      <div class="card service-card reveal reveal-delay-2">
+        <div class="service-num">08</div>
+        <svg class="svc-icon" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="4" width="24" height="44" rx="4" stroke="#0D8080" stroke-width="2.5" fill="none"/>
+          <line x1="14" y1="10" x2="38" y2="10" stroke="#0D8080" stroke-width="2"/>
+          <line x1="14" y1="42" x2="38" y2="42" stroke="#0D8080" stroke-width="2"/>
+          <circle cx="26" cy="45" r="1.6" fill="#0D8080"/>
+          <rect x="18" y="14" width="16" height="10" rx="2" fill="#4F46E5" opacity="0.7"/>
+          <rect x="18" y="27" width="7" height="7" rx="1.5" fill="#0D8080" opacity="0.8"/>
+          <rect x="27" y="27" width="7" height="7" rx="1.5" fill="#4F46E5" opacity="0.6"/>
+          <rect x="18" y="36" width="16" height="3" rx="1" fill="#0D8080" opacity="0.5"/>
+        </svg>
+        <h4>App Development</h4>
+        <p>Native and cross-platform mobile apps, plus the web applications that power them. From spec through ship — small builds, fast cycles, aligned to the business case from week one.</p>
+        <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--signal);letter-spacing:.04em">Outcome we work toward: a shipped product that meets the milestone we set when we started</div>
+        <a href="/services/app-development" class="learn">Explore App Development →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CASE STUDIES -->
 <section style="padding:var(--section-gap) 0">
   <div class="container">
@@ -2211,13 +2305,21 @@ body::after {
         <p>Your embedded growth team — without the hire. Building pipeline for companies since 2014.</p>
       </div>
       <div class="footer-col">
-        <h5>Services</h5>
+        <h5>Growth Marketing</h5>
         <ul>
           <li><a href="/services/b2b-seo">SEO &amp; Content</a></li>
           <li><a href="/services/linkedin-ads">LinkedIn &amp; Paid Media</a></li>
           <li><a href="/services/demand-generation">Demand Generation</a></li>
           <li><a href="/services/authority-positioning">Authority Positioning</a></li>
           <li><a href="/services/marketing-automation">Marketing Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Build &amp; Design</h5>
+        <ul>
+          <li><a href="/services/website-development">Website Development</a></li>
+          <li><a href="/services/ui-ux-design">UI / UX Design</a></li>
+          <li><a href="/services/app-development">App Development</a></li>
         </ul>
       </div>
       <div class="footer-col">
