@@ -456,6 +456,48 @@ body::after {
 .gdel-tag { font-size:10px; background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:4px; padding:3px 7px; color:var(--muted); }
 .gtime-badge { display:inline-flex; align-items:center; gap:4px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.22); border-radius:20px; padding:4px 10px; font-size:10px; font-weight:600; color:#F59E0B; }
 
+/* ── Timeline SVG draw-in animation ── */
+.timeline-track-line {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  transition: stroke-dashoffset 1.8s cubic-bezier(0.16,1,0.3,1) 0.3s;
+}
+.timeline-svg-wrap.visible .timeline-track-line { stroke-dashoffset: 0; }
+
+/* ── Phase number circle highlight on reveal ── */
+.phase-num {
+  transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+}
+.phase-block.visible .phase-num {
+  background: var(--signal);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(17,29,94,0.35);
+}
+
+/* ── Phase deliverable tag stagger animation ── */
+.phase-deliverable {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s, transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.phase-block.visible .phase-deliverable { opacity: 1; transform: none; }
+.phase-block.visible .phase-deliverable:nth-child(1) { transition-delay: 0.05s; }
+.phase-block.visible .phase-deliverable:nth-child(2) { transition-delay: 0.10s; }
+.phase-block.visible .phase-deliverable:nth-child(3) { transition-delay: 0.15s; }
+.phase-block.visible .phase-deliverable:nth-child(4) { transition-delay: 0.20s; }
+.phase-block.visible .phase-deliverable:nth-child(5) { transition-delay: 0.25s; }
+.phase-block.visible .phase-deliverable:nth-child(6) { transition-delay: 0.30s; }
+
+/* ── Gantt row slide-in animation ── */
+.gantt-row { opacity: 0; transform: translateX(-12px); transition: opacity 0.5s, transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.gantt-wrap.visible .gantt-row { opacity: 1; transform: none; }
+.gantt-wrap.visible .gantt-row:nth-child(1) { transition-delay: 0s; }
+.gantt-wrap.visible .gantt-row:nth-child(2) { transition-delay: 0.08s; }
+.gantt-wrap.visible .gantt-row:nth-child(3) { transition-delay: 0.16s; }
+.gantt-wrap.visible .gantt-row:nth-child(4) { transition-delay: 0.24s; }
+.gantt-wrap.visible .gantt-row:nth-child(5) { transition-delay: 0.32s; }
+.gantt-wrap.visible .gantt-row:nth-child(6) { transition-delay: 0.40s; }
+
 </style>
 </head>
 <body>
@@ -514,7 +556,7 @@ body::after {
     <h2 class="reveal reveal-delay-1">One north star:<br>qualified pipeline.</h2>
 
     <!-- Process timeline infographic -->
-    <div class="reveal reveal-delay-2" style="margin-top:48px;margin-bottom:56px">
+    <div class="reveal reveal-delay-2 timeline-svg-wrap" style="margin-top:48px;margin-bottom:56px">
       <svg viewBox="0 0 900 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px">
         <defs>
           <linearGradient id="trackGrad" x1="0" y1="0" x2="1" y2="0">
@@ -524,7 +566,7 @@ body::after {
         </defs>
         <!-- Track line -->
         <line x1="100" y1="44" x2="800" y2="44" stroke="#1E2855" stroke-width="2"/>
-        <line x1="100" y1="44" x2="800" y2="44" stroke="url(#trackGrad)" stroke-width="2" opacity="0.5"/>
+        <line x1="100" y1="44" x2="800" y2="44" stroke="url(#trackGrad)" stroke-width="2" class="timeline-track-line" stroke-dasharray="700" stroke-dashoffset="700"/>
         <!-- Phase 1: Audit -->
         <circle cx="100" cy="44" r="22" fill="#131B4A" stroke="#0D8080" stroke-width="2"/>
         <text x="100" y="40" fill="#0D8080" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle">01</text>
