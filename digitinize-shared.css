@@ -118,6 +118,14 @@ body::after {
 .nav-dropdown-menu li a:hover { background: rgba(13,128,128,0.07); color: var(--paper); }
 .nav-dropdown-menu li a .dd-dot { width: 6px; height: 6px; border-radius: 50%; background: #0D8080; opacity: 0.5; flex-shrink: 0; transition: opacity .15s; }
 .nav-dropdown-menu li a:hover .dd-dot { opacity: 1; }
+.nav-dropdown-menu .dd-group-label {
+  padding: 10px 12px 4px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(14,19,56,0.45); pointer-events: none; list-style: none;
+}
+.nav-dropdown-menu .dd-group-label:not(:first-child) {
+  border-top: 1px solid rgba(14,19,56,0.08); margin-top: 6px; padding-top: 10px;
+}
 .mob-services { display: flex; flex-direction: column; gap: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
 .mob-services-label { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--paper); letter-spacing: -0.02em; padding-bottom: 14px; }
 .mob-services-links { display: flex; flex-direction: column; gap: 0; padding-left: 2px; }
