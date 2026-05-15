@@ -931,6 +931,54 @@ body::after {
 }
 .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* Chart scroll animations */
+.chart-line-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.16,1,0.3,1) 0.2s;
+}
+.metric-chart-card.chart-visible .chart-line-path { stroke-dashoffset: 0; }
+
+.chart-donut-seg {
+  transform-box: fill-box;
+  transform-origin: 90px 80px;
+  opacity: 0;
+  transform: scale(0.4) rotate(-30deg);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.metric-chart-card.chart-visible .chart-donut-seg { opacity: 1; transform: scale(1) rotate(0deg); }
+.metric-chart-card.chart-visible .chart-donut-seg:nth-child(1) { transition-delay: 0.1s; }
+.metric-chart-card.chart-visible .chart-donut-seg:nth-child(2) { transition-delay: 0.22s; }
+.metric-chart-card.chart-visible .chart-donut-seg:nth-child(3) { transition-delay: 0.34s; }
+.metric-chart-card.chart-visible .chart-donut-seg:nth-child(4) { transition-delay: 0.46s; }
+
+/* CTA ambient glow */
+@keyframes ctaGlow {
+  0%,100% { box-shadow: 0 0 80px rgba(13,128,128,0.12), inset 0 0 80px rgba(13,128,128,0.03); }
+  50% { box-shadow: 0 0 140px rgba(13,128,128,0.22), inset 0 0 60px rgba(79,70,229,0.06); }
+}
+.cta-section { animation: ctaGlow 5s ease-in-out infinite; }
+
+/* Phase deliverable tag stagger */
+.phase-deliverable {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.phase-block.visible .phase-deliverable { opacity: 1; transform: none; }
+.phase-block.visible .phase-deliverable:nth-child(1) { transition-delay: 0.05s; }
+.phase-block.visible .phase-deliverable:nth-child(2) { transition-delay: 0.10s; }
+.phase-block.visible .phase-deliverable:nth-child(3) { transition-delay: 0.15s; }
+.phase-block.visible .phase-deliverable:nth-child(4) { transition-delay: 0.20s; }
+.phase-block.visible .phase-deliverable:nth-child(5) { transition-delay: 0.25s; }
+.phase-block.visible .phase-deliverable:nth-child(6) { transition-delay: 0.30s; }
+
+/* Industry tile hover enhancement */
+.industry-tile { transition: border-color .2s, box-shadow .2s, transform .2s cubic-bezier(0.16,1,0.3,1); }
+.industry-tile:hover { border-color: rgba(13,128,128,0.4); box-shadow: 0 8px 24px rgba(13,128,128,0.12); transform: translateY(-4px); }
+.industry-tile svg { transition: transform .25s cubic-bezier(0.16,1,0.3,1); }
+.industry-tile:hover svg { transform: scale(1.15) rotate(-5deg); }
+
 </style>
 </head>
 <body>
@@ -1251,12 +1299,12 @@ body::after {
           <text x="8" y="134" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">Low</text>
           <text x="8" y="59" fill="#3D4570" font-family="Inter,sans-serif" font-size="9">High</text>
           <!-- Before bars (pair per brand group) -->
-          <rect x="52" y="104" width="22" height="26" rx="3" fill="url(#barBefore)"/>
-          <rect x="80" y="82" width="22" height="48" rx="3" fill="url(#barAfter)"/>
-          <rect x="112" y="98" width="22" height="32" rx="3" fill="url(#barBefore)"/>
-          <rect x="140" y="58" width="22" height="72" rx="3" fill="url(#barAfter)"/>
-          <rect x="172" y="100" width="22" height="30" rx="3" fill="url(#barBefore)"/>
-          <rect x="200" y="50" width="22" height="80" rx="3" fill="url(#barAfter)"/>
+          <rect class="chart-bar" data-h="26" data-y="104" x="52" y="104" width="22" height="26" rx="3" fill="url(#barBefore)"/>
+          <rect class="chart-bar" data-h="48" data-y="82" x="80" y="82" width="22" height="48" rx="3" fill="url(#barAfter)"/>
+          <rect class="chart-bar" data-h="32" data-y="98" x="112" y="98" width="22" height="32" rx="3" fill="url(#barBefore)"/>
+          <rect class="chart-bar" data-h="72" data-y="58" x="140" y="58" width="22" height="72" rx="3" fill="url(#barAfter)"/>
+          <rect class="chart-bar" data-h="30" data-y="100" x="172" y="100" width="22" height="30" rx="3" fill="url(#barBefore)"/>
+          <rect class="chart-bar" data-h="80" data-y="50" x="200" y="50" width="22" height="80" rx="3" fill="url(#barAfter)"/>
           <!-- X labels -->
           <text x="58" y="146" fill="#3D4570" font-family="Inter,sans-serif" font-size="8">Brand A</text>
           <text x="118" y="146" fill="#3D4570" font-family="Inter,sans-serif" font-size="8">Brand B</text>
@@ -1291,7 +1339,7 @@ body::after {
           <!-- Area fill -->
           <path d="M 40 126 L 72 118 L 104 108 L 136 92 L 168 70 L 200 48 L 224 30 L 224 130 L 40 130 Z" fill="url(#lineArea)"/>
           <!-- Line -->
-          <path d="M 40 126 L 72 118 L 104 108 L 136 92 L 168 70 L 200 48 L 224 30" stroke="#0D8080" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="chart-line-path" pathLength="1" d="M 40 126 L 72 118 L 104 108 L 136 92 L 168 70 L 200 48 L 224 30" stroke="#0D8080" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           <!-- Dots -->
           <circle cx="40" cy="126" r="3" fill="#0D8080" stroke="#0E1338" stroke-width="2"/>
           <circle cx="136" cy="92" r="3" fill="#0D8080" stroke="#0E1338" stroke-width="2"/>
@@ -1313,13 +1361,13 @@ body::after {
         <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
           <!-- Donut chart centered at 90,80 r=55 -->
           <!-- Paid: 38% → 136.8deg coral -->
-          <path d="M 90 80 L 90 25 A 55 55 0 0 1 137.6 52.5 Z" fill="#0D8080"/>
+          <path class="chart-donut-seg" d="M 90 80 L 90 25 A 55 55 0 0 1 137.6 52.5 Z" fill="#0D8080"/>
           <!-- SEO: 22% → 79.2deg indigo -->
-          <path d="M 90 80 L 137.6 52.5 A 55 55 0 0 1 127.2 133.0 Z" fill="#4F46E5"/>
+          <path class="chart-donut-seg" d="M 90 80 L 137.6 52.5 A 55 55 0 0 1 127.2 133.0 Z" fill="#4F46E5"/>
           <!-- Email/WA: 24% → 86.4deg teal -->
-          <path d="M 90 80 L 127.2 133.0 A 55 55 0 0 1 42.8 107.5 Z" fill="#22C55E" opacity="0.85"/>
+          <path class="chart-donut-seg" d="M 90 80 L 127.2 133.0 A 55 55 0 0 1 42.8 107.5 Z" fill="#22C55E" opacity="0.85"/>
           <!-- Social: 16% → 57.6deg muted -->
-          <path d="M 90 80 L 42.8 107.5 A 55 55 0 0 1 90 25 Z" fill="#F59E0B" opacity="0.85"/>
+          <path class="chart-donut-seg" d="M 90 80 L 42.8 107.5 A 55 55 0 0 1 90 25 Z" fill="#F59E0B" opacity="0.85"/>
           <!-- Donut hole -->
           <circle cx="90" cy="80" r="32" fill="#131B4A"/>
           <!-- Center text -->
@@ -1343,6 +1391,95 @@ body::after {
 <!-- PROBLEM SECTION -->
 <section class="problem-section">
   <div class="container">
+    <!-- Pipeline Accountability Infographic -->
+<div class="reveal" style="margin-bottom:56px;background:linear-gradient(135deg,rgba(14,19,56,0.03),rgba(13,128,128,0.03));border:1px solid var(--border);border-radius:16px;padding:32px 28px;overflow-x:auto">
+  <svg viewBox="0 0 860 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:540px;height:auto" class="pipeline-comparison-svg">
+    <defs>
+      <linearGradient id="badPipe" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.15"/>
+      </linearGradient>
+      <linearGradient id="goodPipe" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#0D8080" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#0D8080" stop-opacity="0.5"/>
+      </linearGradient>
+      <marker id="arrowBad" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L6,3 z" fill="#4F46E5" opacity="0.5"/>
+      </marker>
+      <marker id="arrowGood" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L6,3 z" fill="#0D8080"/>
+      </marker>
+    </defs>
+
+    <!-- Label row -->
+    <text x="8" y="20" fill="#6B7199" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing=".08em" text-transform="uppercase">TYPICAL AGENCY</text>
+    <text x="8" y="100" fill="#0D8080" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing=".08em">DIGITINIZE</text>
+
+    <!-- Stage labels (shared) -->
+    <text x="90" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">Awareness</text>
+    <text x="240" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">Interest</text>
+    <text x="390" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">Consideration</text>
+    <text x="550" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">Intent</text>
+    <text x="700" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">Evaluation</text>
+    <text x="830" y="145" fill="#3D4570" font-family="Inter,sans-serif" font-size="9" text-anchor="middle">Close</text>
+
+    <!-- AGENCY ROW — pipes with leaks -->
+    <!-- Pipe segments (shrinking to show leakage) -->
+    <rect x="40" y="24" width="100" height="14" rx="3" fill="url(#badPipe)" opacity="0.9"/>
+    <!-- Leak 1 -->
+    <line x1="140" y1="31" x2="155" y2="20" stroke="#E5483D" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7"/>
+    <text x="158" y="18" fill="#E5483D" font-family="Inter,sans-serif" font-size="8">−40%</text>
+    <rect x="155" y="26" width="90" height="11" rx="3" fill="url(#badPipe)" opacity="0.75"/>
+    <!-- Leak 2 -->
+    <line x1="245" y1="31" x2="260" y2="20" stroke="#E5483D" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7"/>
+    <text x="263" y="18" fill="#E5483D" font-family="Inter,sans-serif" font-size="8">−30%</text>
+    <rect x="260" y="28" width="82" height="8" rx="3" fill="url(#badPipe)" opacity="0.6"/>
+    <!-- Leak 3 -->
+    <line x1="342" y1="32" x2="358" y2="20" stroke="#E5483D" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7"/>
+    <text x="361" y="18" fill="#E5483D" font-family="Inter,sans-serif" font-size="8">−35%</text>
+    <rect x="358" y="29" width="80" height="6" rx="3" fill="url(#badPipe)" opacity="0.45"/>
+    <!-- Leak 4 -->
+    <line x1="438" y1="32" x2="454" y2="20" stroke="#E5483D" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
+    <text x="457" y="18" fill="#E5483D" font-family="Inter,sans-serif" font-size="8">−25%</text>
+    <rect x="454" y="30" width="75" height="4" rx="3" fill="url(#badPipe)" opacity="0.35"/>
+    <!-- Very thin end — barely anything reaches close -->
+    <rect x="529" y="31" width="60" height="3" rx="2" fill="url(#badPipe)" opacity="0.25"/>
+    <rect x="589" y="31" width="50" height="2" rx="1" fill="url(#badPipe)" opacity="0.15"/>
+    <!-- End: tiny result -->
+    <circle cx="645" cy="32" r="4" fill="#4F46E5" opacity="0.3"/>
+    <text x="652" y="36" fill="#6B7199" font-family="Inter,sans-serif" font-size="8">~3% closes</text>
+
+    <!-- Divider -->
+    <line x1="0" y1="60" x2="860" y2="60" stroke="rgba(14,19,56,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- DIGITINIZE ROW — sealed pipeline -->
+    <rect x="40" y="103" width="100" height="14" rx="3" fill="url(#goodPipe)"/>
+    <!-- Connector 1: sealed with icon -->
+    <rect x="140" y="105" width="100" height="13" rx="3" fill="url(#goodPipe)" opacity="0.92"/>
+    <circle cx="143" cy="111" r="5" fill="#0D8080"/>
+    <text x="142" y="115" fill="#fff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">✓</text>
+    <!-- Connector 2 -->
+    <rect x="240" y="106" width="100" height="12" rx="3" fill="url(#goodPipe)" opacity="0.88"/>
+    <circle cx="243" cy="112" r="5" fill="#0D8080"/>
+    <text x="242" y="116" fill="#fff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">✓</text>
+    <!-- Connector 3 -->
+    <rect x="340" y="106" width="100" height="12" rx="3" fill="url(#goodPipe)" opacity="0.85"/>
+    <circle cx="343" cy="112" r="5" fill="#0D8080"/>
+    <text x="342" y="116" fill="#fff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">✓</text>
+    <!-- Connector 4 -->
+    <rect x="440" y="107" width="100" height="11" rx="3" fill="url(#goodPipe)" opacity="0.82"/>
+    <circle cx="443" cy="112" r="5" fill="#0D8080"/>
+    <text x="442" y="116" fill="#fff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle">✓</text>
+    <!-- Final stretch -->
+    <rect x="540" y="107" width="100" height="11" rx="3" fill="url(#goodPipe)" opacity="0.80"/>
+    <rect x="640" y="107" width="100" height="11" rx="3" fill="url(#goodPipe)" opacity="0.78"/>
+    <!-- End: strong result -->
+    <circle cx="748" cy="112" r="8" fill="#0D8080"/>
+    <text x="748" y="116" fill="#fff" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle">SQL</text>
+    <text x="762" y="112" fill="#0D8080" font-family="Inter,sans-serif" font-size="8" font-weight="600">+Pipeline</text>
+  </svg>
+  <p style="font-size:11px;color:var(--muted);margin-top:12px;font-family:var(--font-mono);letter-spacing:.04em;text-align:center;max-width:none">Illustrative · directional representation of pipeline drop-off in unmanaged vs. managed full-funnel programmes</p>
+</div>
     <div class="problem-grid">
       <div>
         <span class="section-label reveal">The problem with agencies</span>
@@ -2144,6 +2281,36 @@ document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta').forEach(btn =>
   });
   btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
 });
+
+// Animate metric charts on scroll
+const chartObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const card = e.target;
+    card.classList.add('chart-visible');
+    // Animate bar heights
+    card.querySelectorAll('.chart-bar').forEach((bar, i) => {
+      const targetH = parseFloat(bar.dataset.h);
+      const targetY = parseFloat(bar.dataset.y);
+      const baseline = 130;
+      bar.setAttribute('height', 0);
+      bar.setAttribute('y', baseline);
+      setTimeout(() => {
+        const start = performance.now();
+        const dur = 750;
+        (function step(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - p, 4);
+          bar.setAttribute('height', ease * targetH);
+          bar.setAttribute('y', baseline - ease * targetH);
+          if (p < 1) requestAnimationFrame(step);
+        })(performance.now());
+      }, i * 90);
+    });
+    chartObs.unobserve(card);
+  });
+}, { threshold: 0.35 });
+document.querySelectorAll('.metric-chart-card').forEach(c => chartObs.observe(c));
 </script>
 </body>
 </html>
