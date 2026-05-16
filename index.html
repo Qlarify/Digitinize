@@ -814,6 +814,33 @@ body::after {
 .journey-section h2 { color: #F4F9F9; }
 .journey-section p { color: rgba(220,235,235,0.55); }
 .journey-section .section-label { color: #13BABA; }
+/* Journey infographic — light overrides for dark background */
+.journey-section .journey-infographic {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.08);
+}
+.journey-section .jcol { border-right-color: rgba(255,255,255,0.06); }
+.journey-section .jstage-hd { background: rgba(255,255,255,0.04); }
+.journey-section .jstage-num { color: #13BABA; }
+.journey-section .jstage-name { color: #F4F9F9; }
+.journey-section .jstage-timeline { color: rgba(220,235,235,0.5); }
+.journey-section .jrow-label { color: rgba(220,235,235,0.4); }
+.journey-section .jrow-buyer { color: rgba(220,235,235,0.82); }
+.journey-section .jtag {
+  color: rgba(220,235,235,0.78);
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+.journey-section .jcol:nth-child(5) .jstage-hd {
+  background: linear-gradient(135deg, rgba(79,70,229,0.22), rgba(13,128,128,0.18));
+}
+/* Channel chips — boost contrast for dark bg */
+.journey-section .ch-seo  { background: rgba(13,128,128,0.22); color: #5CDDD7; border-color: rgba(19,186,186,0.4); }
+.journey-section .ch-auth { background: rgba(79,70,229,0.22); color: #A5AEF5; border-color: rgba(79,70,229,0.4); }
+.journey-section .ch-li   { background: rgba(79,70,229,0.18); color: #A5AEF5; border-color: rgba(79,70,229,0.35); }
+.journey-section .ch-demand { background: rgba(245,158,11,0.18); color: #FBBF4A; border-color: rgba(245,158,11,0.35); }
+.journey-section .ch-email { background: rgba(16,185,129,0.18); color: #34D399; border-color: rgba(16,185,129,0.35); }
+.journey-section .ch-auto  { background: rgba(139,92,246,0.18); color: #C4B5FD; border-color: rgba(139,92,246,0.35); }
 .journey-header { margin-bottom: 40px; }
 .journey-infographic {
   display: grid;
