@@ -1084,6 +1084,200 @@ body::after {
   66% { transform: translate(-15px, 20px) scale(0.97); }
 }
 
+/* ─── INTERACTIVE ANIMATIONS & VISUAL POLISH ─── */
+
+/* Mouse-follow hero spotlight */
+.hero-spotlight {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: radial-gradient(circle 380px at var(--mx, 50%) var(--my, 50%),
+    rgba(19,186,186,0.16) 0%, transparent 60%);
+  transition: opacity .6s ease;
+  opacity: 0;
+}
+.hero:hover .hero-spotlight { opacity: 1; }
+
+/* Service card 3D tilt + gradient border on hover */
+.service-card {
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1), box-shadow .5s cubic-bezier(0.16,1,0.3,1), border-color .3s;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.service-card.tilt-active {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(8px);
+  box-shadow: 0 28px 60px rgba(13,128,128,0.18), 0 0 0 1.5px rgba(13,128,128,0.22);
+}
+.service-card .svc-icon {
+  transition: transform .4s cubic-bezier(0.16,1,0.3,1);
+}
+.service-card:hover .svc-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+/* Animated SVG icon paths — draw-in on reveal */
+.service-card.visible .svc-icon * {
+  animation: iconFadeIn .8s cubic-bezier(0.16,1,0.3,1) forwards;
+  opacity: 0;
+}
+.service-card.visible .svc-icon *:nth-child(1) { animation-delay: 0.1s; }
+.service-card.visible .svc-icon *:nth-child(2) { animation-delay: 0.18s; }
+.service-card.visible .svc-icon *:nth-child(3) { animation-delay: 0.26s; }
+.service-card.visible .svc-icon *:nth-child(4) { animation-delay: 0.34s; }
+.service-card.visible .svc-icon *:nth-child(5) { animation-delay: 0.42s; }
+@keyframes iconFadeIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Magnetic CTAs */
+.btn-primary, .nav-cta {
+  transition: transform .25s cubic-bezier(0.16,1,0.3,1), box-shadow .25s, background .25s;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .7s cubic-bezier(0.16,1,0.3,1);
+}
+.btn-primary:hover::after { transform: translateX(100%); }
+
+/* Marquee — pause on hover, slight scale */
+.marquee-wrap { transition: padding .3s; }
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+.marquee-item { transition: color .25s, transform .25s; }
+.marquee-item:hover { color: #13BABA; transform: scale(1.08); }
+
+/* Industry tile glow on hover (enhances existing) */
+.industry-tile { position: relative; overflow: hidden; }
+.industry-tile::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle 120px at var(--mx, 50%) var(--my, 50%),
+    rgba(19,186,186,0.18) 0%, transparent 70%);
+  opacity: 0; transition: opacity .35s;
+}
+.industry-tile:hover::after { opacity: 1; }
+
+/* Proof number — pulse on count */
+.proof-num span {
+  transition: color .3s;
+  display: inline-block;
+}
+.proof-item.counted .proof-num span {
+  animation: numberPop .6s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes numberPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.18); color: #13BABA; }
+  100% { transform: scale(1); }
+}
+
+/* Buying journey — connecting line animation */
+.journey-infographic { position: relative; }
+.journey-line {
+  position: absolute; top: 56px; left: 5%; right: 5%; height: 2px;
+  background: linear-gradient(90deg, rgba(13,128,128,0.5) 0%, rgba(79,70,229,0.5) 100%);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1.4s cubic-bezier(0.16,1,0.3,1) 0.3s;
+  z-index: 0; pointer-events: none;
+}
+.journey-infographic.visible .journey-line { transform: scaleX(1); }
+.jcol { position: relative; z-index: 1; }
+.jcol { transition: transform .35s cubic-bezier(0.16,1,0.3,1); }
+.jcol:hover { transform: translateY(-6px); }
+
+/* Section labels — animated shimmer line */
+.section-label::before {
+  background: linear-gradient(90deg, #0D8080, #13BABA, #4F46E5, #13BABA, #0D8080) !important;
+  background-size: 200% 100% !important;
+  animation: labelShimmer 3s ease-in-out infinite;
+}
+@keyframes labelShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animated underline links */
+.learn { position: relative; display: inline-block; padding-bottom: 2px; }
+.learn::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1.5px;
+  background: linear-gradient(90deg, #13BABA, #4F46E5);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .35s cubic-bezier(0.16,1,0.3,1);
+}
+.learn:hover::before { transform: scaleX(1); }
+.learn { transition: color .25s, padding-left .25s; }
+.learn:hover { color: #0D8080; }
+
+/* FAQ subtle expand animation */
+.faq-item { position: relative; overflow: hidden; }
+.faq-item::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, #13BABA, #4F46E5);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform .35s cubic-bezier(0.16,1,0.3,1);
+}
+.faq-item:hover::before { transform: scaleY(1); }
+
+/* Card lift on visible (entry animation polish) */
+.card.visible {
+  animation: cardEntry .9s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+@keyframes cardEntry {
+  from { opacity: 0; transform: translateY(28px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Floating particles in hero */
+.hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.hero-particles span {
+  position: absolute; width: 4px; height: 4px; border-radius: 50%;
+  background: rgba(19,186,186,0.6);
+  animation: particleFloat 14s linear infinite;
+  opacity: 0;
+}
+.hero-particles span:nth-child(1) { left: 12%; top: 80%; animation-delay: 0s; }
+.hero-particles span:nth-child(2) { left: 32%; top: 90%; animation-delay: 2s; background: rgba(79,70,229,0.5); }
+.hero-particles span:nth-child(3) { left: 55%; top: 85%; animation-delay: 4s; }
+.hero-particles span:nth-child(4) { left: 75%; top: 78%; animation-delay: 6s; background: rgba(79,70,229,0.5); }
+.hero-particles span:nth-child(5) { left: 22%; top: 70%; animation-delay: 8s; }
+.hero-particles span:nth-child(6) { left: 68%; top: 95%; animation-delay: 10s; background: rgba(19,186,186,0.4); }
+.hero-particles span:nth-child(7) { left: 88%; top: 60%; animation-delay: 1s; }
+.hero-particles span:nth-child(8) { left: 5%; top: 65%; animation-delay: 5s; background: rgba(79,70,229,0.5); }
+@keyframes particleFloat {
+  0%   { transform: translateY(0) scale(0); opacity: 0; }
+  10%  { opacity: 1; transform: translateY(-50px) scale(1); }
+  90%  { opacity: 0.7; transform: translateY(-450px) scale(0.6); }
+  100% { transform: translateY(-500px) scale(0); opacity: 0; }
+}
+
+/* Comparison column "us" — animated highlight */
+.col-us { position: relative; }
+.col-us::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(13,128,128,0.04), transparent 60%);
+  opacity: 0; transition: opacity .35s;
+}
+tr:hover .col-us::before { opacity: 1; }
+
+/* Smooth scroll snap hint for hero */
+.hero-visual {
+  transition: transform .8s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Improved cursor states */
+.cursor.hover-active { width: 16px; height: 16px; mix-blend-mode: difference; }
+.cursor-ring.hover-active { border-color: #13BABA; }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-particles { animation: none !important; }
+  .section-label::before { animation: none !important; }
+  .service-card.tilt-active { transform: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
 </style>
 </head>
 <body>
@@ -1142,6 +1336,11 @@ body::after {
   <div class="hero-bg"></div>
   <div class="hero-dot-field"></div>
   <div class="hero-grid-line"></div>
+  <div class="hero-spotlight"></div>
+  <div class="hero-particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
   <div class="container">
     <div class="hero-split">
       <div class="hero-content">
@@ -1628,6 +1827,7 @@ body::after {
       <p class="reveal reveal-delay-2" style="margin-top:12px;font-size:17px">Most agencies run tactics. We run a full-funnel programme tied to where your buyers actually are — and what moves them forward at each stage.</p>
     </div>
     <div class="journey-infographic reveal">
+      <div class="journey-line"></div>
       <div class="jcol">
         <div class="jstage-hd">
           <div class="jstage-num">STAGE 01</div>
@@ -2381,6 +2581,104 @@ const ro = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// ─── INTERACTIVE ANIMATIONS ───
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Mouse-follow spotlight on hero
+const heroEl = document.querySelector('.hero');
+if (heroEl && !reducedMotion) {
+  let mouseInHero = false;
+  heroEl.addEventListener('mouseenter', () => { mouseInHero = true; });
+  heroEl.addEventListener('mouseleave', () => { mouseInHero = false; });
+  heroEl.addEventListener('mousemove', (e) => {
+    if (!mouseInHero) return;
+    const r = heroEl.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
+    heroEl.style.setProperty('--mx', x + '%');
+    heroEl.style.setProperty('--my', y + '%');
+  });
+}
+
+// 3D tilt for service cards + industry tiles
+function setupTilt(selector, max) {
+  if (reducedMotion) return;
+  document.querySelectorAll(selector).forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      const rx = (0.5 - y) * max;
+      const ry = (x - 0.5) * max;
+      card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+      card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+      card.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+      card.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+      card.classList.add('tilt-active');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+      card.classList.remove('tilt-active');
+    });
+  });
+}
+setupTilt('.service-card', 6);
+
+// Industry tile mouse-follow glow
+if (!reducedMotion) {
+  document.querySelectorAll('.industry-tile').forEach(tile => {
+    tile.addEventListener('mousemove', (e) => {
+      const r = tile.getBoundingClientRect();
+      tile.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+      tile.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  });
+}
+
+// Magnetic CTAs — pull primary buttons subtly toward cursor
+if (!reducedMotion) {
+  document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
+// Cursor hover state for interactive elements
+const cursorEl = document.querySelector('.cursor');
+const cursorRingEl = document.querySelector('.cursor-ring');
+if (cursorEl && cursorRingEl) {
+  document.querySelectorAll('a, button, .card, .industry-tile, .faq-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorEl.classList.add('hover-active');
+      cursorRingEl.classList.add('hover-active');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorEl.classList.remove('hover-active');
+      cursorRingEl.classList.remove('hover-active');
+    });
+  });
+}
+
+// Add counted class to proof items when counter starts (uses existing animateCounter)
+const proofObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const item = e.target.closest('.proof-item');
+      if (item) item.classList.add('counted');
+      proofObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.proof-num span[data-target]').forEach(el => proofObs.observe(el));
 
 // Counter animation
 function animateCounter(el) {
