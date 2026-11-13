@@ -1,27 +1,30 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
-    { "src": "/services", "dest": "/services.html" },
-    { "src": "/services/b2b-seo", "dest": "/services/b2b-seo.html" },
-    { "src": "/services/linkedin-ads", "dest": "/services/linkedin-ads.html" },
-    { "src": "/services/demand-generation", "dest": "/services/demand-generation.html" },
-    { "src": "/services/authority-positioning", "dest": "/services/authority-positioning.html" },
-    { "src": "/services/marketing-automation", "dest": "/services/marketing-automation.html" },
-    { "src": "/services/website-development", "dest": "/services/website-development.html" },
-    { "src": "/services/ui-ux-design", "dest": "/services/ui-ux-design.html" },
-    { "src": "/services/app-development", "dest": "/services/app-development.html" },
-    { "src": "/industries/real-estate-video-production", "dest": "/industries/real-estate-video-production.html" },
-    { "src": "/industries/founder-branding", "dest": "/industries/founder-branding.html" },
-    { "src": "/industries/ecommerce-video-production", "dest": "/industries/ecommerce-video-production.html" },
-    { "src": "/services/cinematic-brand-films", "dest": "/services/cinematic-brand-films.html" },
-    { "src": "/services/short-form-content-system", "dest": "/services/short-form-content-system.html" },
-    { "src": "/services/youtube-growth-content-systems", "dest": "/services/youtube-growth-content-systems.html" },
-    { "src": "/frameworks/corporate-storytelling", "dest": "/frameworks/corporate-storytelling.html" },
-    { "src": "/about", "dest": "/about.html" },
-    { "src": "/how-we-work", "dest": "/how-we-work.html" },
-    { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/playbooks", "dest": "/playbooks.html" },
-    { "src": "/playbooks/b2b-pipeline-audit", "dest": "/playbooks/b2b-pipeline-audit.html" }
+  "redirects": [
+    { "source": "/services/:path*", "destination": "/#services", "permanent": true },
+    { "source": "/services", "destination": "/#services", "permanent": true },
+    { "source": "/how-we-work", "destination": "/#process", "permanent": true },
+    { "source": "/about", "destination": "/#about", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/careers", "destination": "/#careers", "permanent": true },
+    { "source": "/playbooks/:path*", "destination": "/", "permanent": true },
+    { "source": "/playbooks", "destination": "/", "permanent": true },
+    { "source": "/industries/:path*", "destination": "/", "permanent": true },
+    { "source": "/frameworks/:path*", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/(styles.css|site.js)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
+    }
   ]
 }
