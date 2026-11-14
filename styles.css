@@ -133,6 +133,13 @@ section { padding: 88px 0; }
   .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
 
+/* Client names */
+.clients { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 22px; padding: 22px 0 6px; }
+.clients-label { font: 600 .78rem/1.3 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.clients-list { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; margin: 0; padding: 0; }
+.clients-list li { font: 650 1.12rem/1.3 var(--display); color: var(--ink-2); font-variation-settings: "opsz" 60; }
+@media (max-width: 600px) { .clients { flex-direction: column; gap: 10px; } .clients-list { gap: 6px 16px; } .clients-list li { font-size: 1.02rem; } }
+
 /* Who we work with */
 .sectors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .sector { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
