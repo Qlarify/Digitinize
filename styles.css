@@ -28,6 +28,7 @@ body {
   font: 400 17px/1.6 var(--body); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
 }
 img, svg { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
 a { color: var(--teal-ink); text-underline-offset: 3px; }
 a:hover { color: var(--ink); }
 :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
