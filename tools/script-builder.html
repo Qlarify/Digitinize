@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor Video Script Builder | Digitinize Creative</title>
+<meta name="description" content="Pick a specialty and topic type, type the topic, and get a structured 60-90 second doctor video script outline: hook, three points, call to action and a shot list — built from the structures hospital videos actually follow.">
+<link rel="canonical" href="https://digitinize.com/tools/script-builder">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Doctor Video Script Builder",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://digitinize.com/tools/script-builder",
+  "description": "A rule-based outline builder for 60-90 second doctor videos: hook, three points, call to action and shot list."
+}
+</script>
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:660px;margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.card h2{font-size:20px;margin:0 0 4px}
+.card .hint{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
+.fldrow{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.fldrow>div{flex:1;min-width:180px}
+label.fld{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+input[type=text],select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+input[type=text]:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ttypes{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.ttype{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px 16px;cursor:pointer;flex:1;min-width:180px}
+.ttype input{accent-color:var(--accent)}
+.ttype b{display:block;margin-bottom:4px}
+.ttype span{font-size:13px;color:var(--ink-soft)}
+.ttype:has(input:checked){border-color:var(--accent);background:#eef7f6}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer}
+button.primary:hover{background:var(--accent-dark)}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
+button.ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+#result{display:none}
+.script{counter-reset:sec}
+.spart{border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px;position:relative;background:#fff}
+.spart .stime{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark)}
+.spart h3{margin:4px 0 8px;font-size:17px}
+.spart p{margin:0;font-size:15px;color:var(--ink-soft)}
+.spart p em{color:var(--ink);font-style:normal;font-weight:600}
+.shots{margin:8px 0 0;padding-left:22px;font-size:15px;color:var(--ink-soft)}
+.shots li{margin-bottom:6px}
+.note{font-size:14px;color:var(--ink-soft);margin:14px 0 0}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote{display:none !important}
+  #builder{display:none !important}
+  #result{display:block !important}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Digitinize <span>Creative</span></a>
+    <nav><a href="/tools">Free tools</a><a href="/tools/consent-kit">Consent kit</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Free scripting tool</p>
+    <h1>Doctor video script builder</h1>
+    <p class="lede">Doctors record willingly when the questions are already on their list. Pick a specialty and topic type, type the topic, and get the outline a 60–90 second hospital video follows: hook, three points, call to action, and the shot list for the shoot.</p>
+  </div>
+
+  <section class="card" id="builder">
+    <h2>What is the video about?</h2>
+    <p class="hint">The structure is fixed — proven for hospital video. The words stay the doctor's; we never script medical content for them.</p>
+
+    <div class="fldrow">
+      <div>
+        <label class="fld" for="b-spec">Specialty</label>
+        <select id="b-spec">
+          <option>Cardiology</option><option>Orthopaedics</option><option>Oncology</option>
+          <option>Neurology</option><option>Gastroenterology</option><option>Paediatrics</option>
+          <option>IVF &amp; Fertility</option><option>Urology</option><option>Obstetrics &amp; Gynaecology</option>
+          <option>General &amp; Emergency</option><option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label class="fld" for="b-topic">Topic in the patient's words</label>
+        <input type="text" id="b-topic" placeholder="e.g. chest pain at night" maxlength="80">
+      </div>
+    </div>
+
+    <label class="fld">Topic type</label>
+    <div class="ttypes">
+      <label class="ttype"><input type="radio" name="ttype" value="condition" checked><b>Condition explainer</b><span>What it is, why it happens, when to seek help.</span></label>
+      <label class="ttype"><input type="radio" name="ttype" value="procedure"><b>Procedure film</b><span>What happens, how it feels, recovery.</span></label>
+      <label class="ttype"><input type="radio" name="ttype" value="myth"><b>Myth vs fact</b><span>The thing everyone gets wrong, corrected.</span></label>
+      <label class="ttype"><input type="radio" name="ttype" value="story"><b>Patient story</b><span>A consented journey, told with dignity.</span></label>
+    </div>
+
+    <div class="fldrow" style="margin-top:4px">
+      <div>
+        <label class="fld" for="b-doc">Doctor's name and title (optional)</label>
+        <input type="text" id="b-doc" placeholder="e.g. Dr. Nair, Senior Cardiologist" maxlength="60">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="go" type="button">Build the outline</button>
+      <button class="ghost no-print" type="button" onclick="window.print()">Print the outline</button>
+    </div>
+  </section>
+
+  <section class="card" id="result" aria-live="polite">
+    <h2 id="r-title">Your 60–90 second outline</h2>
+    <p class="hint" id="r-sub"></p>
+    <div class="script" id="script"></div>
+    <p class="note" id="r-note"></p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Have us run the shoot this script deserves</h2>
+    <p class="sub">Send the outline and we reply with a calendar slot and a topic sheet for your department. Or write to <a href="mailto:info@digitinize.com">info@digitinize.com</a>.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">Hospital *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">Anything to add</label><textarea id="f-msg" name="message" placeholder="When is your next shoot day? How many doctors will record?"></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="script-builder"><input type="hidden" name="outline" id="f-outline">
+        <button class="primary" type="submit">Send the outline</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — video production for hospitals, Bengaluru. Video partner to Manipal Hospitals since 2017. The outline is a structure, not medical content: the doctor approves every word that goes on camera.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  var SPEC_QUESTIONS = {
+    'Cardiology': 'When does chest discomfort become an emergency?',
+    'Orthopaedics': 'When does joint pain need a specialist, not a painkiller?',
+    'Oncology': 'Which symptoms should never wait for the next check-up?',
+    'Neurology': 'Which sudden signs mean you should come in immediately?',
+    'Gastroenterology': 'Which symptoms are worth a scope, not another home remedy?',
+    'Paediatrics': 'When should a parent worry and when should they wait?',
+    'IVF & Fertility': 'When should a couple seek help instead of waiting a year?',
+    'Urology': 'Which symptoms should never be ignored out of embarrassment?',
+    'Obstetrics & Gynaecology': 'Which changes in pregnancy deserve a call today?',
+    'General & Emergency': 'When is it an emergency, and when can the OPD wait?',
+    'Other': 'When does this need a doctor, and when can it wait?'
+  };
+
+  var TEMPLATES = {
+    condition: {
+      hook: ['Start with the fear, not the textbook:', '"If <topic> is keeping you up at night, this 60 seconds is for you."'],
+      points: [
+        ['What it actually is', 'One plain sentence, no jargon. Name it the way the patient would google it, then the medical word once.'],
+        ['Why it happens and the signs that matter', 'Two or three warning signs people dismiss. The doctor decides the cut-off for "come in now".'],
+        ['What to do next', 'The honest rule: what can wait for the OPD, what cannot, and which test settles it.']
+      ],
+      cta: '"If any of those signs sound familiar, book a consultation — the details are below. Your heart does not read watchlists; it reads symptoms."',
+      shots: [
+        'Doctor to camera, consultation room, warm light — the whole video lives or dies on this framing',
+        'Hands demonstration: a model, a diagram on tablet, or a simple hand gesture for each sign',
+        'Cutaway: the relevant room or machine (echo, OPD desk, day-care suite) — no patient data in frame',
+        'Vertical companion take of the hook, for the reels cut',
+        'Name-and-title card graphic, hospital logo bottom-right',
+        'End plate: department, booking number, languages available'
+      ]
+    },
+    procedure: {
+      hook: ['Answer the waiting-room question:', '"If you have been told you need <topic>, here is exactly what the day looks like."'],
+      points: [
+        ['What happens, step by step', 'From admission to discharge in plain minutes. The camera walks the route the patient will walk.'],
+        ['What it feels like', 'Anaesthesia, discomfort, the first hours after. Fear shrinks when the honest answer is on tape.'],
+        ['Recovery and back-to-life', 'First walk, first meal, back-to-work timeline, follow-up. Families rewatch this point most.']
+      ],
+      cta: '"Ask your consultant whether this is the right option for you — the details for a consultation are below."',
+      shots: [
+        'Doctor to camera for the spine of the story',
+        'Route walk: registration, the suite, the recovery corner — filmed with the unit, patients out of frame or consented',
+        'Close-ups: equipment, the recliner, the tea after. Small details carry comfort',
+        'Consented recovery story or staged b-roll for the back-to-life point',
+        'Vertical hook take for the reels cut',
+        'End plate: consultation booking, department, phone number'
+      ]
+    },
+    myth: {
+      hook: ['Name the myth in the first five seconds:', '"Most people believe <topic> means something it does not. Here is what is actually true."'],
+      points: [
+        ['The myth, said out loud', 'Say it exactly the way the family said it in the OPD. Naming it disarms it.'],
+        ['The fact, calmly', 'What is true, with the one number or mechanism that makes it land. No scolding tone.'],
+        ['What to do instead', 'The habit, test or visit that the myth was standing in front of.']
+      ],
+      cta: '"If someone told you that today, forward them this. And if it applies to you — the consultation details are below."',
+      shots: [
+        'Doctor to camera, slightly warmer framing than usual — myth-busting works on trust',
+        'Cut on each beat: myth / fact / action — three distinct takes or angles',
+        'Simple graphic or whiteboard for the one number that lands',
+        'Vertical cut of the myth line for reels — this is the most shareable format a hospital makes',
+        'Name-and-title card',
+        'End plate: booking number, "share this with someone who needs it"'
+      ]
+    },
+    story: {
+      hook: ['Open on the human moment, never the diagnosis:', '"Before <topic>, [patient] could not ... . This is what changed."'],
+      points: [
+        ['Life before', 'One concrete detail: the steps they could not climb, the fear at dinner. Consent signed before this is filmed.'],
+        ['The turn — treatment in their words', 'The patient narrates; the doctor adds one clinical sentence. Two voices, one story.'],
+        ['Life now', 'The same detail reversed. Recovery shown, not claimed.']
+      ],
+      cta: '"Every story is shared with permission, and every recovery begins with a consultation. The details are below."',
+      shots: [
+        'Two-person interview setup: patient at home or workplace, soft light, no clinic backdrop',
+        'Doctor segment: consultation room, one or two clinical sentences only',
+        'The before-and-after detail, filmed twice: the same action, once at the start, once at the end',
+        'Hands and daily-life b-roll: the actual recovered motion, dignity first',
+        'Consent form signed and filed BEFORE the shoot — see our consent kit for the form',
+        'End plate: department, booking number, consent reminder for your own shoots'
+      ]
+    }
+  };
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  document.getElementById('go').addEventListener('click', function(){
+    var spec = document.getElementById('b-spec').value;
+    var topic = document.getElementById('b-topic').value.trim();
+    var doc = document.getElementById('b-doc').value.trim();
+    var t = document.querySelector('input[name=ttype]:checked').value;
+    var tpl = TEMPLATES[t];
+    if (!topic){ topic = 'this symptom'; }
+
+    document.getElementById('r-sub').textContent =
+      (doc ? doc + ' · ' : '') + spec + ' · ' +
+      ({condition:'condition explainer', procedure:'procedure film', myth:'myth vs fact', story:'patient story'})[t];
+
+    var hook = tpl.hook[1].replace('<topic>', topic);
+    var parts = [];
+    parts.push({time:'0–10 s', title:'The hook', body:'<p><em>' + esc(hook) + '</em></p><p>' + tpl.hook[0] + '</p>'});
+    var times = ['10–35 s','35–60 s','60–75 s'];
+    tpl.points.forEach(function(p,i){
+      parts.push({time:times[i], title:'Point ' + (i+1) + ': ' + p[0], body:'<p>' + p[1] + '</p><p><em>' + esc(SPEC_QUESTIONS[spec]) + '</em> — the question this point answers.</p>'});
+    });
+    parts.push({time:'75–90 s', title:'The call to action', body:'<p><em>' + esc(tpl.cta) + '</em></p>'});
+
+    var script = document.getElementById('script');
+    script.innerHTML = parts.map(function(p){
+      return '<div class="spart"><span class="stime">' + p.time + '</span><h3>' + esc(p.title) + '</h3>' + p.body + '</div>';
+    }).join('') +
+    '<div class="spart"><span class="stime">shoot day</span><h3>Shot list</h3><ol class="shots">' +
+    tpl.shots.map(function(s){return '<li>' + esc(s) + '</li>';}).join('') + '</ol></div>';
+
+    document.getElementById('r-note').textContent =
+      'Reading pace: 60–90 seconds is about 150–200 spoken words — one breath per point. The doctor keeps medical ownership: this outline structures the recording, it never dictates clinical content.';
+
+    document.getElementById('f-outline').value =
+      spec + ' | ' + t + ' | topic: ' + topic + (doc ? ' | doctor: ' + doc : '');
+
+    var res = document.getElementById('result');
+    res.style.display = 'block';
+    res.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  window.addEventListener('beforeprint', function(){ if(document.getElementById('result').style.display!=='block') document.getElementById('go').click(); });
+
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Please add your name and a valid work email so we can reply.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){ if (el.name) data[el.name] = el.value; });
+    fetch('/api/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Thank you — your outline is with us. We reply within one working day from info@digitinize.com.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Our form service is not reachable right now. Please email info@digitinize.com and we will pick it up.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
