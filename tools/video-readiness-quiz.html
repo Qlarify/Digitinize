@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is Your Hospital Ready for Video? Self-Audit | Digitinize Creative</title>
+<meta name="description" content="Ten honest questions for hospital marketing heads. Score your hospital's video readiness in two minutes and get five next steps matched to where you stand today — doctor participation, patient consent, publishing rhythm and review speed.">
+<link rel="canonical" href="https://digitinize.com/tools/video-readiness-quiz">
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:640px;margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.q{padding:18px 0;border-bottom:1px solid var(--line)}
+.q:last-of-type{border-bottom:none}
+.q .qt{font-weight:700;margin:0 0 10px}
+.q .qt .n{color:var(--accent);margin-right:8px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;font-size:15px;background:#fff}
+.opt:hover{border-color:var(--accent)}
+.opt input{accent-color:var(--accent);margin-top:3px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--accent);background:#eef7f6}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer;margin-top:18px}
+button.primary:hover{background:var(--accent-dark)}
+button.primary:disabled{background:#9db4b3;cursor:not-allowed}
+#score{display:none}
+.scorenum{font-size:64px;font-weight:800;line-height:1;color:var(--accent-dark)}
+.scorebar{height:12px;border-radius:6px;background:#e6edf5;margin:16px 0 6px;overflow:hidden}
+.scorebar i{display:block;height:100%;background:var(--accent);border-radius:6px;transition:width .6s}
+.scorewords{font-weight:700;margin:4px 0 18px}
+.verdict{color:var(--ink-soft);margin:0 0 22px}
+.steps{counter-reset:step;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:step;position:relative;padding:0 0 16px 46px}
+.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.steps li b{display:block}
+.steps li span{color:var(--ink-soft);font-size:15px}
+.retake{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote,#quiz{display:none !important}
+  #score{display:block !important}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Digitinize <span>Creative</span></a>
+    <nav><a href="/#services">What we make</a><a href="/#process">How it works</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Two-minute self-audit</p>
+    <h1>Is your hospital ready for video?</h1>
+    <p class="lede">Ten honest questions about the things that decide whether hospital video works — doctor participation, patient consent, publishing rhythm, review speed. Answer for how your hospital runs <em>today</em>, not how you plan to run next year. Nothing is sent anywhere until you press Send at the bottom.</p>
+  </div>
+
+  <section class="card" id="quiz">
+    <div id="questions"></div>
+    <button class="primary" id="scorebtn" type="button" disabled>Score my hospital</button>
+  </section>
+
+  <section class="card" id="score" aria-live="polite">
+    <div class="scorenum" id="scorenum"></div>
+    <div class="scorebar"><i id="scorefill"></i></div>
+    <p class="scorewords" id="scorewords"></p>
+    <p class="verdict" id="verdict"></p>
+    <h2 style="font-size:18px;margin:0 0 14px">Your five next steps</h2>
+    <ol class="steps" id="steps"></ol>
+    <div class="no-print" style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="retake" type="button" onclick="location.reload()">Change my answers</button>
+      <button class="retake" type="button" onclick="window.print()">Print this report</button>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Get these five steps done with us</h2>
+    <p class="sub">Send your score and we will reply with how a hospital at your stage usually starts — or write to <a href="mailto:info@digitinize.com">info@digitinize.com</a>.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">Hospital *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">Anything to add</label><textarea id="f-msg" name="message" placeholder="Your top blocker, a deadline, a launch date..."></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="video-readiness-quiz"><input type="hidden" name="score" id="f-score">
+        <button class="primary" type="submit">Send my score</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — video production for hospitals, Bengaluru. Video partner to Manipal Hospitals since 2017. 50,000+ videos produced for healthcare teams.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  var QS = [
+    {q:"How many of your senior doctors have recorded a video for marketing in the last 6 months?",
+     a:["None", "1–3 of them", "4–10 of them", "More than 10"]},
+    {q:"When a doctor says \"I don't have time for this\", who solves it?",
+     a:["Nobody — it stalls there", "Marketing chases for weeks", "A coordinator books a fixed monthly slot with the doctor's office", "Doctors' offices come to us with topics"]},
+    {q:"Does every recording session use a proper room, lapel mics and light — or a phone in a corridor?",
+     a:["A phone in a corridor", "A mix, depending on the day", "A proper room and kit, always", "We have a studio corner in the hospital"]},
+    {q:"How do you collect patient consent for appearing in a video?",
+     a:["We don't, honestly", "Verbal consent on the day", "A signed form before the shoot", "A signed form plus a consent-minder who explains rights on camera"]},
+    {q:"How often does your hospital publish a new video?",
+     a:["Less than once a month", "About monthly", "Weekly", "Several a week across channels"]},
+    {q:"Who writes the doctor's talking points before a shoot?",
+     a:["The doctor improvises", "Marketing sends a rough topic", "Each specialty gets a topic sheet drawn from the questions patients actually ask"]},
+    {q:"How long from shoot day to a review-ready first cut?",
+     a:["Weeks, or never", "About a week", "2–3 working days", "Same day for urgent items"]},
+    {q:"How do reviews happen?",
+     a:["Long email chains", "WhatsApp screenshots and forwards", "One review link where people comment on the exact second"]},
+    {q:"Are your videos subtitled and translated for the languages your patients speak?",
+     a:["No subtitles", "Subtitles in English only", "Subtitles in 2–3 regional languages", "Subtitles and versions in 5+ languages, checked by native speakers"]},
+    {q:"Can you measure what video brings into your hospital?",
+     a:["No idea", "Views and likes only", "Enquiry calls traced to some videos", "Every campaign video carries a trackable number or link"]}
+  ];
+
+  var WEIGHTS = [1,1,1,1,1,1,1,1,1,1]; // every question weighs equally
+
+  var STEPS = {
+    high: [
+      ["Fix the review bottleneck","With this much output, the slowest thing is usually review — one shared review link per shoot, comments on the exact second, one owner who closes them."],
+      ["Build a topic calendar by specialty","Sit with each department head once and pull out the 20 questions their patients actually ask. That becomes your quarter's topic sheet."],
+      ["Make consent a flow, not a scramble","Pre-check consent status before shoot day so no story is shot and then shelved."],
+      ["Double down on what traces","Keep the videos that bring traced enquiries; retire the formats that only bring likes."],
+      ["Plan a quarterly anchor","One flagship film a quarter — a unit story, a first-of-its-kind procedure — around which the weekly reels orbit."]
+    ],
+    mid: [
+      ["Pick two specialties, not ten","Start where doctors are already willing. Two specialties recording monthly beats ten agreeing to nothing."],
+      ["Book fixed monthly slots","The single habit that keeps hospital video alive: every doctor's office knows the shoot day a month ahead."],
+      ["Put consent forms in the OPD flow","Hand the form to willing patients early, so by shoot day consent is already signed."],
+      ["Publish weekly, even if small","A reel a week keeps the channel warm while the bigger films are in edit."],
+      ["Get the first cut to 2 working days","Speed is what keeps doctors interested — they see their effort on screen the same week."]
+    ],
+    low: [
+      ["Record one willing doctor this month","One good explainer byte from your most willing senior doctor proves the pipeline to your leadership."],
+      ["Choose a quiet room with a window","A consultation room with soft daylight beats any corridor. Lapel mic and a tripod phone is enough to start."],
+      ["Print a consent form before anything else","No consent, no story. Get the form ready before the first patient conversation."],
+      ["Write five topics from your OPD desk","Ask your front desk: what do patients ask most? Those five questions are your first five videos."],
+      ["Set a slot, not a wish","A recurring monthly hour in the doctor's calendar, protected like a CME slot."]
+    ]
+  };
+
+  var container = document.getElementById('questions');
+  QS.forEach(function(item, i){
+    var d = document.createElement('div'); d.className='q';
+    var opts = item.a.map(function(txt, j){
+      return '<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+txt+'</span></label>';
+    }).join('');
+    d.innerHTML = '<p class="qt"><span class="n">'+(i+1)+'</span>'+item.q+'</p><div class="opts">'+opts+'</div>';
+    container.appendChild(d);
+  });
+
+  var scoreBtn = document.getElementById('scorebtn');
+  container.addEventListener('change', function(){
+    var answered = document.querySelectorAll('#questions input:checked').length;
+    scoreBtn.disabled = answered < QS.length;
+    scoreBtn.textContent = answered < QS.length
+      ? 'Answer the remaining ' + (QS.length - answered) + ' question' + ((QS.length-answered)>1?'s':'')
+      : 'Score my hospital';
+  });
+
+  scoreBtn.addEventListener('click', function(){
+    var total = 0;
+    QS.forEach(function(item, i){
+      var sel = document.querySelector('input[name="q'+i+'"]:checked');
+      if (sel) total += WEIGHTS[i] * (parseInt(sel.value,10) + 1);
+    });
+    var max = QS.length * 4;
+    var pct = Math.round(100 * total / max);
+
+    document.getElementById('scorenum').textContent = total + ' / ' + max;
+    document.getElementById('scorefill').style.width = pct + '%';
+    document.getElementById('f-score').value = total + '/' + max + ' (' + pct + '%)';
+
+    var words, verdict, steps;
+    if (pct >= 70){
+      words = 'Your hospital is video-ready — the machine is running.';
+      verdict = 'You already have the hard parts: willing doctors, consent flow and publishing rhythm. What separates hospitals at your level is review speed and topic discipline. We run exactly this kind of weekly machine for multi-unit hospital groups.';
+      steps = STEPS.high;
+    } else if (pct >= 40){
+      words = 'You are halfway there — the intent is real, the habits are not.';
+      verdict = 'Something is being recorded and something is being published, but doctor time, consent or review speed keeps breaking the chain. Hospitals in this range usually go from monthly to weekly output in one quarter by fixing two habits, not by spending more.';
+      steps = STEPS.mid;
+    } else {
+      words = 'You are at the starting line — and that is a fine place to start.';
+      verdict = 'Almost nothing is in place yet, which means the fastest wins are small ones: one willing doctor, one quiet room, one signed consent form. First videos from a standing start take weeks, not months, when the first three habits are locked.';
+      steps = STEPS.low;
+    }
+    document.getElementById('scorewords').textContent = words;
+    document.getElementById('verdict').textContent = verdict;
+    document.getElementById('steps').innerHTML = steps.map(function(s){
+      return '<li><b>'+s[0]+'</b><span>'+s[1]+'</span></li>';
+    }).join('');
+
+    var sc = document.getElementById('score');
+    sc.style.display='block';
+    sc.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Please add your name and a valid work email so we can reply.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){
+      if (el.name) data[el.name] = el.value;
+    });
+    fetch('/api/lead', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Thank you — your score is with us. We reply within one working day from info@digitinize.com.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Our form service is not reachable right now. Please email info@digitinize.com with your score and we will pick it up.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

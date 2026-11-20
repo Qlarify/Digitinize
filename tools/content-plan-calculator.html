@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital Video Content-Plan Calculator | Digitinize Creative</title>
+<meta name="description" content="Pick your specialties, doctors and months — get a monthly hospital video plan: doctor bytes, reels, patient testimonials and event films, with shoot days per month and a printable plan you can take to your leadership.">
+<link rel="canonical" href="https://digitinize.com/tools/content-plan-calculator">
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --warn:#b3541e; --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:640px;margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.card h2{font-size:20px;margin:0 0 4px}
+.card .hint{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
+label.fld{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+.fldrow{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:18px}
+.fldrow>div{flex:1;min-width:160px}
+input[type=number],select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+input[type=number]:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;cursor:pointer;font-size:15px;user-select:none}
+.chip input{accent-color:var(--accent);margin:0;cursor:pointer}
+.chip:has(input:checked){border-color:var(--accent);background:#eef7f6;font-weight:600}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer}
+button.primary:hover{background:var(--accent-dark)}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
+button.ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+#result{display:none}
+#result .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.planband{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 20px}
+.planband .b{background:#eef7f6;border:1px solid #cfe6e4;border-radius:10px;padding:12px 18px;min-width:150px}
+.planband .b b{display:block;font-size:26px;line-height:1.1;color:var(--accent-dark)}
+.planband .b span{font-size:13px;color:var(--ink-soft)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tfoot td{font-weight:700;border-bottom:none;background:#f2f6fa}
+.note{font-size:14px;color:var(--ink-soft);margin:14px 0 0}
+.priceband{margin-top:20px;border-left:4px solid var(--gold);background:#fbf6ec;border-radius:0 10px 10px 0;padding:14px 18px;font-size:15px}
+.priceband b{color:#7a5f1e}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea,.formgrid select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote{display:none !important}
+  .card{border:none;padding:0}
+  #calculator{display:none !important}
+  #result{display:block !important}
+  h1{font-size:22px}
+  .planband .b{border:1px solid #999;background:#fff}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Digitinize <span>Creative</span></a>
+    <nav><a href="/#services">What we make</a><a href="/#process">How it works</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Free planning tool</p>
+    <h1>Hospital video content-plan calculator</h1>
+    <p class="lede">Tell us your specialties and how many doctors will face the camera. Get a month-by-month video plan — doctor explainer bytes, reels, patient stories and event films — with shoot days per month. Print it and take it to your leadership review.</p>
+  </div>
+
+  <section class="card" id="calculator">
+    <h2>Your hospital, in numbers</h2>
+    <p class="hint">Nothing is sent anywhere until you press Send at the bottom of the page — the plan is calculated right here in your browser.</p>
+
+    <div class="fldrow">
+      <div>
+        <label class="fld" for="spec-chips">Specialties you want on camera</label>
+        <div class="chips" id="spec-chips">
+          <label class="chip"><input type="checkbox" value="Cardiology">Cardiology</label>
+          <label class="chip"><input type="checkbox" value="Orthopaedics">Orthopaedics</label>
+          <label class="chip"><input type="checkbox" value="Oncology">Oncology</label>
+          <label class="chip"><input type="checkbox" value="Neurology">Neurology</label>
+          <label class="chip"><input type="checkbox" value="Gastroenterology">Gastroenterology</label>
+          <label class="chip"><input type="checkbox" value="Paediatrics">Paediatrics</label>
+          <label class="chip"><input type="checkbox" value="IVF / Fertility">IVF / Fertility</label>
+          <label class="chip"><input type="checkbox" value="Urology">Urology</label>
+          <label class="chip"><input type="checkbox" value="Obstetrics &amp; Gynaecology">Obstetrics &amp; Gynaecology</label>
+          <label class="chip"><input type="checkbox" value="General &amp; Emergency">General &amp; Emergency</label>
+          <label class="chip"><input type="checkbox" value="Other">Other (write it in the message below)</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="fldrow">
+      <div>
+        <label class="fld" for="doctors">Doctors who will record</label>
+        <input type="number" id="doctors" min="1" max="60" value="6">
+      </div>
+      <div>
+        <label class="fld" for="months">Months to plan</label>
+        <select id="months">
+          <option value="1">1 month</option>
+          <option value="3" selected>3 months</option>
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+        </select>
+      </div>
+      <div>
+        <label class="fld" for="beds">Hospital size</label>
+        <select id="beds">
+          <option value="multi">Multi-specialty (100+ beds)</option>
+          <option value="single">Single-specialty / clinic</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="go" type="button">Build my plan</button>
+      <button class="ghost no-print" type="button" onclick="window.print()">Print the plan</button>
+    </div>
+  </section>
+
+  <section class="card" id="result" aria-live="polite">
+    <div class="head">
+      <h2 id="plan-title">Your monthly video plan</h2>
+      <span class="hint" id="plan-sub"></span>
+    </div>
+
+    <div class="planband" id="planband"></div>
+
+    <table id="plantable">
+      <thead>
+        <tr><th>Content type</th><th class="num">Per month</th><th>What it is for</th></tr>
+      </thead>
+      <tbody id="planrows"></tbody>
+      <tfoot>
+        <tr><td>Total videos per month</td><td class="num" id="totalcell"></td><td>Delivered with first cuts in 2 working days each</td></tr>
+        <tr><td>Shoot days per month</td><td class="num" id="dayscell"></td><td>Scheduled around your OPD hours</td></tr>
+      </tfoot>
+    </table>
+
+    <p class="note" id="plannote"></p>
+
+    <div class="priceband">
+      <b>Retainers like this start from ₹1.5 lakh per month.</b> The exact number depends on shoot days, travel and how many languages you need subtitles in. Send the plan below and we will price yours in one working day.
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Send this plan to us</h2>
+    <p class="sub">We will reply with a quote and a calendar slot for your first shoot. Or write to <a href="mailto:info@digitinize.com">info@digitinize.com</a>.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">Hospital *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-role">Your role</label><input id="f-role" name="role" placeholder="Marketing head / Brand manager" autocomplete="job-title"></div>
+      <div><label for="f-city">City</label><input id="f-city" name="city" placeholder="Bengaluru" autocomplete="address-level2"></div>
+      <div class="full"><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div class="full"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">Anything to add</label><textarea id="f-msg" name="message" placeholder="A health day coming up? A new unit launch? Tell us and we will fit it in."></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="content-plan-calculator"><input type="hidden" name="plan" id="f-plan">
+        <button class="primary" type="submit">Send my plan</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — video production for hospitals, Bengaluru. Video partner to Manipal Hospitals since 2017. 50,000+ videos produced for healthcare teams.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  var QUIET = {
+    "Cardiology": ["heart attack warning signs","angioplasty vs bypass","pre-op heart checks"],
+    "Orthopaedics": ["knee replacement recovery","sports injury first aid","joint pain myths"],
+    "Oncology": ["chemotherapy myths","cancer screening schedules","patient journey films"],
+    "Neurology": ["stroke FAST signs","migraine vs headache","epilepsy first response"],
+    "Gastroenterology": ["liver health basics","endoscopy explained","gut and diet"],
+    "Paediatrics": ["vaccination timelines","fever in children","newborn care"],
+    "IVF / Fertility": ["first IVF consultation","myths about fertility treatment","success factors"],
+    "Urology": ["kidney stones prevention","prostate screening age","urinary infections"],
+    "Obstetrics & Gynaecology": ["high-risk pregnancy care","antenatal visit schedule","PCOS explained"],
+    "General & Emergency": ["emergency room walk-through","first aid basics","health check packages"],
+    "Other": ["your hospital's top procedures"]
+  };
+
+  function picks(){
+    var chips = document.querySelectorAll('#spec-chips input:checked');
+    return Array.prototype.map.call(chips, function(c){return c.value;});
+  }
+
+  function compute(){
+    var specs = picks();
+    var docs = parseInt(document.getElementById('doctors').value,10) || 0;
+    var months = parseInt(document.getElementById('months').value,10) || 3;
+    var kind = document.getElementById('beds').value;
+    if (!specs.length) return null;
+
+    // Model: a steady month a hospital marketing team can actually publish.
+    var bytes  = Math.min(docs, specs.length * 2);          // every doctor recorded on rotation
+    var reels  = Math.max(6, Math.round(specs.length * 2)); // 2 reels per specialty, floor of 6
+    var tests  = Math.min(specs.length * 2, 4);             // consented patient stories, capped for consent capacity
+    var events = kind === 'multi' ? 2 : 1;                  // camps, CMEs, health-day coverage
+
+    var doctorBytes = Math.max(bytes, specs.length);       // at least one per specialty
+    var shootDays = Math.max(2, Math.ceil((doctorBytes + tests) / 4)); // ~4 sessions per shoot day
+
+    return {
+      specs: specs, docs: docs, months: months, kind: kind,
+      bytes: doctorBytes, reels: reels, tests: tests, events: events,
+      total: doctorBytes + reels + tests + events, days: shootDays,
+      grandTotal: (doctorBytes + reels + tests + events) * months
+    };
+  }
+
+  function topicsFor(specs, per){
+    var out = [];
+    specs.forEach(function(s){
+      (QUIET[s]||[]).slice(0, per).forEach(function(t){ out.push(t + " (" + s + ")"); });
+    });
+    return out;
+  }
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  function render(){
+    var p = compute();
+    var res = document.getElementById('result');
+    if (!p){ res.style.display='none'; return; }
+
+    document.getElementById('plan-title').textContent = 'Your monthly video plan';
+    document.getElementById('plan-sub').textContent =
+      p.specs.length + (p.specs.length===1?' specialty':' specialties') + ' · ' + p.docs + ' doctors · ' + p.months + ' month' + (p.months>1?'s':'');
+
+    var band = document.getElementById('planband');
+    band.innerHTML = '';
+    [['Doctor bytes', p.bytes], ['Reels', p.reels], ['Patient stories', p.tests], ['Event films', p.events], ['Shoot days', p.days]]
+      .forEach(function(x){
+        var d = document.createElement('div'); d.className='b';
+        d.innerHTML = '<b>'+x[1]+'</b><span>'+esc(x[0])+' / month</span>';
+        band.appendChild(d);
+      });
+
+    var rows = [
+      ['Doctor explainer bytes', p.bytes, topicsFor(p.specs, 1).slice(0, p.bytes).join('; ') || 'Answers patients google before they visit, one topic per doctor.'],
+      ['Short reels', p.reels, 'Vertical cuts and OPD-wait loops from the same recordings — your social calendar stays full.'],
+      ['Patient stories', p.tests, 'Consented testimonial films: journey, treatment, recovery. Two per specialty per month is what consent flow comfortably allows.'],
+      ['Event coverage', p.events, 'Camps, CMEs, launches and health-day films, edited within the week.']
+    ];
+    document.getElementById('planrows').innerHTML = rows.map(function(r){
+      return '<tr><td><b>'+esc(r[0])+'</b></td><td class="num">'+r[1]+'</td><td>'+esc(r[2])+'</td></tr>';
+    }).join('');
+    document.getElementById('totalcell').textContent = p.total;
+    document.getElementById('dayscell').textContent = p.days;
+
+    document.getElementById('plannote').textContent =
+      'Over ' + p.months + ' month' + (p.months>1?'s':'') + ' this is ' + p.grandTotal + ' videos. We suggest reviewing topics with each department head in week one, and locking the first month before the first shoot day.';
+
+    document.getElementById('f-plan').value =
+      'Specialties: ' + p.specs.join(', ') + ' | Doctors: ' + p.docs + ' | Months: ' + p.months +
+      ' | Per month: ' + p.bytes + ' doctor bytes, ' + p.reels + ' reels, ' + p.tests + ' patient stories, ' + p.events + ' event films (' + p.days + ' shoot days)';
+
+    res.style.display = 'block';
+    res.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.getElementById('go').addEventListener('click', render);
+
+  // Print: if the visitor prints before building a plan, build it first.
+  window.addEventListener('beforeprint', function(){ if(document.getElementById('result').style.display!=='block') render(); });
+
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Please add your name and a valid work email so we can reply.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){
+      if (el.name) data[el.name] = el.value;
+    });
+    fetch('/api/lead', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Thank you — your plan is with us. We reply within one working day from info@digitinize.com.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Our form service is not reachable right now. Please email your plan to info@digitinize.com and we will pick it up.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
