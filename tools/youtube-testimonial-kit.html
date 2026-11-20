@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital YouTube Channel Checklist &amp; Patient Testimonial Kit | Digitinize Creative</title>
+<meta name="description" content="A 30-point scored checklist for a hospital YouTube channel, and a patient testimonial kit: the questions to ask, the consent form to sign first, and the shot list for the day.">
+<link rel="canonical" href="https://digitinize.com/tools/youtube-testimonial-kit">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hospital YouTube Channel Checklist and Patient Testimonial Kit",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://digitinize.com/tools/youtube-testimonial-kit",
+  "description": "A scored 30-point hospital YouTube channel audit plus a printable patient testimonial kit: interview questions, consent flow and shot list."
+}
+</script>
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:680px;margin:0 0 24px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 30px}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer}
+button.primary:hover{background:var(--accent-dark)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.card h2{font-size:22px;margin:0 0 6px}
+.card p.hint{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
+#score{display:none}
+.sect{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:22px 0 10px}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line)}
+.checks li:last-child{border-bottom:none}
+.checks input{accent-color:var(--accent);margin-top:3px}
+.checks .ct{font-size:15px}
+.checks .ct small{display:block;color:var(--ink-soft)}
+.scorebar{height:12px;border-radius:6px;background:#e6edf5;margin:14px 0 4px;overflow:hidden}
+.scorebar i{display:block;height:100%;background:var(--accent);border-radius:6px;transition:width .6s}
+.scorewords{font-weight:700;margin:4px 0 10px}
+.note{font-size:14px;color:var(--ink-soft);margin:14px 0 0}
+.notice{border-left:4px solid var(--gold);background:#fbf6ec;border-radius:0 10px 10px 0;padding:13px 16px;font-size:14px;margin:16px 0 0}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px;margin-bottom:28px}
+.doc .docname{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 10px}
+.doc h2{font-size:24px;margin:0 0 6px}
+.doc .docsub{color:var(--ink-soft);font-size:14px;margin:0 0 20px}
+.doc h3{font-size:17px;margin:26px 0 10px}
+.doc ol,.doc ul{padding-left:22px;margin:0 0 12px;font-size:15px}
+.doc li{margin-bottom:8px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote,.actions,#score{display:none !important}
+  .card,.doc{border:none;padding:0}
+  .doc+.doc{page-break-before:always}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Digitinize <span>Creative</span></a>
+    <nav><a href="/tools">Free tools</a><a href="/tools/consent-kit">Consent kit</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Free audit + kit</p>
+    <h1>Hospital YouTube channel checklist &amp; testimonial kit</h1>
+    <p class="lede">Two documents hospital marketing teams keep pinned: a scored 30-point audit of your hospital's YouTube presence, and the testimonial kit — the questions to ask a consented patient, and the shots that carry their story with dignity.</p>
+    <div class="actions">
+      <button class="primary" type="button" onclick="window.print()">Print both documents</button>
+    </div>
+  </div>
+
+  <!-- ===================== Document 1 ===================== -->
+  <section class="card" id="audit">
+    <div class="docname">Document 1</div>
+    <h2>The 30-point YouTube audit</h2>
+    <p class="hint">Tick what is true today. The score updates as you tick — and shows what to fix first.</p>
+
+    <div id="score">
+      <div class="scorebar"><i id="scorefill"></i></div>
+      <p class="scorewords"><span id="scorenum"></span> <span id="scorewords"></span></p>
+    </div>
+
+    <p class="sect">Channel foundation</p>
+    <ul class="checks" data-sect="foundation">
+      <li><input type="checkbox"><span class="ct">Channel name and handle match the hospital's brand, not a department's abbreviation<small>Patients search the hospital's name — the channel must answer to it.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Banner image states the city, the specialties and one promise<small>Six words or fewer. A banner is a billboard, not a brochure.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Channel description carries the address, phone and OPD hours<small>It is indexed. Patients read it before they trust it.</small></span></li>
+      <li><input type="checkbox"><span class="ct">A trailer welcomes a first-time visitor within 60 seconds<small>The one video every new viewer sees. Most hospital channels waste it.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Playlists are organised by specialty, not by month<small>"Cardiology" beats "October uploads" in every respect.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Links go to the booking page, not the homepage<small>One fewer click between interest and an OPD slot.</small></span></li>
+    </ul>
+
+    <p class="sect">Publishing rhythm</p>
+    <ul class="checks" data-sect="rhythm">
+      <li><input type="checkbox"><span class="ct">A new video goes out at least twice a month<small>YouTube rewards rhythm more than bursts.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Publish day and hour are fixed and known to the team<small>Consistency compounds; surprise uploads don't.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Each video has one doctor and one topic — no marathons<small>Watch time dies at minute four of a multi-topic recording.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Every long video yields at least two vertical cuts for shorts and reels<small>The same footage should feed every channel you run.</small></span></li>
+      <li><input type="checkbox"><span class="ct">An upload calendar exists on paper, a month ahead<small>If it isn't scheduled, it isn't a rhythm.</small></span></li>
+    </ul>
+
+    <p class="sect">Titles, thumbnails and search</p>
+    <ul class="checks" data-sect="search">
+      <li><input type="checkbox"><span class="ct">Titles are written as the question patients google<small>"When does chest pain need a doctor?" — not "Cardiology CME 2026".</small></span></li>
+      <li><input type="checkbox"><span class="ct">Thumbnails show a doctor's face or a patient moment, with three words maximum<small>The face earns the click; text clutter kills it.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Descriptions carry the first 100 characters as the answer itself<small>That line shows in search results. Make it useful, not "Welcome to our channel".</small></span></li>
+      <li><input type="checkbox"><span class="ct">Every video has chapters with plain-language labels<small>Patients skip to the minute they need; chapters keep them.</small></span></li>
+      <li><input type="checkbox"><span class="ct">The hospital's city appears in titles or tags where it matters<small>Hospital video is local search. "Bengaluru" belongs in the title for OPD-driven topics.</small></span></li>
+    </ul>
+
+    <p class="sect">Watch experience</p>
+    <ul class="checks" data-sect="watch">
+      <li><input type="checkbox"><span class="ct">Sound is clean — lapel mics, no corridor echo<small>Patients forgive a plain room; they do not forgive noise.</small></span></li>
+      <li><input type="checkbox"><span class="ct">The first 10 seconds answer the title's question or promise it tightly<small>Retention is decided before the doctor finishes their greeting.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Every video is subtitled in English<small>Most hospital video is watched muted at first.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Regional-language subtitles or versions exist for the top-performing videos<small>The patients who need you most often watch in their own language.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Names and titles on screen are verified with the doctor's office<small>A mislabelled consultant is a relationship burned for a thumbnail.</small></span></li>
+    </ul>
+
+    <p class="sect">Consent and compliance</p>
+    <ul class="checks" data-sect="consent">
+      <li><input type="checkbox"><span class="ct">No patient face appears anywhere without a signed consent on file<small>Not "verbal approval on the day". Signed, filed, retrievable.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Consent forms are re-checked before any video is re-used in a campaign<small>Past consent covered past use; check before re-publishing.</small></span></li>
+      <li><input type="checkbox"><span class="ct">No cure claims, no survival-rate promises, no competitor comparisons in any title or description<small>Compliance is cheaper than an apology.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Clinical scripts and on-screen claims pass a medical review<small>One named reviewer, one day turnaround, no exceptions.</small></span></li>
+    </ul>
+
+    <p class="sect">Growth and measurement</p>
+    <ul class="checks" data-sect="growth">
+      <li><input type="checkbox"><span class="ct">Videos end with one action: a phone number, a booking link, or a playlist<small>"Subscribe" is not the action a hospital needs.</small></span></li>
+      <li><input type="checkbox"><span class="ct">A trackable phone number or link appears in the videos that matter<small>Views are vanity; traced enquiries are the business.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Someone reads the retention graph of every upload<small>The drop-off minute tells you exactly what to fix next time.</small></span></li>
+      <li><input type="checkbox"><span class="ct">Comments get a reply within two working days<small>The comment section is a waiting room; staff it like one.</small></span></li>
+      <li><input type="checkbox"><span class="ct">The channel is linked from the hospital website, WhatsApp and Google profile<small>Your own properties are the first subscribers and the first trust.</small></span></li>
+    </ul>
+
+    <p class="note" id="scorenote">Tick what is true — the bar updates as you go.</p>
+    <p class="notice"><b>Scoring:</b> 24–30 means the machine runs; 15–23 means the parts exist but the habits don't; below 15, start with the foundation section and the publishing rhythm — nothing else pays off until those are fixed.</p>
+  </section>
+
+  <!-- ===================== Document 2 ===================== -->
+  <section class="doc" id="testimonial">
+    <div class="docname">Document 2</div>
+    <h2>Patient testimonial kit</h2>
+    <p class="docsub">The questions, the consent flow and the shots. The story belongs to the patient; the recording belongs to the consent form.</p>
+
+    <h3>Before you ask a patient</h3>
+    <ol>
+      <li><b>Consent first, always.</b> Use the patient video consent form in our <a href="/tools/consent-kit">consent kit</a> — signed before the shoot, with the patient told exactly where the film appears.</li>
+      <li><b>Let the doctor make the ask.</b> Patients agree most readily when their own consultant raises it after a good outcome. A marketer cold-calling the ward does not work.</li>
+      <li><b>Choose story over praise.</b> "The staff was excellent" is an advertisement. "I climbed the temple steps I could not climb last year" is a film.</li>
+      <li><b>Offer the no-face option.</b> Voice, hands, silhouette — many of the best testimonial films carry no face at all, and consent rates double when patients know that.</li>
+    </ol>
+
+    <h3>Ten questions that make a story</h3>
+    <p style="font-size:14px;color:var(--ink-soft);margin:0 0 10px">Ask in this order. Follow-ups are where the film lives — the numbered questions only open doors.</p>
+    <ol>
+      <li>"What could you not do before you came to us?"</li>
+      <li>"What did you think was going to happen?"</li>
+      <li>"Who was with you when you decided to come here?"</li>
+      <li>"What do you remember about the first day?"</li>
+      <li>"What surprised you?"</li>
+      <li>"Was there a moment you knew you were getting better?"</li>
+      <li>"What did the doctors and nurses do that stayed with you?"</li>
+      <li>"What would you say to someone sitting where you sat three months ago?"</li>
+      <li>"What are you doing now that you couldn't do then?"</li>
+      <li>"Is there anything you want to add that I didn't ask?"</li>
+    </ol>
+
+    <h3>The interview rules</h3>
+    <ul>
+      <li>The patient may stop at any time, and is told so before the camera rolls.</li>
+      <li>Never ask for praise, never feed lines, never ask them to repeat something "more positively".</li>
+      <li>Let the answer run. Silence after an answer is where the real answer lives.</li>
+      <li>One clinical sentence from the doctor, if the patient agrees — the story is the patient's, the context is the doctor's.</li>
+      <li>Show the patient the cut before it is published, if they ask to see it.</li>
+    </ul>
+
+    <h3>Shot list for the day</h3>
+    <ol>
+      <li>Patient seated at home or workplace, soft window light, camera at eye level — never in a ward gown.</li>
+      <li>The "before" detail: the stairway, the kitchen, the walking stick — whatever the story named.</li>
+      <li>Hands and daily actions: tea poured, a grandchild held, a page turned. Dignity lives in small motions.</li>
+      <li>The doctor segment: consultation room, one or two clinical sentences, warm framing.</li>
+      <li>The "after" motion: the same action as the "before" detail, now done with ease — film it exactly twice.</li>
+      <li>Vertical takes of the strongest single answer, for reels and shorts.</li>
+      <li>Cutaways of the consented family member listening — reaction shots are half the film.</li>
+      <li>End plate: department, booking number, "shared with the patient's permission".</li>
+    </ol>
+
+    <p class="notice"><b>One rule that outranks the rest:</b> if the patient hesitates — before, during or after — the film waits. No shot is worth a patient who felt used. A story told freely is worth ten arranged ones.</p>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section class="contact" id="contact">
+    <h2>Have your channel audited by the team that runs them</h2>
+    <p class="sub">We run hospital YouTube channels end to end — shoots, edits, subtitles, uploads. Send your score and we reply with what to fix first. Or write to <a href="mailto:info@digitinize.com">info@digitinize.com</a>.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">Hospital *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">Anything to add</label><textarea id="f-msg" name="message" placeholder="Your channel URL, your score, your next shoot date..."></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="youtube-testimonial-kit"><input type="hidden" name="score" id="f-score">
+        <button class="primary" type="submit">Send my audit</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — video production for hospitals, Bengaluru. Video partner to Manipal Hospitals since 2017. 50,000+ videos produced for healthcare teams.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  var total = document.querySelectorAll('#audit .checks input').length;
+  var scoreBox = document.getElementById('score');
+  function update(){
+    var done = document.querySelectorAll('#audit .checks input:checked').length;
+    var pct = Math.round(100 * done / total);
+    document.getElementById('scorefill').style.width = pct + '%';
+    document.getElementById('scorenum').textContent = done + ' / ' + total;
+    document.getElementById('f-score').value = done + '/' + total + ' (' + pct + '%)';
+    var w;
+    if (pct >= 80) w = 'The machine runs. Your next gain is in the growth section.';
+    else if (pct >= 50) w = 'The parts exist; the habits do not. Fix rhythm before polish.';
+    else w = 'Start with the foundation. Nothing else pays off until it holds.';
+    document.getElementById('scorewords').textContent = w;
+    scoreBox.style.display = 'block';
+  }
+  document.getElementById('audit').addEventListener('change', update);
+
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Please add your name and a valid work email so we can reply.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){ if (el.name) data[el.name] = el.value; });
+    fetch('/api/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Thank you — your audit is with us. We reply within one working day from info@digitinize.com.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Our form service is not reachable right now. Please email info@digitinize.com and we will pick it up.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
