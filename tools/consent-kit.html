@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient Video Consent &amp; Shoot-Day Kit | Digitinize Creative</title>
+<meta name="description" content="A ready-to-print patient video consent form and a shoot-day checklist for hospital marketing teams — the two pieces of paper that keep hospital video safe, legal and unhurried.">
+<link rel="canonical" href="https://digitinize.com/tools/consent-kit">
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:680px;margin:0 0 26px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 30px}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer}
+button.primary:hover{background:var(--accent-dark)}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
+button.ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+.doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px;margin-bottom:28px;position:relative}
+.doc .docname{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 10px}
+.doc h2{font-size:24px;margin:0 0 6px}
+.doc .docsub{color:var(--ink-soft);font-size:14px;margin:0 0 20px}
+.doc h3{font-size:17px;margin:26px 0 10px}
+.doc p,.doc li{font-size:15px}
+.doc ol,.doc ul{padding-left:22px;margin:0 0 12px}
+.formline{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 18px}
+.formline label{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:4px}
+.formline input{border:none;border-bottom:1.5px solid #9fb0c4;background:#fbfcfe;border-radius:6px 6px 0 0;padding:8px 10px;font-size:15px;font-family:inherit;width:100%}
+.formline>div{flex:1;min-width:170px}
+.checks{list-style:none;padding:0;margin:0 0 14px}
+.checks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0}
+.checks input{accent-color:var(--accent);margin-top:3px}
+.sigs{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px}
+.sigs>div{flex:1;min-width:180px}
+.sigs .sline{border-bottom:1.5px solid var(--ink);height:44px}
+.sigs .slabel{font-size:13px;color:var(--ink-soft);margin-top:5px}
+.notice{border-left:4px solid var(--gold);background:#fbf6ec;border-radius:0 10px 10px 0;padding:13px 16px;font-size:14px;margin:16px 0 0}
+.checkcol{columns:2;column-gap:34px}
+.checkcol li{break-inside:avoid}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}.checkcol{columns:1}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote,.actions{display:none !important}
+  .doc{border:none;padding:0;margin-bottom:34px;page-break-inside:avoid}
+  .doc+.doc{page-break-before:always}
+  .doc h2{font-size:20px}
+  .formline input{background:#fff}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Digitinize <span>Creative</span></a>
+    <nav><a href="/#services">What we make</a><a href="/tools/content-plan-calculator">Plan calculator</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Free printable kit</p>
+    <h1>Patient video consent &amp; shoot-day kit</h1>
+    <p class="lede">The two pieces of paper that keep hospital video safe: a consent form a patient can actually understand, and a checklist that keeps a shoot day unhurried and inside the rules. Print them, stamp your hospital name on them, and use them from your next shoot.</p>
+    <div class="actions">
+      <button class="primary" type="button" onclick="window.print()">Print the kit</button>
+      <a class="ghost" style="text-decoration:none;padding:12px 20px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-weight:600;color:var(--ink)" href="/tools/content-plan-calculator">Build my video plan instead</a>
+    </div>
+  </div>
+
+  <!-- ===================== Document 1 ===================== -->
+  <section class="doc" id="consent">
+    <p class="docname">Document 1 of 2</p>
+    <h2>Patient Video Consent Form</h2>
+    <p class="docsub">To be signed <b>before</b> any recording. Give the patient time to read it, and answer questions before signing, not after.</p>
+
+    <div class="formline">
+      <div><label>Hospital / unit name</label><input></div>
+      <div><label>Date</label><input type="date"></div>
+    </div>
+    <div class="formline">
+      <div><label>Patient name</label><input></div>
+      <div><label>OPD / registration number</label><input></div>
+    </div>
+    <div class="formline">
+      <div><label>Department</label><input></div>
+      <div><label>Treatment / procedure spoken about in the video</label><input></div>
+    </div>
+
+    <h3>What we are asking</h3>
+    <p>We would like to record a video of you (or your child, named above) for the hospital's public communication. We are asking your permission before anything is recorded.</p>
+
+    <h3>Please tick what you agree to</h3>
+    <ul class="checks">
+      <li><input type="checkbox" id="c1"><label for="c1">My face may appear on camera</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">My voice may be recorded</label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">My story (illness, treatment and recovery) may be spoken about in the video</label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">The video may be published on the hospital's website</label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">The video may be published on the hospital's social media pages</label></li>
+      <li><input type="checkbox" id="c6"><label for="c6">The video may be shown inside the hospital (waiting areas, events, health camps)</label></li>
+    </ul>
+    <p style="font-size:14px;color:var(--ink-soft)">Anything you do not tick will not be used. We can also film you so that your face is not shown — please tell the coordinator and they will adjust the framing.</p>
+
+    <h3>Your medical care will never depend on this</h3>
+    <ol>
+      <li>Saying no will not affect your treatment or your relationship with your doctors in any way.</li>
+      <li>You may change your mind at any time, even after the video is published. Tell the marketing desk and we will take it down within one working day.</li>
+      <li>The recording belongs to the hospital. No money is paid for appearing in it, and the video may not be used to promote any product or medicine.</li>
+      <li>Your medical records are not part of this video. Doctors and staff will appear with you only with their own consent.</li>
+    </ol>
+
+    <h3>For patients under 18</h3>
+    <p>The parent or legal guardian signs below. The child's own willingness is also asked for, in words the child understands, before any recording.</p>
+
+    <div class="sigs">
+      <div><div class="sline"></div><div class="slabel">Signature of patient / parent / guardian &nbsp;·&nbsp; name in full</div></div>
+      <div><div class="sline"></div><div class="slabel">Signature of hospital representative (name &amp; designation)</div></div>
+      <div><div class="sline"></div><div class="slabel">Signature of witness, if the hospital requires one</div></div>
+    </div>
+
+    <p class="notice"><b>For the marketing team:</b> file the signed original with the project record. Re-confirm consent by phone if publication happens more than 60 days after signing. If the patient withdraws, log the date, the person informed and the takedown date. Have your legal team review this template once before first use — hospital policies differ.</p>
+  </section>
+
+  <!-- ===================== Document 2 ===================== -->
+  <section class="doc" id="checklist">
+    <p class="docname">Document 2 of 2</p>
+    <h2>Shoot-Day Checklist</h2>
+    <p class="docsub">One page, three passes: before the day, on the day, before you leave the room.</p>
+
+    <h3>One week before</h3>
+    <ul class="checks checkcol">
+      <li><input type="checkbox"><label>Room booked: quiet, curtains working, soft daylight, no corridor noise</label></li>
+      <li><input type="checkbox"><label>Doctor's office confirmed the 30-minute slot, in writing</label></li>
+      <li><input type="checkbox"><label>Topic sheet sent to each doctor: one topic per take, questions patients ask</label></li>
+      <li><input type="checkbox"><label>Consent forms printed (one per patient story on the day)</label></li>
+      <li><input type="checkbox"><label>Unit head informed: which corridors, which rooms, which hours</label></li>
+      <li><input type="checkbox"><label>Batteries charged, cards formatted, lapel mics packed, backup mic packed</label></li>
+      <li><input type="checkbox"><label>Props ready: water for the doctor, tissue, seat adjusted to height, model or tablet for demonstrations</label></li>
+      <li><input type="checkbox"><label>Phone numbers of the marketing coordinator and the doctor's office, on paper in the bag</label></li>
+    </ul>
+
+    <h3>On the day, before the doctor arrives</h3>
+    <ul class="checks checkcol">
+      <li><input type="checkbox"><label>Frame set and light checked against a stand-in — never against the doctor's time</label></li>
+      <li><input type="checkbox"><label>Mic tested: record ten seconds, play it back, listen for hum and echo</label></li>
+      <li><input type="checkbox"><label>Phone on silent, room phone unplugged if possible, door sign up</label></li>
+      <li><input type="checkbox"><label>Patient consents signed <b>before</b> their recording slot, never after</label></li>
+      <li><input type="checkbox"><label>Any screen in frame checked: no patient names, no IDs, no open records</label></li>
+      <li><input type="checkbox"><label>Vertical framing planned for the reels — shot list marked which takes are vertical</label></li>
+      <li><input type="checkbox"><label>Doctor's name, designation and department verified with the office (for titles)</label></li>
+      <li><input type="checkbox"><label>Emergency exit route known; if the unit is called, the crew folds in 60 seconds</label></li>
+    </ul>
+
+    <h3>Before leaving the room</h3>
+    <ul class="checks checkcol">
+      <li><input type="checkbox"><label>Every take logged: topic, doctor, vertical/horizontal, best take number</label></li>
+      <li><input type="checkbox"><label>Signed consent forms counted against planned patient stories</label></li>
+      <li><input type="checkbox"><label>Cards backed up to two drives before the crew leaves the hospital</label></li>
+      <li><input type="checkbox"><label>Room returned: furniture back, door sign down, nothing left behind</label></li></li>
+      <li><input type="checkbox"><label>Thank-you message sent to the doctor's office the same day</label></li>
+      <li><input type="checkbox"><label>Review-link date promised in writing: first cut in 2 working days</label></li>
+    </ul>
+
+    <p class="notice"><b>The one rule that saves every shoot:</b> the room is never the doctor's problem. If a session is running late, the crew waits — the calendar of the hospital wins over the calendar of the crew.</p>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section class="contact" id="contact">
+    <h2>Want this handled for you?</h2>
+    <p class="sub">We run hospital shoots with this kit every week — consent, OPD-hour planning, review links and subtitles included. Or write to <a href="mailto:info@digitinize.com">info@digitinize.com</a>.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">Hospital *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">Anything to add</label><textarea id="f-msg" name="message" placeholder="When is your next planned shoot? How many doctors?"></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="consent-kit">
+        <button class="primary" type="submit">Send the request</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — video production for hospitals, Bengaluru. Video partner to Manipal Hospitals since 2017. This form is a working template, not legal advice; have your hospital's legal team review it before first use.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Please add your name and a valid work email so we can reply.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){ if (el.name) data[el.name] = el.value; });
+    fetch('/api/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Thank you — your message is with us. We reply within one working day from info@digitinize.com.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Our form service is not reachable right now. Please email info@digitinize.com and we will pick it up.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
