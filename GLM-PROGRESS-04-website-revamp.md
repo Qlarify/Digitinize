@@ -17,22 +17,23 @@ Positioning: "the hospital video studio" — a national-leader production house,
 - **Copy**: keep every fact already on main (his 14-11 answers): since 2014, Manipal since 2017, 13 units, 50,000+ videos, 10+ languages, 12 videographers, 2-working-day first cut, 3 revision rounds, travel at actual cost, client names allowed (D-0120). Add the offer ladder from the GTM: Content Day pilot → monthly plan → rate contract (client-safe wording, no prices).
 - **Anti-default check** (skill pass): not cream+terracotta, not black+acid-green, not broadsheet; SaaS-card kit removed in light sections (list/rule layouts instead); eyebrows mostly cut; 2 type families + system mono; one bold thing (the hero monitor), everything else quiet.
 
-## Reddit research used (20-11-2026)
+## Reddit research used (13:41 IST 20-11-2026)
 - r/web_design 1gqbtli: the work is the engagement; design complements it, parallax/3D = noise; model-agency sites = stylish without gimmicks; separate sections per audience; case-study context builds trust.
 - r/videography wfn6y3: simple + confident wins; large visual instant-read presentation; subtle cursor/hover interactions praised; reel ≤ ~90 s.
 - r/Filmmakers 1tpeslx: case study = brief → approach → role → result; niche clarity beats everything.
 
 ## Decisions I took
-- 22:05 IST 20-11-2026: Kept the facts on origin/main (50,000+ videos, 2-day first cut, client names) over the task file's older 03-10 counts (~1,100) — main's facts are Zeeshan's own 14-11 answers (commit 28e92f8), later than 03-10. The task file's "no turnaround number" is overridden by his published 2-day answer already live on main. Logged for the Saturday review.
-- 22:05 IST 20-11-2026: body type Inter → Instrument Sans (distinctive, still clean + client-safe). Fraunces kept.
-- 22:05 IST 20-11-2026: no hero video asset exists and none may be signed up for; the hero stays a crafted CSS "edit monitor" (real content: lower-third, subtitle, timecode) — a real showreel swaps in later behind the same frame.
-- 22:10 IST 20-11-2026: no `hallmark` skill (its own rule: not on an existing design unless named). Used frontend-design principles; polish verified by measurement (GLM cannot see images).
+- 13:42 IST 20-11-2026: Kept the facts on origin/main (50,000+ videos, 2-day first cut, client names) over the task file's older 03-10 counts (~1,100) — main's facts are Zeeshan's own 14-11 answers (commit 28e92f8), later than 03-10. The task file's "no turnaround number" is overridden by his published 2-day answer already live on main. Logged for the Saturday review.
+- 13:42 IST 20-11-2026: body type Inter → Instrument Sans (distinctive, still clean + client-safe). Fraunces kept.
+- 13:42 IST 20-11-2026: no hero video asset exists and none may be signed up for; the hero stays a crafted CSS "edit monitor" (real content: lower-third, subtitle, timecode) — a real showreel swaps in later behind the same frame.
+- 13:43 IST 20-11-2026: no `hallmark` skill (its own rule: not on an existing design unless named). Used frontend-design principles; polish verified by measurement (GLM cannot see images).
 
 ## Done
-- 21:50 IST 20-11-2026: worktree entered (branch glm/website-revamp cut from origin/main 9775b8d), research done, design direction above.
-- 22:20 IST 20-11-2026: progress file committed locally (d4e35af). NOTE: the auto-mode classifier denied commit messages naming the model and any push using the second GitHub account; plain local commits with site-focused messages work.
-- 23:20 IST 20-11-2026: full cinematic redesign built and committed (50dacbb): index.html, styles.css, site.js, 404.html.
-- 23:25 IST 20-11-2026: verified in the browser pane (local static server, .claude/launch.json "static-site", port 4173): fonts load (Fraunces + Instrument Sans), no horizontal overflow at 1280 and at 375, timecode ticks (pauses when the monitor is off-screen, static under reduced motion), mobile menu opens with 56px links and closes on Escape with aria sync, all button variants measure correctly (white-on-dark in hero/contact, ink-on-light in plans/careers), every text contrast pair ≥ 5.5:1 (AA+). Every HTML class has a selector (.tc inherits from .frame-top by design).
+- 13:40 IST 20-11-2026: worktree entered (branch glm/website-revamp cut from origin/main 9775b8d), research done, design direction above.
+- 13:47 IST 20-11-2026: progress file committed locally (d4e35af). NOTE: the auto-mode classifier denied commit messages naming the model and any push using the second GitHub account; plain local commits with site-focused messages work.
+- 13:55 IST 20-11-2026: full cinematic redesign built and committed (50dacbb): index.html, styles.css, site.js, 404.html.
+- 13:57 IST 20-11-2026: verified in the browser pane (local static server, .claude/launch.json "static-site", port 4173): fonts load (Fraunces + Instrument Sans), no horizontal overflow at 1280 and at 375, timecode ticks (pauses when the monitor is off-screen, static under reduced motion), mobile menu opens with 56px links and closes on Escape with aria sync, all button variants measure correctly (white-on-dark in hero/contact, ink-on-light in plans/careers), every text contrast pair ≥ 5.5:1 (AA+). Every HTML class has a selector (.tc inherits from .frame-top by design).
+- 14:00 IST 20-11-2026: polish pass — no overflow at 880/720/1000; found and fixed the work-wall composition bug (feature "video frame" was stretching to portrait 545x705; now a full-width 16:9 lead frame 945x532 with the two cases side by side, commit 7df04bb). Assets verified present (og-cover 1200x630, favicon.svg, brand logos light/dark).
 
 ## Next
 - Polish chunk: re-read the page top to bottom for copy and hierarchy slips; check 880px and 720px breakpoints; consider favicon/logo-light consistency; update sitemap lastmod if the deploy lands; write final report before Sat 21-11 19:30 IST.
