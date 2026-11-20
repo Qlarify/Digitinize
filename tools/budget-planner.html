@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital Video Budget Planner | Digitinize Creative</title>
+<meta name="description" content="Pick the video formats and monthly volumes your hospital needs — get the shoot days, a cost band and the right way to start: a Content Day pilot (about ₹1 lakh) or a monthly plan (from ₹1.5 lakh per month). Your quote arrives in one working day.">
+<link rel="canonical" href="https://digitinize.com/tools/budget-planner">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hospital Video Budget Planner",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://digitinize.com/tools/budget-planner",
+  "description": "Pick video formats and monthly volumes; get shoot days, a cost band and the right starting tier for a hospital video programme.",
+  "offers": {"@type": "Offer", "priceCurrency": "INR", "price": "150000", "description": "Monthly hospital video plans start from ₹1.5 lakh per month; a Content Day pilot is about ₹1 lakh."}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Why does this planner show ranges and not exact prices?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Every hospital's cost depends on shoot days, travel and subtitle languages, so an honest number needs one conversation. What we can publish: monthly plans start from ₹1.5 lakh, and a Content Day pilot — every format recorded in one day — is about ₹1 lakh. Your exact quote arrives in one working day."}},
+    {"@type": "Question", "name": "What is a Content Day pilot?",
+     "acceptedAnswer": {"@type": "Answer", "text": "One shoot day at your hospital: doctor bytes, reels from the same footage, a suite tour and any consented patient story. You get a full month's worth of video for about ₹1 lakh, and it tells both of us whether the monthly rhythm works before you commit to a plan."}},
+    {"@type": "Question", "name": "What makes a monthly plan more than the starting price?",
+     "acceptedAnswer": {"@type": "Answer", "text": "More shoot days, travel to units outside Bengaluru, more subtitle languages, and heavier formats — patient journeys and procedure films take longer to edit than reels cut from the same footage."}},
+    {"@type": "Question", "name": "Do you charge per video or per shoot day?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Monthly plans are built around shoot days: four recording sessions in one day is the usual rhythm, and the edit volume follows from it. This keeps the calendar predictable for your doctors' offices, which is what actually keeps a hospital video programme alive."}},
+    {"@type": "Question", "name": "Can we start with one specialty only?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes, and we recommend it. One willing department recording monthly beats ten departments agreeing to nothing. The pilot tier exists exactly for that start."}}
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:660px;margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.card h2{font-size:20px;margin:0 0 4px}
+.card .hint{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
+.fmt{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.fmt .fhead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.fmt .fname{font-weight:700}
+.fmt .fdesc{font-size:14px;color:var(--ink-soft);margin:0 0 12px}
+.fmt .weight{font-size:12px;color:#8a7a4e;letter-spacing:.05em}
+.fmt label{font-size:13px;font-weight:600;color:var(--ink-soft)}
+.fmt .vol{display:flex;align-items:center;gap:10px}
+.fmt .vol input{width:70px;padding:8px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+.fmt .vol select{padding:8px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:#fff;color:var(--ink)}
+.fldrow{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 4px}
+.fldrow>div{flex:1;min-width:170px}
+label.fld{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+input[type=number],select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer}
+button.primary:hover{background:var(--accent-dark)}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
+button.ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+#result{display:none}
+.tier{border:1px solid #cfe6e4;background:#eef7f6;border-radius:12px;padding:20px;margin-bottom:16px}
+.tier .tname{font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark)}
+.tier .tprice{font-size:26px;font-weight:800;margin:4px 0 8px;color:var(--ink)}
+.tier p{margin:0;font-size:15px;color:var(--ink-soft)}
+.planband{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 20px}
+.planband .b{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 18px;min-width:140px}
+.planband .b b{display:block;font-size:26px;line-height:1.1;color:var(--accent-dark)}
+.planband .b span{font-size:13px;color:var(--ink-soft)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tfoot td{font-weight:700;border-bottom:none;background:#f2f6fa}
+.note{font-size:14px;color:var(--ink-soft);margin:14px 0 0}
+.priceband{margin-top:20px;border-left:4px solid var(--gold);background:#fbf6ec;border-radius:0 10px 10px 0;padding:14px 18px;font-size:15px}
+.priceband b{color:#7a5f1e}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote{display:none !important}
+  #calculator{display:none !important}
+  #result{display:block !important}
+  .tier,.planband .b{background:#fff}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Digitinize <span>Creative</span></a>
+    <nav><a href="/tools">Free tools</a><a href="/tools/content-plan-calculator">Plan calculator</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Free budgeting tool</p>
+    <h1>Hospital video budget planner</h1>
+    <p class="lede">Choose what your hospital wants to publish each month. Get the shoot days it needs, where the cost sits, and the honest way to start — a one-day pilot or a monthly plan. We publish ranges, not fake exact prices; your real quote arrives in one working day.</p>
+  </div>
+
+  <section class="card" id="calculator">
+    <h2>What do you want made, and how much of it?</h2>
+    <p class="hint">Set per-month volumes to zero for anything you don't want. Nothing is sent anywhere until you press Send below.</p>
+
+    <div class="fmt" data-weight="1">
+      <div class="fhead"><span class="fname">Doctor explainer bytes</span><span class="weight">cost weight ●○○</span></div>
+      <p class="fdesc">60–90 second answers to the questions patients google. The backbone of a hospital video calendar.</p>
+      <div class="vol"><label for="v-bytes">Per month</label><input type="number" id="v-bytes" min="0" max="40" value="4"></div>
+    </div>
+
+    <div class="fmt" data-weight="1">
+      <div class="fhead"><span class="fname">Short reels</span><span class="weight">cost weight ●○○</span></div>
+      <p class="fdesc">Vertical cuts from the same recordings — the cheap volume that keeps channels warm.</p>
+      <div class="vol"><label for="v-reels">Per month</label><input type="number" id="v-reels" min="0" max="60" value="6"></div>
+    </div>
+
+    <div class="fmt" data-weight="3">
+      <div class="fhead"><span class="fname">Patient stories</span><span class="weight">cost weight ●●●</span></div>
+      <p class="fdesc">Consented journey films: the slowest to arrange and the strongest thing a hospital page can carry.</p>
+      <div class="vol"><label for="v-stories">Per month</label><input type="number" id="v-stories" min="0" max="12" value="2"></div>
+    </div>
+
+    <div class="fmt" data-weight="2">
+      <div class="fhead"><span class="fname">Event films</span><span class="weight">cost weight ●●○</span></div>
+      <p class="fdesc">Camps, CMEs, launches and health days, edited within the week.</p>
+      <div class="vol"><label for="v-events">Per month</label><input type="number" id="v-events" min="0" max="10" value="1"></div>
+    </div>
+
+    <div class="fmt" data-weight="3">
+      <div class="fhead"><span class="fname">Suite and procedure tour films</span><span class="weight">cost weight ●●●</span></div>
+      <p class="fdesc">Cath labs, NICUs, day-care suites, endoscopy rooms — films that make frightening rooms familiar. Edit-heavy.</p>
+      <div class="vol"><label for="v-tours">Per month</label><input type="number" id="v-tours" min="0" max="8" value="1"></div>
+    </div>
+
+    <div class="fldrow">
+      <div>
+        <label class="fld" for="v-langs">Subtitle languages</label>
+        <select id="v-langs">
+          <option value="0">None</option>
+          <option value="1">English only</option>
+          <option value="2">English + 1 regional</option>
+          <option value="4" selected>English + 3 regional</option>
+          <option value="6">English + 5 regional</option>
+        </select>
+      </div>
+      <div>
+        <label class="fld" for="v-units">Hospitals / units to cover</label>
+        <input type="number" id="v-units" min="1" max="15" value="1">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="go" type="button">Show my budget band</button>
+      <button class="ghost no-print" type="button" onclick="window.print()">Print the plan</button>
+    </div>
+  </section>
+
+  <section class="card" id="result" aria-live="polite">
+    <h2 id="tier-title">Your budget band</h2>
+    <p class="hint" id="r-sub"></p>
+
+    <div class="tier" id="tier-box">
+      <div class="tname" id="t-name"></div>
+      <div class="tprice" id="t-price"></div>
+      <p id="t-desc"></p>
+    </div>
+
+    <div class="planband" id="planband"></div>
+
+    <table id="plantable">
+      <thead><tr><th>Format</th><th class="num">Per month</th><th>Cost weight</th></tr></thead>
+      <tbody id="planrows"></tbody>
+      <tfoot>
+        <tr><td>Total videos per month</td><td class="num" id="totalcell"></td><td></td></tr>
+        <tr><td>Shoot days per month</td><td class="num" id="dayscell"></td><td></td></tr>
+      </tfoot>
+    </table>
+
+    <p class="note" id="r-note"></p>
+
+    <div class="priceband">
+      <b>Published ranges, honestly:</b> a monthly plan starts from ₹1.5 lakh per month; a Content Day pilot — every format recorded in one day — is about ₹1 lakh. Travel outside Bengaluru and every extra subtitle language move a plan up from there. Your exact quote arrives in one working day.
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Get the exact quote</h2>
+    <p class="sub">Send this plan and we reply with pricing and a calendar slot for the first shoot. Or write to <a href="mailto:info@digitinize.com">info@digitinize.com</a>.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">Your name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">Hospital *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-email">Work email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">Anything to add</label><textarea id="f-msg" name="message" placeholder="Deadline, launch, travel locations, languages you need..."></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="budget-planner"><input type="hidden" name="plan" id="f-plan">
+        <button class="primary" type="submit">Send my plan</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — video production for hospitals, Bengaluru. Video partner to Manipal Hospitals since 2017. 50,000+ videos produced for healthcare teams.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  var FORMATS = [
+    ['Doctor explainer bytes', 'v-bytes', 1, 1],
+    ['Short reels',            'v-reels',  1, 0],
+    ['Patient stories',        'v-stories',3, 2],
+    ['Event films',            'v-events', 2, 2],
+    ['Suite and procedure tours','v-tours', 3, 2]
+  ];
+  var WEIGHT_LABELS = {1:'●○○ light', 2:'●●○ medium', 3:'●●● heavy'};
+
+  function num(id){
+    var v = parseInt(document.getElementById(id).value,10);
+    return isNaN(v) ? 0 : Math.max(0, v);
+  }
+
+  function compute(){
+    var rows = FORMATS.map(function(f){
+      return {name:f[0], vol:num(f[1]), weight:f[2], sessions:f[3]};
+    });
+    var total = rows.reduce(function(s,r){return s + r.vol;},0);
+    if (total === 0) return null;
+    var sessions = rows.reduce(function(s,r){return s + r.vol * r.sessions / 4;},0); // 4 sessions per shoot day
+    var days = Math.max(1, Math.ceil(sessions));
+    var langs = parseInt(document.getElementById('v-langs').value,10) || 0;
+    var units = Math.max(1, num('v-units'));
+    // cost score: heavier formats and more languages/units push the plan up the tiers
+    var weightSum = rows.reduce(function(s,r){return s + r.vol * r.weight;},0);
+    var score = weightSum + langs * 3 + (units - 1) * 6;
+    return {rows:rows, total:total, days:days, langs:langs, units:units, score:score};
+  }
+
+  function render(){
+    var p = compute();
+    var res = document.getElementById('result');
+    if (!p){ res.style.display='none'; return; }
+
+    var tname, tprice, tdesc;
+    if (p.score <= 22){
+      tname = 'Start here: the Content Day pilot';
+      tprice = 'about ₹1 lakh, one-time';
+      tdesc = 'Everything on your list, recorded in a single day at your hospital: doctor bytes, reels cut from the same footage, one suite tour and any consented story. You get a month’s worth of video and a real test of the monthly rhythm before you commit to anything.';
+    } else if (p.score <= 55){
+      tname = 'Monthly plan';
+      tprice = 'from ₹1.5 lakh / month';
+      tdesc = 'A fixed shoot rhythm of about ' + p.days + ' day' + (p.days>1?'s':'') + ' a month with your doctors’ offices, edit flow included, first cuts in 2 working days. This is the tier most single-site and smaller multi-specialty hospitals run.';
+    } else {
+      tname = 'Scale plan';
+      tprice = 'priced on your calendar';
+      tdesc = 'Multi-unit programmes at this volume are shaped around your hospital group’s calendar — unit rotation, travel and a wider subtitle set. Monthly plans still start from ₹1.5 lakh; the exact number for a plan this size is a one-working-day quote, not a published range.';
+    }
+    document.getElementById('t-name').textContent = tname;
+    document.getElementById('t-price').textContent = tprice;
+    document.getElementById('t-desc').textContent = tdesc;
+
+    document.getElementById('r-sub').textContent = p.total + ' videos / month · ' + p.days + ' shoot day' + (p.days>1?'s':'') + (p.langs ? ' · subtitles in ' + (p.langs) + ' language' + (p.langs>1?'s':'') : '');
+
+    var band = document.getElementById('planband');
+    band.innerHTML = '';
+    [['Videos / month', p.total], ['Shoot days / month', p.days], ['Languages subtitled', p.langs || '—'], ['Units covered', p.units]]
+      .forEach(function(x){
+        var d = document.createElement('div'); d.className='b';
+        d.innerHTML = '<b>'+x[1]+'</b><span>'+x[0]+'</span>';
+        band.appendChild(d);
+      });
+
+    document.getElementById('planrows').innerHTML = p.rows.filter(function(r){return r.vol>0;}).map(function(r){
+      return '<tr><td>'+r.name+'</td><td class="num">'+r.vol+'</td><td>'+WEIGHT_LABELS[r.weight]+'</td></tr>';
+    }).join('');
+    document.getElementById('totalcell').textContent = p.total;
+    document.getElementById('dayscell').textContent = p.days;
+
+    document.getElementById('r-note').textContent =
+      'Where the money goes: patient stories and suite tours carry the edit weight; reels ride on footage that already exists. If the band is above where you want to start, cut the heavy formats first — the light ones keep your channels alive on their own.';
+
+    document.getElementById('f-plan').value =
+      'Formats: ' + p.rows.filter(function(r){return r.vol>0;}).map(function(r){return r.vol + ' ' + r.name;}).join(', ') +
+      ' | ' + p.days + ' shoot days | ' + p.langs + ' subtitle languages | ' + p.units + ' unit(s) | tier: ' + tname;
+
+    res.style.display='block';
+    res.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.getElementById('go').addEventListener('click', render);
+  window.addEventListener('beforeprint', function(){ if(document.getElementById('result').style.display!=='block') render(); });
+
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Please add your name and a valid work email so we can reply.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){ if (el.name) data[el.name] = el.value; });
+    fetch('/api/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'Thank you — your plan is with us. We reply within one working day from info@digitinize.com.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'Our form service is not reachable right now. Please email info@digitinize.com and we will pick it up.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
