@@ -1,4 +1,4 @@
-// Digitinize Creative — menu toggle + header border. No dependencies.
+// Digitinize Creative — menu, header state, hero timecode. No dependencies.
 (function () {
   var header = document.querySelector('.site-header');
   var btn = document.querySelector('.menu-btn');
@@ -17,4 +17,28 @@
   function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // Hero monitor timecode — HH:MM:SS:FF at 25 fps, runs only while the monitor is on screen.
+  var tc = document.getElementById('tc');
+  var frame = document.querySelector('.hero .frame');
+  if (tc && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var frames = 3748 + 8; // starts on 00:01:24:08
+    var last = 0, running = false, rafId = null;
+    function pad(n, w) { n = String(n); while (n.length < w) n = '0' + n; return n; }
+    function tick(now) {
+      if (!running) { rafId = null; return; }
+      if (now - last >= 1000 / 25) {
+        last = now;
+        var f = frames % 25, s = Math.floor(frames / 25) % 60,
+            m = Math.floor(frames / 1500) % 60, h = Math.floor(frames / 90000);
+        tc.textContent = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(f, 2);
+        frames++;
+      }
+      rafId = requestAnimationFrame(tick);
+    }
+    new IntersectionObserver(function (entries) {
+      running = entries[0].isIntersecting;
+      if (running && rafId === null) { last = 0; rafId = requestAnimationFrame(tick); }
+    }, { threshold: 0 }).observe(frame);
+  }
 })();
