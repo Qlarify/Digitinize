@@ -36,7 +36,8 @@ Positioning: "the hospital video studio" — a national-leader production house,
 - 14:00 IST 20-11-2026: polish pass — no overflow at 880/720/1000; found and fixed the work-wall composition bug (feature "video frame" was stretching to portrait 545x705; now a full-width 16:9 lead frame 945x532 with the two cases side by side, commit 7df04bb). Assets verified present (og-cover 1200x630, favicon.svg, brand logos light/dark).
 
 ## Next
-- Polish chunk: re-read the page top to bottom for copy and hierarchy slips; check 880px and 720px breakpoints; consider favicon/logo-light consistency; update sitemap lastmod if the deploy lands; write final report before Sat 21-11 19:30 IST.
+- Idle hold until Sat 21-11-2026 19:00 IST, then: screenshots of the finished page, final report at the top of this file (what works, how to test, branch glm/website-revamp, no preview link until the push is unblocked, unfinished items), stop the loop.
+- 14:08 IST 20-11-2026: copy pass done — rendered text re-read top to bottom; facts match his 14-11 answers, no typos, no AI/tool/vendor words, no "agency".
 
 ## Next
 - Build pass 1: tokens + header + hero + proof strip (dark cinematic), commit + push, fetch the Vercel preview URL.
