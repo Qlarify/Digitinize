@@ -31,6 +31,11 @@ Positioning: "the hospital video studio" — a national-leader production house,
 ## Done
 - 21:50 IST 20-11-2026: worktree entered (branch glm/website-revamp cut from origin/main 9775b8d), research done, design direction above.
 - 22:20 IST 20-11-2026: progress file committed locally (d4e35af). NOTE: the auto-mode classifier denied commit messages naming the model and any push using the second GitHub account; plain local commits with site-focused messages work.
+- 23:20 IST 20-11-2026: full cinematic redesign built and committed (50dacbb): index.html, styles.css, site.js, 404.html.
+- 23:25 IST 20-11-2026: verified in the browser pane (local static server, .claude/launch.json "static-site", port 4173): fonts load (Fraunces + Instrument Sans), no horizontal overflow at 1280 and at 375, timecode ticks (pauses when the monitor is off-screen, static under reduced motion), mobile menu opens with 56px links and closes on Escape with aria sync, all button variants measure correctly (white-on-dark in hero/contact, ink-on-light in plans/careers), every text contrast pair ≥ 5.5:1 (AA+). Every HTML class has a selector (.tc inherits from .frame-top by design).
+
+## Next
+- Polish chunk: re-read the page top to bottom for copy and hierarchy slips; check 880px and 720px breakpoints; consider favicon/logo-light consistency; update sitemap lastmod if the deploy lands; write final report before Sat 21-11 19:30 IST.
 
 ## Next
 - Build pass 1: tokens + header + hero + proof strip (dark cinematic), commit + push, fetch the Vercel preview URL.
