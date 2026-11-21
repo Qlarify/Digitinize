@@ -303,3 +303,12 @@ section { padding: 88px 0; }
   .langs span { font-size: .74rem; padding: 4px 9px; }
   .langs span:last-child { display: none; }
 }
+
+/* Language switch (W-B) */
+.langswitch { display: inline-flex; align-items: center; gap: 10px; font-size: .82rem; margin-left: 18px; }
+.langswitch a { color: var(--muted); text-decoration: none; font-weight: 500; }
+.langswitch a:hover { color: var(--ink); }
+.langswitch b { color: var(--ink); font-weight: 700; }
+@media (max-width: 860px) {
+  .langswitch { order: 9; width: 100%; margin: 6px 0 0; }
+}
