@@ -8,8 +8,6 @@
     { "source": "/about", "destination": "/#about", "permanent": true },
     { "source": "/contact", "destination": "/#contact", "permanent": true },
     { "source": "/careers", "destination": "/#careers", "permanent": true },
-    { "source": "/playbooks/:path*", "destination": "/", "permanent": true },
-    { "source": "/playbooks", "destination": "/", "permanent": true },
     { "source": "/industries/:path*", "destination": "/", "permanent": true },
     { "source": "/frameworks/:path*", "destination": "/", "permanent": true }
   ],
