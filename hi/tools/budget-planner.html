@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="hi-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>अस्पताल वीडियो बजट प्लानर | Digitinize Creative</title>
+<meta name="description" content="चुनिए कि आपका अस्पताल हर महीने क्या प्रकाशित करना चाहता है — शूट डेज़, कीमत की रेंज और ईमानदार शुरुआत: एक-दिन का पायलट (लगभग ₹1 लाख) या मंथली प्लान (₹1.5 लाख/महीना से)।">
+<link rel="canonical" href="https://digitinize.com/hi/tools/budget-planner">
+<link rel="alternate" hreflang="en-IN" href="https://digitinize.com/tools/budget-planner">
+<link rel="alternate" hreflang="kn-IN" href="https://digitinize.com/kn/tools/budget-planner">
+<link rel="alternate" hreflang="hi-IN" href="https://digitinize.com/hi/tools/budget-planner">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hospital Video Budget Planner",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://digitinize.com/tools/budget-planner",
+  "description": "Pick video formats and monthly volumes; get shoot days, a cost band and the right starting tier for a hospital video programme.",
+  "offers": {"@type": "Offer", "priceCurrency": "INR", "price": "150000", "description": "Monthly hospital video plans start from ₹1.5 lakh per month; a Content Day pilot is about ₹1 lakh."}
+}
+</script>
+<style>
+:root{
+  --ink:#12233b; --ink-soft:#3d5270; --paper:#f7f9fc; --card:#ffffff;
+  --line:#dce4ef; --accent:#0d6e6e; --accent-dark:#095a5a; --gold:#c8a24a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:700;font-size:18px;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+header.site nav a{color:var(--ink-soft);text-decoration:none;font-size:14px;margin-left:18px}
+header.site nav a:hover{color:var(--accent-dark)}
+.page-head{padding:44px 0 8px}
+.kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 8px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0 0 12px}
+.lede{color:var(--ink-soft);max-width:660px;margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.card h2{font-size:20px;margin:0 0 4px}
+.card .hint{color:var(--ink-soft);font-size:14px;margin:0 0 18px}
+.fmt{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.fmt .fhead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.fmt .fname{font-weight:700}
+.fmt .fdesc{font-size:14px;color:var(--ink-soft);margin:0 0 12px}
+.fmt .weight{font-size:12px;color:#8a7a4e;letter-spacing:.05em}
+.fmt label{font-size:13px;font-weight:600;color:var(--ink-soft)}
+.fmt .vol{display:flex;align-items:center;gap:10px}
+.fmt .vol input{width:70px;padding:8px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+.fmt .vol select{padding:8px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:#fff;color:var(--ink)}
+.fldrow{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 4px}
+.fldrow>div{flex:1;min-width:170px}
+label.fld{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+input[type=number],select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;background:#fff;color:var(--ink)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px}
+button.primary{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-size:16px;font-weight:700;cursor:pointer}
+button.primary:hover{background:var(--accent-dark)}
+button.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:15px;font-weight:600;cursor:pointer}
+button.ghost:hover{border-color:var(--accent);color:var(--accent-dark)}
+#result{display:none}
+.tier{border:1px solid #cfe6e4;background:#eef7f6;border-radius:12px;padding:20px;margin-bottom:16px}
+.tier .tname{font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dark)}
+.tier .tprice{font-size:26px;font-weight:800;margin:4px 0 8px;color:var(--ink)}
+.tier p{margin:0;font-size:15px;color:var(--ink-soft)}
+.planband{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 20px}
+.planband .b{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 18px;min-width:140px}
+.planband .b b{display:block;font-size:26px;line-height:1.1;color:var(--accent-dark)}
+.planband .b span{font-size:13px;color:var(--ink-soft)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tfoot td{font-weight:700;border-bottom:none;background:#f2f6fa}
+.note{font-size:14px;color:var(--ink-soft);margin:14px 0 0}
+.priceband{margin-top:20px;border-left:4px solid var(--gold);background:#fbf6ec;border-radius:0 10px 10px 0;padding:14px 18px;font-size:15px}
+.priceband b{color:#7a5f1e}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px}
+.contact h2{margin:0 0 6px;font-size:20px}
+.contact p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 16px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid .full{grid-column:1/-1}
+.formgrid label{font-weight:600;font-size:14px;display:block;margin-bottom:5px}
+.formgrid input,.formgrid textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:16px;font-family:inherit}
+.formgrid textarea{min-height:90px;resize:vertical}
+.formmsg{margin-top:12px;font-size:15px;display:none;padding:11px 14px;border-radius:9px}
+.formmsg.ok{display:block;background:#eef7f6;color:var(--accent-dark);border:1px solid #cfe6e4}
+.formmsg.err{display:block;background:#fdeeea;color:#8c3a1e;border:1px solid #f2cfc5}
+.footnote{color:var(--ink-soft);font-size:13px;padding:8px 0 46px}
+@media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff}
+  header.site,.no-print,footer.site,.contact,.footnote{display:none !important}
+  #calculator{display:none !important}
+  #result{display:block !important}
+  .tier,.planband .b{background:#fff}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/hi/">Digitinize <span>Creative</span></a>
+    <nav><a href="/hi/tools/">टूल्स</a><a href="/#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <p class="kicker">Free budgeting tool</p>
+    <h1>अस्पताल वीडियो बजट प्लानर</h1>
+    <p class="lede">हर महीने क्या बनवाना है, चुनिए. उसके शूट डेज़, कीमत कहाँ बैठती है और शुरुआत का सही रास्ता मिलता है. हम रेंज प्रकाशित करते हैं, बनाई हुई सटीक कीमतें नहीं; आपका असली कोट एक वर्किंग डे में आता है.</p>
+  </div>
+
+  <section class="card" id="calculator">
+    <h2>क्या बनवाना है, और कितना?</h2>
+    <p class="hint">Set per-month volumes to zero for anything you don't want. Nothing is sent anywhere until you press Send below.</p>
+
+    <div class="fmt" data-weight="1">
+      <div class="fhead"><span class="fname">डॉक्टर एक्सप्लेनर बाइट्स</span><span class="weight">कीमत का वज़न ●○○</span></div>
+      <p class="fdesc">मरीज़ जो हुडुकते हैं उन सवालों के 60–90 सेकंड जवाब. अस्पताल के वीडियो कैलेंडर की रीढ़.</p>
+      <div class="vol"><label for="v-bytes">हर महीने</label><input type="number" id="v-bytes" min="0" max="40" value="4"></div>
+    </div>
+
+    <div class="fmt" data-weight="1">
+      <div class="fhead"><span class="fname">छोटी रील</span><span class="weight">कीमत का वज़न ●○○</span></div>
+      <p class="fdesc">उसी फुटेज की वर्टिकल कट — चैनल गर्म रखने वाली सस्ती मात्रा.</p>
+      <div class="vol"><label for="v-reels">हर महीने</label><input type="number" id="v-reels" min="0" max="60" value="6"></div>
+    </div>
+
+    <div class="fmt" data-weight="3">
+      <div class="fhead"><span class="fname">मरीज़ों की कहानियाँ</span><span class="weight">कीमत का वज़न ●●●</span></div>
+      <p class="fdesc">कंसेंट ली गई जर्नी फिल्में — इंतज़ाम में समय लगता है, पर पन्ने की सबसे मज़बूत चीज़ यही है.</p>
+      <div class="vol"><label for="v-stories">हर महीने</label><input type="number" id="v-stories" min="0" max="12" value="2"></div>
+    </div>
+
+    <div class="fmt" data-weight="2">
+      <div class="fhead"><span class="fname">इवेंट फिल्में</span><span class="weight">कीमत का वज़न ●●○</span></div>
+      <p class="fdesc">कैंप, CME, उद्घाटन और जागरूकता दिवस — हफ्ते भर में एडिट.</p>
+      <div class="vol"><label for="v-events">हर महीने</label><input type="number" id="v-events" min="0" max="10" value="1"></div>
+    </div>
+
+    <div class="fmt" data-weight="3">
+      <div class="fhead"><span class="fname">वार्ड और प्रक्रिया टूर फिल्में</span><span class="weight">कीमत का वज़न ●●●</span></div>
+      <p class="fdesc">कैथ लैब, NICU, डे-केयर — डरावने कमरों को जाना-पहचाना बनाने वाली फिल्में. एडिट-भारी.</p>
+      <div class="vol"><label for="v-tours">हर महीने</label><input type="number" id="v-tours" min="0" max="8" value="1"></div>
+    </div>
+
+    <div class="fldrow">
+      <div>
+        <label class="fld" for="v-langs">सबटाइटल भाषाएँ</label>
+        <select id="v-langs">
+          <option value="0">None</option>
+          <option value="1">English only</option>
+          <option value="2">English + 1 regional</option>
+          <option value="4" selected>English + 3 regional</option>
+          <option value="6">English + 5 regional</option>
+        </select>
+      </div>
+      <div>
+        <label class="fld" for="v-units">अस्पताल / यूनिट</label>
+        <input type="number" id="v-units" min="1" max="15" value="1">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="go" type="button">मेरी बजट रेंज दिखाइए</button>
+      <button class="ghost no-print" type="button" onclick="window.print()">प्लान प्रिंट करें</button>
+    </div>
+  </section>
+
+  <section class="card" id="result" aria-live="polite">
+    <h2 id="tier-title">आपकी बजट रेंज</h2>
+    <p class="hint" id="r-sub"></p>
+
+    <div class="tier" id="tier-box">
+      <div class="tname" id="t-name"></div>
+      <div class="tprice" id="t-price"></div>
+      <p id="t-desc"></p>
+    </div>
+
+    <div class="planband" id="planband"></div>
+
+    <table id="plantable">
+      <thead><tr><th>फॉर्मेट</th><th class="num">हर महीने</th><th>कीमत का वज़न</th></tr></thead>
+      <tbody id="planrows"></tbody>
+      <tfoot>
+        <tr><td>कुल वीडियो / महीने</td><td class="num" id="totalcell"></td><td></td></tr>
+        <tr><td>शूट डे / महीने</td><td class="num" id="dayscell"></td><td></td></tr>
+      </tfoot>
+    </table>
+
+    <p class="note" id="r-note"></p>
+
+    <div class="priceband">
+      <b>प्रकाशित रेंज, ईमानदारी से:</b> मंथली प्लान ₹1.5 लाख/महीना से शुरू; कंटेंट डे पायलट — हर फॉर्मेट एक ही दिन में — लगभग ₹1 लाख. बेंगलुरु से बाहर यात्रा और हर अतिरिक्त सबटाइटल भाषा इससे ऊपर ले जाती है. आपका सही कोट एक वर्किंग डे में.
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>सही कोट पाइए</h2>
+    <p class="sub">यह प्लान भेजिए — हम कीमत और पहले शूट की तारीख़ के साथ जवाब देते हैं. या info@digitinize.com पर लिखिए.</p>
+    <form id="leadform" class="formgrid" novalidate>
+      <div><label for="f-name">आपका नाम *</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div><label for="f-hosp">अस्पताल *</label><input id="f-hosp" name="hospital" required autocomplete="organization"></div>
+      <div><label for="f-email">वर्क ईमेल *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="f-phone">फोन (वैकल्पिक)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="full"><label for="f-msg">कुछ और जोड़ना हो</label><textarea id="f-msg" name="message" placeholder="Deadline, launch, travel locations, languages you need..."></textarea></div>
+      <div class="full"><input type="hidden" name="source" value="budget-planner-hi"><input type="hidden" name="plan" id="f-plan">
+        <button class="primary" type="submit">मेरा प्लान भेजिए</button></div>
+    </form>
+    <div class="formmsg" id="formmsg" role="status"></div>
+  </section>
+
+  <p class="footnote">Digitinize Creative — अस्पतालों के लिए वीडियो निर्माण, बेंगलुरु. Manipal Hospitals के वीडियो पार्टनर 2017 से. 50,000+ हेल्थकेयर टीमों के लिए वीडियो.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p style="color:var(--ink-soft);font-size:14px;padding:0 0 30px">© Digitinize Creative · Video production for hospitals · <a href="/" style="color:var(--accent-dark)">digitinize.com</a></p></div>
+</footer>
+
+<script>
+(function(){
+  var FORMATS = [
+    ["डॉक्टर एक्सप्लेनर बाइट्स", 'v-bytes', 1, 1],
+    ["छोटी रील",            'v-reels',  1, 0],
+    ["मरीज़ों की कहानियाँ",        'v-stories',3, 2],
+    ["इवेंट फिल्में",            'v-events', 2, 2],
+    ["वार्ड और प्रक्रिया टूर फिल्में",'v-tours', 3, 2]
+  ];
+  var WEIGHT_LABELS = {1:"●○○ हल्का", 2:"●●○ मध्यम", 3:"●●● भारी"};
+
+  function num(id){
+    var v = parseInt(document.getElementById(id).value,10);
+    return isNaN(v) ? 0 : Math.max(0, v);
+  }
+
+  function compute(){
+    var rows = FORMATS.map(function(f){
+      return {name:f[0], vol:num(f[1]), weight:f[2], sessions:f[3]};
+    });
+    var total = rows.reduce(function(s,r){return s + r.vol;},0);
+    if (total === 0) return null;
+    var sessions = rows.reduce(function(s,r){return s + r.vol * r.sessions / 4;},0); // 4 sessions per shoot day
+    var days = Math.max(1, Math.ceil(sessions));
+    var langs = parseInt(document.getElementById('v-langs').value,10) || 0;
+    var units = Math.max(1, num('v-units'));
+    // cost score: heavier formats and more languages/units push the plan up the tiers
+    var weightSum = rows.reduce(function(s,r){return s + r.vol * r.weight;},0);
+    var score = weightSum + langs * 3 + (units - 1) * 6;
+    return {rows:rows, total:total, days:days, langs:langs, units:units, score:score};
+  }
+
+  function render(){
+    var p = compute();
+    var res = document.getElementById('result');
+    if (!p){ res.style.display='none'; return; }
+
+    var tname, tprice, tdesc;
+    var TIERS = [["यहीं से शुरू कीजिए: कंटेंट डे पायलट", "लगभग ₹1 लाख, एक बार", "आपकी लिस्ट की हर चीज़, अस्पताल में एक ही दिन में: डॉक्टर बाइट्स, उसी फुटेज़ की रील, एक टूर फिल्म और कंसेंट वाली कहानी. एक महीने का वीडियो और मंथली गति का असली टेस्ट."], ["मंथली प्लान", "₹1.5 लाख/महीना से", "डॉक्टरों के ऑफिस के साथ लगभग {days} दिन की तय शूट गति, एडिट फ्लो सहित, फर्स्ट कट 2 वर्किंग डेज़ में. ज़्यादातर सिंगल-साइट और छोटे मल्टी-स्पेशलिटी अस्पताल इसी हिस्से में चलते हैं."], ["स्केल प्लान", "आपके कैलेंडर पर तय", "इस वॉल्यूम के मल्टी-यूनिट प्रोग्राम आपके ग्रुप के कैलेंडर पर बनते हैं. मंथली प्लान फिर भी ₹1.5 लाख से शुरू; इस आकार की सही संख्या एक वर्किंग डे का कोट है."]];
+    var pick = p.score <= 22 ? 0 : (p.score <= 55 ? 1 : 2);
+    tname = TIERS[pick][0];
+    tprice = TIERS[pick][1];
+    tdesc = pick === 1 ? TIERS[pick][2].replace('{days}', p.days + (p.days>1 ? ' दिन' : ' दिन')) : TIERS[pick][2];
+    document.getElementById('t-name').textContent = tname;
+    document.getElementById('t-price').textContent = tprice;
+    document.getElementById('t-desc').textContent = tdesc;
+
+    document.getElementById('r-sub').textContent = p.total + ' वीडियो / महीने · ' + p.days + ' शूट दिन' + (p.langs ? ' · ' + (p.langs) + ' सबटाइटल भाषाएँ' : '');
+
+    var band = document.getElementById('planband');
+    band.innerHTML = '';
+    [["वीडियो / महीने", p.total], ["शूट डे / महीने", p.days], ["सबटाइटल भाषाएँ", p.langs || '—'], ["यूनिट", p.units]]
+      .forEach(function(x){
+        var d = document.createElement('div'); d.className='b';
+        d.innerHTML = '<b>'+x[1]+'</b><span>'+x[0]+'</span>';
+        band.appendChild(d);
+      });
+
+    document.getElementById('planrows').innerHTML = p.rows.filter(function(r){return r.vol>0;}).map(function(r){
+      return '<tr><td>'+r.name+'</td><td class="num">'+r.vol+'</td><td>'+WEIGHT_LABELS[r.weight]+'</td></tr>';
+    }).join('');
+    document.getElementById('totalcell').textContent = p.total;
+    document.getElementById('dayscell').textContent = p.days;
+
+    document.getElementById('r-note').textContent =
+      "पैसा कहाँ जाता है: मरीज़ कहानियाँ और टूर फिल्में एडिट का वज़न उठाती हैं; रील पहले से मौजूद फुटेज़ पर चलती हैं. रेंज आपकी सीमा से ऊपर हो तो पहले भारी फॉर्मेट काटिए — हल्के फॉर्मेट चैनल खुद जिंदा रखते हैं.";
+
+    document.getElementById('f-plan').value =
+      'Formats: ' + p.rows.filter(function(r){return r.vol>0;}).map(function(r){return r.vol + ' ' + r.name;}).join(', ') +
+      ' | ' + p.days + ' shoot days | ' + p.langs + ' subtitle languages | ' + p.units + ' unit(s) | tier: ' + tname;
+
+    res.style.display='block';
+    res.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.getElementById('go').addEventListener('click', render);
+  window.addEventListener('beforeprint', function(){ if(document.getElementById('result').style.display!=='block') render(); });
+
+  document.getElementById('leadform').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target, msg = document.getElementById('formmsg');
+    var name = f.name && f.name.value.trim();
+    var email = f.email && f.email.value.trim();
+    if (!name || !email || email.indexOf('@') < 1){
+      msg.className = 'formmsg err';
+      msg.textContent = 'जवाब देने के लिए अपना नाम और सही वर्क ईमेल डालिए.';
+      return;
+    }
+    var data = {};
+    Array.prototype.forEach.call(f.elements, function(el){ if (el.name) data[el.name] = el.value; });
+    fetch('/api/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('bad status');
+      msg.className = 'formmsg ok';
+      msg.textContent = 'धन्यवाद — आपका प्लान हमारे पास है. एक वर्किंग डे में info@digitinize.com से जवाब.';
+      f.reset();
+    }).catch(function(){
+      msg.className = 'formmsg err';
+      msg.textContent = 'हमारी फॉर्म सेवा अभी पहुँच रही नहीं. कृपया info@digitinize.com पर ईमेल कीजिए.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
